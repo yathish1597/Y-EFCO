@@ -1,0 +1,107 @@
+<h3 class="custom-header" style="font-weight: 300; margin-bottom: 10px !important;" mat-dialog-title>
+    Expense Code
+</h3>
+
+<form>
+
+    <div mat-dialog-content>
+
+        <div class="form-group">
+            <label class="control-label col-sm-4 add-member-label">Expense Code: </label>
+            <div class="col-sm-8 margin-bottom-15px p-0">
+                <input type="text" class="form-control" formControlName="JobCode" placeholder="Enter Expense Code">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-4 add-member-label">Expense Unit :</label>
+            <mat-select class='col-sm-8 select-option form-control margin-bottom-15px'
+                placeholder="-- Select Expense Unit --">
+                <mat-option>$ / day</mat-option>
+                <mat-option>$ / km</mat-option>
+                <mat-option>Kms</mat-option>
+                <mat-option>liters / km</mat-option>
+                <mat-option>No</mat-option>
+            </mat-select>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-4 add-member-label">Expense Limit Type :</label>
+            <mat-select class='col-sm-8 select-option form-control margin-bottom-15px'
+                placeholder="-- Select Expense Limit Type --">
+                <mat-option>Daily</mat-option>
+                <mat-option>Monthly</mat-option>
+                <mat-option>No Limit</mat-option>
+                <mat-option>Weekly</mat-option>
+                <mat-option>Yearly</mat-option>
+            </mat-select>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-4 add-member-label">Limit Amount ($) :</label>
+            <div class="col-sm-8 margin-bottom-15px p-0">
+                <input type="text" class="form-control" formControlName="ChargeoutRate"
+                    placeholder="Enter Expense Limit Amount">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-4 add-member-label">Rate ($) : </label>
+            <div class="col-sm-8 margin-bottom-15px p-0">
+                <input type="text" class="form-control" formControlName="ChargeoutRate" placeholder="Enter Rate">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-4 add-member-label">Budget Default: </label>
+            <div class="col-sm-8 margin-bottom-15px">
+                <!-- <mat-checkbox formControlName="isDefault">Is Default</mat-checkbox> -->
+                <mat-radio-group>
+                    <mat-radio-button [value]="true"><small
+                            style="font-size:13px;font-weight: bold">Yes&nbsp;&nbsp;</small></mat-radio-button>
+                    <mat-radio-button [value]="false"><small
+                            style="font-size:13px;font-weight: bold">No&nbsp;&nbsp;</small></mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-4 add-member-label">Reimbursable: </label>
+            <div class="col-sm-8 margin-bottom-15px">
+                <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button [value]="true"><small
+                            style="font-size:13px;font-weight: bold">Yes&nbsp;&nbsp;</small></mat-radio-button>
+                    <mat-radio-button [value]="false"><small
+                            style="font-size:13px;font-weight: bold">No&nbsp;&nbsp;</small></mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-4 add-member-label">Attachment Required: </label>
+            <div class="col-sm-8 margin-bottom-15px">
+                <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button [value]="true"><small
+                            style="font-size:13px;font-weight: bold">Yes&nbsp;&nbsp;</small></mat-radio-button>
+                    <mat-radio-button [value]="false"><small
+                            style="font-size:13px;font-weight: bold">No&nbsp;&nbsp;</small></mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+
+    </div>
+
+    <mat-dialog-actions align="center" style="padding-top: 17px !important;">
+        <button (click)="close()" mat-raised-button style="background: #286ba5 !important"
+            class="add-hover btn-success">
+            <mat-icon>send</mat-icon>
+            <span>&nbsp;Save</span>
+        </button>
+
+        <button (click)="close()" mat-raised-button class="add-dark-hover btn-default">
+            <mat-icon>cancel</mat-icon>
+            <span>&nbsp;Cancel</span>
+        </button>
+
+    </mat-dialog-actions>
+</form>

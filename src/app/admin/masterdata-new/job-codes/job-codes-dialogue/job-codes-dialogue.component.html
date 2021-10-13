@@ -1,0 +1,59 @@
+<h3 class="custom-header" style="font-weight: 300; margin-bottom: 10px !important;" mat-dialog-title>
+  Job Code
+</h3>
+
+<form>
+
+ <div mat-dialog-content>
+
+     <div class="form-group">
+         <label class="control-label col-sm-4 add-member-label">Job Code: </label>
+         <div class="col-sm-8 margin-bottom-15px p-0">
+             <input type="text" class="form-control" formControlName="JobCode" placeholder="Enter Job Code">
+         </div>
+     </div>
+
+     <div class="form-group">
+         <label class="control-label col-sm-4 add-member-label">Job Code Title: </label>
+         <div class="col-sm-8 margin-bottom-15px p-0">
+             <input type="text" class="form-control" 
+             formControlName="JobCodeTitle" placeholder="Enter Job Code Title">
+         </div>
+     </div>
+
+     <div class="form-group">
+        <label class="control-label col-sm-4 add-member-label">Job Code Category :</label>
+        <mat-select class='col-sm-8 select-option form-control margin-bottom-15px' placeholder="-- Job Code Category --">
+            <mat-option >Business Services Team</mat-option>
+            <mat-option >Construction Team</mat-option>
+            <mat-option >Engineering Team</mat-option>
+            <mat-option >Legal Team</mat-option>
+            <mat-option >Production Team</mat-option>
+            <mat-option >Research Team</mat-option>
+        </mat-select>
+     </div>
+
+     <div class="form-group">
+        <label class="control-label col-sm-4 add-member-label">Chargeout Rate ($/hr): </label>
+        <div class="col-sm-8 margin-bottom-15px p-0">
+            <input type="text" class="form-control" 
+            formControlName="ChargeoutRate" placeholder="Enter Chargeout Rate">
+        </div>
+    </div>
+     
+ </div>
+
+ <mat-dialog-actions align="center" style="padding-top: 17px !important;">
+     <button 
+       (click)="close()" mat-raised-button style="background: #286ba5 !important" class="add-hover btn-success">
+         <mat-icon>send</mat-icon>
+         <span>&nbsp;Save</span>
+     </button>
+
+     <button (click)="close()" mat-raised-button class="add-dark-hover btn-default">
+         <mat-icon>cancel</mat-icon>
+         <span>&nbsp;Cancel</span>
+     </button>
+
+ </mat-dialog-actions>
+</form>

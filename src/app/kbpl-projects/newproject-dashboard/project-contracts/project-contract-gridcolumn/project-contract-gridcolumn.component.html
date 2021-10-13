@@ -1,0 +1,31 @@
+<div class="NewHeader" style="background-color:#286ba5 !important;height:50px">
+  <h1 mat-dialog-title>Grid View Configuration </h1>
+</div> 
+<p>Please select the required columns in the grid, to view grid with specific columns</p>
+<div mat-dialog-content style="overflow:hidden!important;">
+  <form class="form-horizontal" novalidate [formGroup]="gridColumnForm" style="margin-top:10px">
+    <mat-checkbox  class="col-sm-4"  [checked]="true" >Contract  #</mat-checkbox>
+    <mat-checkbox  class="col-sm-4"  [checked]="true" >Contract  Name</mat-checkbox>
+    <mat-checkbox  class="col-sm-4"  [checked]="true" >Client</mat-checkbox>
+    <mat-checkbox  class="col-sm-4"  [checked]="true" >Consultant</mat-checkbox>
+    <mat-checkbox  class="col-sm-4"  [checked]="true" >Letter of Award  #</mat-checkbox>
+    <mat-checkbox  class="col-sm-4"  [checked]="true" >Award Date</mat-checkbox>
+    <mat-checkbox class="col-sm-4"  [checked]="true" >Agreement #</mat-checkbox>
+    <mat-checkbox  class="col-sm-4"  [checked]="true" >Agreement Date</mat-checkbox>
+    <mat-checkbox class="col-sm-4"  [checked]="true" >Start Date</mat-checkbox>
+    <mat-checkbox class="col-sm-4"  [checked]="true" >Target Date</mat-checkbox>
+    <mat-checkbox class="col-sm-4"  [checked]="true" >Budget</mat-checkbox>
+    <mat-checkbox class="col-sm-4"  [checked]="true" >Billed</mat-checkbox>
+    <mat-checkbox class="col-sm-4"  [checked]="true" >Paid</mat-checkbox>
+    <mat-checkbox class="col-sm-4"  [checked]="true" >Margin</mat-checkbox>
+    <mat-checkbox class="col-sm-4"  [checked]="true" >Completion</mat-checkbox>
+  </form>
+</div>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button  (click)="close()" style="color: rgb(7, 10, 7); background-color: #e0e0e0;"><mat-icon>cancel</mat-icon> Close</button>
+<button mat-raised-button class="btn-primary" (click)="saveGridColumns()"  [mat-dialog-close]="'test'"><mat-icon>send</mat-icon> Configure
+   </button>
+    
+</mat-dialog-actions> 
+

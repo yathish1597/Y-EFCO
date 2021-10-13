@@ -1,0 +1,106 @@
+<div fxLayout="row wrap" #resizedDiv>
+  <div class="flex-p w-100">
+
+      <div class="row" style="margin-bottom:14px;">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <div class="w-100 flex-p">
+              </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <div class="w-100 flex-p">
+                  <button mat-raised-button class="pull-right btn-primary" (click)="openEditDialog(null)">
+                      <mat-icon>person_add</mat-icon> Add Role
+                  </button>
+                  <button mat-raised-button color="primary" class="pull-right filter-hover margin-right-10"
+                      (click)="filterToggle = !filterToggle">
+                      <mat-icon>filter_list</mat-icon> Filter
+                  </button>
+              </div>
+          </div>
+      </div>
+
+
+      <div fxLayout="row wrap" *ngIf="filterToggle">
+          <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p">
+              <form [formGroup]="filterForm">
+              <mat-card class="filter">
+                  <mat-card-content>
+                      <div class="row col-sm-12">
+                          <div class="col-sm-4">
+                              <div class="col-sm-3 newMarginClass">
+                                  Keyword:
+                              </div>
+                              <div class="col-sm-9">
+                                  <input type="text" formControlName="Keyword" onCopy="return false" onPaste="return false" class="form-control"
+                                      placeholder="Search by Name, Email, Role">
+                              </div>
+                          </div>
+                    
+                          <div class="col-sm-4">
+                              <div class="col-sm-3 newMarginClass">
+                                 Role:
+                              </div>
+                              <div class="col-sm-8">
+                                    <mat-select placeholder="Select Role" class="form-control">
+                                        <mat-option *ngFor="let option of roles">{{option.value}}
+                                        </mat-option>
+                                    </mat-select>
+                              </div>
+                          </div>
+                          <div class="col-lg-1" style="margin-left:195px!important;">
+                              <button mat-raised-button class="pull-right btn-primary">
+                                  Search
+                              </button>
+                          </div>
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+                              <button mat-raised-button style="background-color:#37474f; color:#fff !important">
+                                  Clear
+                              </button>
+                          </div>
+                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"></div>
+                      </div>
+                  </mat-card-content>
+              </mat-card>
+          </form>
+          </div>
+      </div>
+    
+      <div fxLayout="row wrap" style="margin-left: 13px;">
+          <div class="table-responsive">
+              <table id="example2" class="table table-bordered table-hover">
+                  <thead class="tbl-head">
+                    <tr class="tr-grid-header">
+                        <th>Role</th>
+                          <th class="text-center">Users</th>
+                          <th style="text-align: center !important;">Screen Permissions</th>
+                          <th style="text-align: center !important;">Actions</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let item of roleDetails">
+                          <td>{{item.roleName}}</td>          
+                          <td class="text-center"><a style="cursor: pointer; color: cornflowerblue;" routerLink="/admin/manage-users/users">{{item.users}}</a></td>  
+                          <td class="text-center"><a style="cursor: pointer; color: cornflowerblue;" routerLink="/admin/manage-users/permissions">{{item.screenPermissions}}</a></td>                
+                          <td style="text-align: center !important;">
+                              <a title="Edit Role" style="margin-right: 10px; cursor: pointer; color: cornflowerblue;"
+                                  (click)="openEditDialog(item)">
+                                  <i class="fa fa-edit"></i>
+                              </a>
+                              <a mwlConfirmationPopover [popoverTitle]="popoverTitle"
+                                  [popoverMessage]="popoverMessage" placement="left"
+                                  (confirm)="deleteRole(item)" (cancel)="cancelClicked = true">
+                                  <i style="cursor: pointer;" title="Delete Role" class="fa fa-trash red"></i>
+                              </a>
+
+                          </td>
+                      </tr>
+          </tbody>
+                
+      </table>
+              <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+                  [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons>
+              </mat-paginator>
+          </div>
+      </div>
+  </div>
+</div>

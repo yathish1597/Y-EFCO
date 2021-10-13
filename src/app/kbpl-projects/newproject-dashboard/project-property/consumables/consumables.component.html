@@ -1,0 +1,112 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 p-0">
+      <table class="table table-bordered">
+        <tr class="tbl-head">
+          <th rowspan="2" class="text-center" style="vertical-align: middle;">Sl.No</th>
+          <th rowspan="2" class="text-center" style="vertical-align: middle;">Mat Code</th>
+          <th rowspan="2" class="text-center" style="vertical-align: middle;">Description</th>
+          <th rowspan="2" class="text-center" style="vertical-align: middle;">Size</th>
+          <th rowspan="2" class="text-center" style="vertical-align: middle;">Rate/Unit</th>
+          <th rowspan="2" class="text-center" style="vertical-align: middle;">UOM</th>
+          <th colspan="3" class="text-center" style="vertical-align: middle;">Qty</th>
+          <th colspan="2" class="text-center" style="vertical-align: middle;">Amount</th>
+        </tr>
+        <tr class="tbl-head">
+          <th class="text-center" style="max-width: 100px;">Issued</th>
+          <th class="text-center" style="max-width: 100px;">Returned</th>
+          <th class="text-center" style="max-width: 100px;">Consumed</th>
+          <th class="text-center" style="max-width: 100px;">Issued</th>
+          <th class="text-center" style="max-width: 100px;">Consumed</th>
+        </tr>
+        <tr *ngFor="let item of items">
+          <td>{{item.slno}}</td>
+          <td>{{item.matcode}}</td>
+          <td>{{item.description}}</td>
+          <td>{{item.size}}</td>
+          <td>{{item.rate}}</td>
+          <td>{{item.uom}}</td>
+          <td><input type="text"  class="form-control"></td>
+          <td><input type="text"  class="form-control"></td>
+          <td><input type="text"  class="form-control"></td>
+          <td><input type="text"  class="form-control"></td>
+          <td><input type="text"  class="form-control"></td>
+        </tr>
+        <tr>
+          <th style="vertical-align: middle;">Total</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          
+          <th></th>
+          <th></th>
+          <th><input type="text"  class="form-control"></th>
+        </tr>
+        
+        
+      </table>
+      
+      <table class="table table-bordered">
+        <tr>
+          <th class="col-sm-3"  style="vertical-align: middle;">Issued to Site</th>
+          <th class="col-sm-3" ><input type="text"  class="form-control"></th>
+          <th class="col-sm-3"  style="vertical-align: middle;">Issued Date</th>
+          <th class="col-sm-3" ><input type="text"  class="form-control"></th>
+        </tr>
+      </table>
+      <table class="table">
+        <tbody>
+          <tr class="p-5">
+            <td class="p-5">Officer Stores</td>
+            <td class="p-5">Security</td>
+            <td class="p-5">Reciever</td>
+            <td class="p-5">Manager Operations</td>
+            <td class="p-5">Maintainance</td>
+          </tr>
+          <tr>
+            <th colspan="3" style="vertical-align: middle;">Issued to Site</th>
+            <th colspan="8"><input type="text"  class="form-control"></th>
+          </tr>
+        </tbody>
+       
+      </table>
+      <table class="table table-bordered">
+        <tr>
+          <th colspan="3" style="vertical-align: middle;">Missing List Made</th>
+          <th colspan="8"><input type="text"  class="form-control"></th>
+        </tr>
+        <tr>
+          <td class="p-5">
+            Write brief remarks for any discrepancy:								
+          </td>
+        </tr>
+        <tr>
+          <th class="col-sm-3"  style="vertical-align: middle;">Return From Site</th>
+          <th class="col-sm-3"  ><input type="text"  class=" form-control"></th>
+          <th class="col-sm-3"   style="vertical-align: middle;">Returned Date</th>
+          <th class="col-sm-3"  ><input type="text"  class=" form-control"></th>
+        </tr>
+      </table>
+      <table class="table">
+        <tbody>
+          <tr class="p-5">
+            <td class="p-5">Officer Stores</td>
+            <td class="p-5">Security</td>
+            <td class="p-5">Reciever</td>
+            <td class="p-5">Manager Operations</td>
+            <td class="p-5">Maintainance</td>
+          </tr>
+        </tbody>
+       
+      </table>
+    </div>
+    <div class="col-sm-12 mt-3 p-0  text-center">
+      <button class="btn btn-primary add-hover" style="font-size:larger !important;"  routerLink="/joborders/joborder-dashboard/POW/site-monitor">Save &
+        Continue</button>
+    </div>
+  </div>
+</div>

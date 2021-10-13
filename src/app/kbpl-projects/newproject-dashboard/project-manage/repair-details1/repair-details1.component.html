@@ -1,0 +1,823 @@
+<!-- <button style=" color:#fff !important;cursor: pointer;margin-bottom: 5px;" class="pull-right btn  btn-primary"
+  matTooltip="Add Item" (click)="allFields.push(1)">
+  <i class="fa fa-plus"> </i> Add Item
+</button> -->
+<div id="grid-table-container" class="table-responsive" style="margin-left: 10px;">
+  <table id="example2" class="table table-bordered">
+
+    <thead class="tbl-head">
+      <tr style="border-bottom: 1px white solid;">
+        <th class="text-center" colspan="18">Details of Repair</th>
+      </tr>
+      <tr style="border-bottom: 1px white solid;">
+        <th rowspan="2" style="vertical-align: middle; min-width: 200px; ">Location of Repair</th>
+
+        <th class="text-center" colspan="8">First Repair</th>
+        <th class="text-center" colspan="7">Second Repair <small>(If Valve FAILS in first attempt)</small></th>
+        <!-- <th class="text-center" style="vertical-align: middle;" rowspan="2">Assembly</th>
+        <th class="text-center" style="vertical-align: middle;" rowspan="2">Handed Over</th> -->
+        <!-- <th rowspan="2" style="vertical-align: middle;">Actions</th> -->
+      </tr>
+      <tr style="border-bottom: 1px white solid;">
+        <th>Intial LPT</th>
+        <th>Welding</th>
+        <th>PWHT</th>
+        <th>Machining</th>
+        <th>Lapping</th>
+        <th>Final LPT</th>
+        <th>Blue Match</th>
+        <th>Assembly</th>
+        <th>Welding</th>
+        <th>PWHT</th>
+        <th>Machining</th>
+        <th>Lapping</th>
+        <th>Final LPT</th>
+        <th>Blue Match</th>
+        <th>Assembly</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Nozzle
+        </td>
+
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" name="dt2" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3" name="dt3" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt4" [owlDateTime]="dt4" name="dt4" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt4></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt5" [owlDateTime]="dt5" name="dt5" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt5></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt6" [owlDateTime]="dt6" name="dt6" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt6></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt7" [owlDateTime]="dt7" name="dt7" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt7></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt30" [owlDateTime]="dt30" name="dt30" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt30></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt31" [owlDateTime]="dt31" name="dt31" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt31></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt8" [owlDateTime]="dt8" name="dt8" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt8></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt10" [owlDateTime]="dt10" name="dt10" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt10></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt11" [owlDateTime]="dt11" name="dt11" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt11></owl-date-time>
+        </td>
+
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt12" [owlDateTime]="dt12" name="dt12" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt12></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt13" [owlDateTime]="dt13" name="dt13" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt13></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt32" [owlDateTime]="dt32" name="dt32" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt32></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt33" [owlDateTime]="dt33" name="dt33" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt33></owl-date-time>
+        </td>
+
+        <!-- <td class="text-center">
+          <a title="Click to Delete" class="btnDeleteRow disable-delete" id="btnDeleteRow-0"><i  (click)="removeItem(i)" class="fa fa-trash disable-icon" title="Cannot delete" style="color: red;"></i></a>
+      </td> -->
+      </tr>
+      <tr>
+        <td> Disc
+        </td>
+
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt100" [owlDateTime]="dt100" name="dt100" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt100></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt103" [owlDateTime]="dt103" name="dt103" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt103></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt104" [owlDateTime]="dt104" name="dt104" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt104></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt105" [owlDateTime]="dt105" name="dt105" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt105></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt106" [owlDateTime]="dt106" name="dt106" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt106></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt107" [owlDateTime]="dt107" name="dt107" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt107></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt1030" [owlDateTime]="dt1030" name="dt1030" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt1030></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt1031" [owlDateTime]="dt1031" name="dt1031" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt1031></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt108" [owlDateTime]="dt108" name="dt108" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt108></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt1010" [owlDateTime]="dt1010" name="dt1010" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt1010></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt1011" [owlDateTime]="dt1011" name="dt1011" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt1011></owl-date-time>
+        </td>
+
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt1012" [owlDateTime]="dt1012" name="dt1012" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt1012></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt1013" [owlDateTime]="dt1013" name="dt1013" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt1013></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt1032" [owlDateTime]="dt1032" name="dt1032" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt1032></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt1033" [owlDateTime]="dt1033" name="dt1033" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt1033></owl-date-time>
+        </td>
+
+        <!-- <td class="text-center">
+          <a title="Click to Delete" class="btnDeleteRow disable-delete" id="btnDeleteRow-0"><i  (click)="removeItem(i)" class="fa fa-trash disable-icon" title="Cannot delete" style="color: red;"></i></a>
+      </td> -->
+      </tr>
+
+      <tr>
+        <td>Spindle
+        </td>
+
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt200" [owlDateTime]="dt200" name="dt200" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt200></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt203" [owlDateTime]="dt203" name="dt203" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt203></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt204" [owlDateTime]="dt204" name="dt204" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt204></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt205" [owlDateTime]="dt205" name="dt205" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt205></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt206" [owlDateTime]="dt206" name="dt206" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt206></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt207" [owlDateTime]="dt207" name="dt207" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt207></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt2030" [owlDateTime]="dt2030" name="dt2030" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt2030></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt2031" [owlDateTime]="dt2031" name="dt2031" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt2031></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt208" [owlDateTime]="dt208" name="dt208" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt208></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt2010" [owlDateTime]="dt2010" name="dt2010" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt2010></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt2011" [owlDateTime]="dt2011" name="dt2011" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt2011></owl-date-time>
+        </td>
+
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt2012" [owlDateTime]="dt2012" name="dt2012" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt2012></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt2013" [owlDateTime]="dt2013" name="dt2013" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt2013></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt2032" [owlDateTime]="dt2032" name="dt2032" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt2032></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt2033" [owlDateTime]="dt2033" name="dt2033" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt2033></owl-date-time>
+        </td>
+
+        <!-- <td class="text-center">
+          <a title="Click to Delete" class="btnDeleteRow disable-delete" id="btnDeleteRow-0"><i  (click)="removeItem(i)" class="fa fa-trash disable-icon" title="Cannot delete" style="color: red;"></i></a>
+      </td> -->
+      </tr>
+
+      <tr>
+        <td>Bellow
+        </td>
+
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt300" [owlDateTime]="dt300" name="dt300" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt300></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt303" [owlDateTime]="dt303" name="dt303" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt303></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt304" [owlDateTime]="dt304" name="dt304" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt304></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt305" [owlDateTime]="dt305" name="dt305" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt305></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt306" [owlDateTime]="dt306" name="dt306" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt306></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt307" [owlDateTime]="dt307" name="dt307" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt307></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt3030" [owlDateTime]="dt3030" name="dt3030" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt3030></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt3031" [owlDateTime]="dt3031" name="dt3031" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt3031></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt308" [owlDateTime]="dt308" name="dt308" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt308></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt3010" [owlDateTime]="dt3010" name="dt3010" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt3010></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt3011" [owlDateTime]="dt3011" name="dt3011" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt3011></owl-date-time>
+        </td>
+
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt3012" [owlDateTime]="dt3012" name="dt3012" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt3012></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt3013" [owlDateTime]="dt3013" name="dt3013" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt3013></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt3032" [owlDateTime]="dt3032" name="dt3032" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt3032></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt3033" [owlDateTime]="dt3033" name="dt3033" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt3033></owl-date-time>
+        </td>
+
+        <!-- <td class="text-center">
+          <a title="Click to Delete" class="btnDeleteRow disable-delete" id="btnDeleteRow-0"><i  (click)="removeItem(i)" class="fa fa-trash disable-icon" title="Cannot delete" style="color: red;"></i></a>
+      </td> -->
+      </tr>
+
+      <tr>
+        <td>Others
+        </td>
+
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt400" [owlDateTime]="dt400" name="dt400" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt400></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt403" [owlDateTime]="dt403" name="dt403" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt403></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt404" [owlDateTime]="dt404" name="dt404" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt404></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt405" [owlDateTime]="dt405" name="dt405" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt405></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt406" [owlDateTime]="dt406" name="dt406" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt406></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt407" [owlDateTime]="dt407" name="dt407" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt407></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt4030" [owlDateTime]="dt4030" name="dt4030" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt4030></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt4031" [owlDateTime]="dt4031" name="dt4031" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt4031></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt408" [owlDateTime]="dt408" name="dt408" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt408></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt4010" [owlDateTime]="dt4010" name="dt4010" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt4010></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt4011" [owlDateTime]="dt4011" name="dt4011" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt4011></owl-date-time>
+        </td>
+
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt4012" [owlDateTime]="dt4012" name="dt4012" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt4012></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt4013" [owlDateTime]="dt4013" name="dt4013" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt4013></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt4032" [owlDateTime]="dt4032" name="dt4032" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt4032></owl-date-time>
+        </td>
+        <td>
+          <input class="form-control" style="width:60px" placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt4033" [owlDateTime]="dt4033" name="dt4033" style="width: 100px">
+          <owl-date-time [pickerType]="'calendar'" #dt4033></owl-date-time>
+        </td>
+
+        <!-- <td class="text-center">
+          <a title="Click to Delete" class="btnDeleteRow disable-delete" id="btnDeleteRow-0"><i  (click)="removeItem(i)" class="fa fa-trash disable-icon" title="Cannot delete" style="color: red;"></i></a>
+      </td> -->
+      </tr>
+      <tr>
+        <td style="vertical-align: middle;">
+          Qualified Welder Name
+        </td>
+        <td style="vertical-align: middle;" colspan="2">
+          <input type="text" class="form-control" placeholder="Enter Welder Name">
+        </td>
+        <td style="vertical-align: middle;">
+          QC Signature
+        </td>
+        <td style="vertical-align: middle;" colspan="2">
+
+        </td>
+        <td>
+          Date
+        </td>
+        <td colspan="2">
+          <input class="form-control" placeholder="MM/DD/YYYY" (keypress)="false" [owlDateTimeTrigger]="dt20"
+            [owlDateTime]="dt20" name="dt20">
+          <owl-date-time [pickerType]="'calendar'" #dt20></owl-date-time>
+        </td>
+        <td colspan="2">
+
+        </td>
+        <td style="vertical-align: middle;">
+          QC Signature
+        </td>
+
+        <td colspan="2">
+
+        </td>
+        <td>
+          Date
+        </td>
+        <td colspan="2">
+          <input class="form-control" placeholder="MM/DD/YYYY" (keypress)="false" [owlDateTimeTrigger]="dt21"
+            [owlDateTime]="dt21" name="dt21">
+          <owl-date-time [pickerType]="'calendar'" #dt21></owl-date-time>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: middle;">
+          Blue Match Operator
+        </td>
+        <td style="vertical-align: middle;" colspan="2">
+          <input type="text" class="form-control" placeholder="Enter Blue Match Operator">
+        </td>
+        <td style="vertical-align: middle;">
+          QC Signature
+        </td>
+        <td style="vertical-align: middle;" colspan="2">
+
+        </td>
+        <td>
+          Date
+        </td>
+        <td colspan="2">
+          <input class="form-control" placeholder="MM/DD/YYYY" (keypress)="false" [owlDateTimeTrigger]="dt23"
+            [owlDateTime]="dt23" name="dt23">
+          <owl-date-time [pickerType]="'calendar'" #dt23></owl-date-time>
+        </td>
+        <td colspan="2">
+
+        </td>
+        <td style="vertical-align: middle;">
+          QC Signature
+        </td>
+
+        <td colspan="2">
+
+        </td>
+        <td>
+          Date
+        </td>
+        <td colspan="2">
+          <input class="form-control" placeholder="MM/DD/YYYY" (keypress)="false" [owlDateTimeTrigger]="dt24"
+            [owlDateTime]="dt24" name="dt24">
+          <owl-date-time [pickerType]="'calendar'" #dt24></owl-date-time>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: middle;">
+          Test History as per API 527</td>
+        <td style="vertical-align: middle;text-align: center !important;" colspan="8">
+          First Repair
+        </td>
+        <td style="vertical-align: middle;" colspan="2">
+          Test History as per API 527
+        </td>
+        <td style="vertical-align: middle;text-align: center !important;" colspan="6">
+          Second Repair
+        </td>
+
+      </tr>
+      <tr>
+        <td style="vertical-align: middle;">
+          Set Pressure Test
+        </td>
+        <td style="vertical-align: middle;" colspan="3">
+          <input type="text" class="form-control">
+        </td>
+        <td style="vertical-align: middle;" colspan="2">
+          Medium
+        </td>
+        <td style="vertical-align: middle;" colspan="3">
+          <input type="text" class="form-control">
+        </td>
+        <td style="vertical-align: middle;" colspan="2">
+          Set Pressure Test
+        </td>
+        <td style="vertical-align: middle;" colspan="2">
+          <input type="text" class="form-control">
+        </td>
+        <td style="vertical-align: middle;">
+          Medium
+        </td>
+        <td style="vertical-align: middle;" colspan="3">
+          <input type="text" class="form-control">
+        </td>
+
+      </tr>
+
+      <tr>
+        <td style="vertical-align: middle;">
+          Cold Set Pressure Test
+        </td>
+        <td style="vertical-align: middle;" colspan="3">
+          <input type="text" class="form-control">
+        </td>
+        <td style="vertical-align: middle;" colspan="2">
+          Bubbles at 90%
+        </td>
+        <td style="vertical-align: middle;" colspan="3">
+          <input type="text" class="form-control">
+        </td>
+        <td style="vertical-align: middle;" colspan="2">
+          Cold Set Pressure Test
+        </td>
+        <td style="vertical-align: middle;" colspan="2">
+          <input type="text" class="form-control">
+        </td>
+        <td style="vertical-align: middle;">
+          Bubbles at 90%
+        </td>
+        <td style="vertical-align: middle;" colspan="3">
+          <input type="text" class="form-control">
+        </td>
+
+      </tr>
+
+      <tr>
+        <td style="vertical-align: middle;">
+          Back Test Pressure
+        </td>
+        <td style="vertical-align: middle;" colspan="3">
+          <input type="text" class="form-control">
+        </td>
+        <td style="vertical-align: middle;" colspan="2">
+          Final Adj of Screw ht
+        </td>
+        <td style="vertical-align: middle;" colspan="3">
+          <input type="text" class="form-control">
+        </td>
+        <td style="vertical-align: middle;" colspan="2">
+          Back Test Pressure
+        </td>
+        <td style="vertical-align: middle;" colspan="2">
+          <input type="text" class="form-control">
+        </td>
+        <td style="vertical-align: middle;">
+          Final Adj of Screw ht
+        </td>
+        <td style="vertical-align: middle;" colspan="3">
+          <input type="text" class="form-control">
+        </td>
+
+      </tr>
+
+      <tr>
+        <td style="vertical-align: middle;">
+          Below Test
+        </td>
+        <td style="vertical-align: middle;" colspan="3">
+          <input type="text" class="form-control">
+        </td>
+        <td style="vertical-align: middle;" colspan="2">
+          Test Status
+        </td>
+        <td style="vertical-align: middle;" colspan="3">
+          <input type="text" class="form-control">
+        </td>
+        <td style="vertical-align: middle;" colspan="2">
+          Below Test
+        </td>
+        <td style="vertical-align: middle;" colspan="2">
+          <input type="text" class="form-control">
+        </td>
+        <td style="vertical-align: middle;">
+          Test Status
+        </td>
+        <td style="vertical-align: middle;" colspan="3">
+          <input type="text" class="form-control">
+        </td>
+
+      </tr>
+
+
+      <tr>
+        <td colspan="16">If valve failed in first repair, mention reasons / Root cause analysis </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: middle;">
+          <div class="row">
+            <div class="col-sm-12">
+              Product Acceptance
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              A. Valve Hydrote &nbsp; &nbsp; <input type="checkbox">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              or
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              B. Plant Lightup &nbsp; &nbsp; &nbsp; <input type="checkbox">
+            </div>
+          </div>
+        </td>
+        <td style="vertical-align: middle;" colspan="2">
+          <input type="text" class="form-control" placeholder="Enter Welder Name">
+        </td>
+        <td style="vertical-align: middle;">
+          QC Signature
+        </td>
+        <td style="vertical-align: middle;" colspan="2">
+
+        </td>
+        <td style="vertical-align: middle;">
+          Date
+        </td>
+        <td colspan="2" style="vertical-align: middle;">
+          <input class="form-control" placeholder="MM/DD/YYYY" (keypress)="false" [owlDateTimeTrigger]="dt25"
+            [owlDateTime]="dt25" name="dt25">
+          <owl-date-time [pickerType]="'calendar'" #dt25></owl-date-time>
+        </td>
+        <td colspan="2">
+
+        </td>
+        <td style="vertical-align: middle;">
+          QC Signature
+        </td>
+
+        <td colspan="2">
+
+        </td>
+        <td style="vertical-align: middle;">
+          Date
+        </td>
+        <td colspan="2" style="vertical-align: middle;">
+          <input class="form-control" placeholder="MM/DD/YYYY" (keypress)="false" [owlDateTimeTrigger]="dt26"
+            [owlDateTime]="dt26" name="dt26">
+          <owl-date-time [pickerType]="'calendar'" #dt26></owl-date-time>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>
+          Signature of Manager Operations
+        </td>
+        <td colspan="2">
+
+        </td>
+        <td colspan="2" style="vertical-align:middle;">
+          Name
+        </td>
+        <td colspan="2" style="vertical-align: middle;">
+          <input type="text" class="form-control" placeholder="Enter Name">
+        </td>
+        <td colspan="3" style="vertical-align:middle;">
+          Date
+        </td>
+        <td colspan="3" style="vertical-align: middle;">
+          <input class="form-control" placeholder="MM/DD/YYYY" (keypress)="false" [owlDateTimeTrigger]="dt16"
+            [owlDateTime]="dt16" name="dt16">
+          <owl-date-time [pickerType]="'calendar'" #dt16></owl-date-time>
+        </td>
+      </tr>
+      <!-- <tr>
+    <td colspan="13" class="text-center">Page 2/2</td>
+  </tr>
+  <tr>
+    <td colspan="2">Prepared by</td>
+    <td colspan="4"> Management Representative</td>
+    <td colspan="3">Date</td>
+    <td colspan="4">
+      <input class="form-control"  placeholder="MM/DD/YYYY" (keypress)="false"
+      [owlDateTimeTrigger]="dt17" [owlDateTime]="dt17" name="dt17">
+    <owl-date-time [pickerType]="'calendar'" #dt17></owl-date-time>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">Reviewed by</td>
+    <td colspan="4"> Management Representative</td>
+    <td colspan="3">Date</td>
+    <td colspan="4">
+      <input class="form-control"  placeholder="MM/DD/YYYY" (keypress)="false"
+      [owlDateTimeTrigger]="dt18" [owlDateTime]="dt18" name="dt18">
+    <owl-date-time [pickerType]="'calendar'" #dt18></owl-date-time>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">Approved by</td>
+    <td colspan="4"> Managing Director</td>
+    <td colspan="3">Date</td>
+    <td colspan="4">
+      <input class="form-control"  placeholder="MM/DD/YYYY" (keypress)="false"
+      [owlDateTimeTrigger]="dt19" [owlDateTime]="dt19" name="dt19">
+    <owl-date-time [pickerType]="'calendar'" #dt19></owl-date-time>
+    </td>
+  </tr> -->
+
+    </tbody>
+  </table>
+
+</div>
+<button class="mine" mat-fab (click)="scrollGrid('right');">
+  <mat-icon style="color:#37474f">fast_forward</mat-icon>
+</button>
+<button class="mine" mat-fab style="margin-right: 78px !important;" (click)="scrollGrid('left');">
+  <mat-icon style="color:#37474f">fast_rewind</mat-icon>
+</button>
+
+<!-- <div class="row justify-content-center mt-5">
+  <div class="col-auto">
+<button mat-raised-button class="  btn-primary"  >Save & Continue</button>
+  </div>
+</div> -->
+
+<div class="row justify-content-center mt-5">
+  <div class="col-auto">
+    <button mat-raised-button class="  btn-primary">Save</button>
+    <button mat-raised-button class="  btn-primary ml-2">
+     <!-- <a (click)="goToLink('http://localhost:4200/#/safety_preview')">Preview</a> -->
+      <a (click)="goToLink('https://f2o.optionmatrix.in/#/safety_preview')">Preview</a>
+
+    </button>
+  </div>
+</div>

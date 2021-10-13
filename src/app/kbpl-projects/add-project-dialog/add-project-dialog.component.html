@@ -1,0 +1,96 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+    {{data ? 'Update' : 'Add'}} Project
+  </h1>
+</div>
+<div mat-dialog-content>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Client Name: </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <mat-select class="form-control" placeholder="Select Client">
+          <mat-option [value]="0">
+            Adani kawai
+          </mat-option>
+          <mat-option [value]="1">
+            Talwandi Saboo
+          </mat-option>
+          <mat-option [value]="2">
+            Balco
+          </mat-option>
+          <mat-option [value]="3">
+            HINDALCO
+          </mat-option>
+          <mat-option [value]="4">
+            NTPC rihand
+          </mat-option>
+        </mat-select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Contact Name: </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <input type="text" class="form-control" placeholder="Enter Contact Name">
+      </div>
+    </div>
+    <!-- <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Email: </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <input type="text" class="form-control" placeholder="Enter Email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Phone: </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <input type="number" class="form-control" placeholder="Enter Phone">
+
+      </div>
+    </div> -->
+
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Project Code: </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <input type="text" class="form-control" placeholder="Enter Project Code">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Job Title: </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <input type="text" class="form-control" placeholder="Enter Job Title">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Start Date: </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <input type="number" class="form-control" placeholder="Start Date">
+
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">End Date: </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <input type="number" class="form-control" placeholder="End Date">
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Notes: </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <textarea class="form-control" placeholder="Enter Notes" rows="2" style="resize: none;"></textarea>
+      </div>
+    </div>
+
+  </form>
+</div>
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary" [mat-dialog-close]="'test'">
+    <mat-icon>send</mat-icon><span>Save</span>
+  </button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()">
+    <mat-icon>cancel</mat-icon>Close
+  </button>
+</mat-dialog-actions>

@@ -1,0 +1,26 @@
+.bubble {
+    font-size: 15px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+}
+
+.etadatediff {
+    background-color: black;
+    height: 30px;
+    margin: auto;
+    width: 30px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle img{
+    height:30px;
+    width:30px
+}

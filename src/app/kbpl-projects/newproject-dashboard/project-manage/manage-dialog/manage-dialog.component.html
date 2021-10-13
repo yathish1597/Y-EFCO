@@ -1,0 +1,439 @@
+<h1 mat-dialog-title class="custom-header">
+  Action Details
+</h1>
+<div mat-dialog-content>
+  <mat-horizontal-stepper #stepper>
+      <mat-step>
+          <ng-template matStepLabel>Action Overview</ng-template>
+          <div class="row" style="margin-bottom: 10px;">
+              <div class="col-sm-12 margin-top-10">
+                  <div class="row">
+                      <div class="col-sm-12">
+                          <p-accordion class="customAccordian">
+                              <p-accordionTab selected="true">
+                                  <p-header>
+                                      <label>View Instructions</label>
+                                  </p-header>
+                                  <app-ngx-editor
+                                      height="70px" minHeight="50px"
+                                       placeholder="Enter Details" spellcheck="true">
+                                  </app-ngx-editor>
+                              </p-accordionTab>
+                          </p-accordion>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row" style="margin-top:10px">
+              <div class="col-sm-3 no-padding">
+                  <div class="col-sm-12">
+                      <b>Ref No.:</b>
+                  </div>
+                  <div class="col-sm-12">
+                      <a matTooltip="Project properties"
+                          target="_blank"
+                          >QuoteNo</a>
+                      &nbsp;&nbsp;&nbsp;
+
+                      <a matTooltip="Research folder link"
+                          target="_blank">
+                          <link rel="stylesheet" href="">
+
+                      </a>
+                      <a matTooltip="Research folder link"
+                          
+                          target="_blank">
+                          link
+
+                      </a>
+                      &nbsp;&nbsp;
+                      <a matTooltip="Click to Open GOTO Link"
+                           target="_blank"
+                          style="font-size: 20px;">
+                          link
+                      </a>
+                      <a matTooltip="Click to Open GOTO Link"
+                          
+                          target="_blank" style="font-size: 20px;">
+                          link
+                      </a>
+                  </div>
+              </div>
+
+              <div class="col-sm-3 no-padding">
+                  <div class="col-sm-12">
+                      <b>Site:</b>
+                  </div>
+                  <div class="col-sm-12">
+                      <a class="anchor" target="_blank"
+                          >SiteName</a>
+                      
+                      &nbsp;
+                      <a class="anchor"
+                         >
+                          link
+                      </a>
+                  </div>
+              </div>
+              <div class="col-sm-3 no-padding">
+                  <div class="col-sm-12">
+                      <b>SOW:</b>
+                  </div>
+                  <div class="col-sm-12">
+                      <a >SowName</a>
+                     
+                  </div>
+              </div>
+              <div class="col-sm-3 no-padding">
+                  <div class="col-sm-12">
+                      <b>Task:</b>
+                  </div>
+                  <div class="col-sm-12">
+                      TaskName
+                  </div>
+              </div>
+          </div>
+          <div class="row" style="margin-top:10px">
+              <div class="col-sm-3 no-padding">
+                  <div class="col-sm-12">
+                      <b>Action:</b>
+                  </div>
+                  <div class="col-sm-12">
+                      <span class="control-label">ActionName</span>
+                      &nbsp;&nbsp;
+                      <a matTooltip="Click to View Document" target="_blank"
+                          >
+                          link
+                      </a>
+                  </div>
+
+              </div>
+              <div class="col-sm-3 no-padding">
+                  <div class="col-sm-12">
+                      <b>Project Manager:</b>
+                  </div>
+                  <div class="col-sm-12">
+                    ProjectManagerName
+                  </div>
+              </div>
+
+              <div class="col-sm-3 no-padding">
+                  <div class="col-sm-12">
+                      <b>Job Code (Title):</b>
+                  </div>
+                  <div class="col-sm-12">
+                    JobCode (JobCodeTitle)
+                  </div>
+              </div>
+              <div class="col-sm-3 no-padding">
+                  <div class="col-sm-12">
+                      <b>Project Drive Folder:</b>
+                  </div>
+                  <div class="col-sm-12">
+                      <a mattooltip="Click to View Document" target="_blank"><img
+                            style="margin-bottom: 3px !important;"
+                            src="https://img.icons8.com/color/20/google-drive--v2.png" /></a>
+
+                  </div>
+              </div>
+
+          </div>
+          <div class="row" style="margin-top:10px">
+              <div class="col-sm-3 no-padding">
+                  <div class="col-sm-12">
+                      <b>Created By:</b>
+                  </div>
+                  <div class="col-sm-12">
+                    --CreatedBy
+                  </div>
+              </div>
+              <div class="col-sm-3 no-padding">
+                  <div class="col-sm-12">
+                      <b>Created On:</b>
+                  </div>
+                  <div class="col-sm-12">
+                    --RecDate
+                  </div>
+              </div>
+
+              <div class="col-sm-3 no-padding">
+                  <div class="col-sm-12">
+                      <b>Scheduled Date:</b>
+                  </div>
+                  <div class="col-sm-12">
+                      <p-calendar dateFormat="yy-mm-dd" class="no-padding"
+                          showOtherMonths="false" showIcon="true" appendTo="body"
+                          >
+                      </p-calendar>
+                  </div>
+              </div>
+              <div class="col-sm-3 no-padding">
+                  <div class="col-sm-12">
+                      <b>Assigned To:</b>
+                  </div>
+                  <div class="col-sm-12">
+                      <div class="col-sm-10 no-padding">
+                          <mat-select class='form-control' placeholder="--Select User --">
+                              <mat-option>UserName</mat-option>
+                          </mat-select>
+                      </div>
+                      <div class="col-sm-2 no-padding">
+                          <a class="edit-icon pull-right"
+                              matTooltip="" style="margin-left: 0px!important;margin-right: 0px!important">
+                              <i class="fas fa-info-circle" style="color:#237ad9; font-size: 19px;"></i>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-sm-3 no-padding">
+                  <div class="col-sm-12">
+                      <b>Assigned By:</b>
+                  </div>
+                  <div class="col-sm-12">
+                    AssignedByUserName
+                  </div>
+              </div>
+              <div class="col-sm-3 no-padding">
+                  <div class="col-sm-12">
+                      <b>Assigned On:</b>
+                  </div>
+                  <div class="col-sm-12">
+                      date : 'y-MM-dd, h:mm a'
+                  </div>
+              </div>
+
+              <div class="col-sm-3 no-padding">
+                  <div class="col-sm-12">
+                      <b>Status:</b>
+                  </div>
+                  <div class="col-sm-12">
+                      Status
+                  </div>
+              </div>
+              <div class="col-sm-3 no-padding">
+                  <div class="col-sm-12">
+                      <b>Split With (Assigned Hours):</b>
+                  </div>
+                  <div class="col-sm-12">
+                      <span>-</span>
+                          <p style="margin: 0px">UserName 
+                            userAssignedHours</p>
+                  </div>
+              </div>
+          </div>
+          <div class="row" style="margin-top: 10px;">
+              <div class="col-sm-3 no-padding">
+                  <div class="col-sm-12">
+                      <b>Due Date & Urgency:</b>
+                  </div>
+                  <div class="col-sm-12 anchor">
+                    DueDate (DueDateOption)
+                  </div>
+              </div>
+              <div class="col-sm-3 no-padding">
+                  <div class="col-sm-12">
+                      <b>Action Status:</b>
+                  </div>
+                  <div class="col-sm-12">
+                    timehseetStatus
+                  </div>
+              </div>
+              <div class="col-sm-3 no-padding">
+                  <div class="col-sm-12">
+                      <b>Planned | Assigned | Worked:</b>
+                  </div>
+                  <div class="col-sm-12">
+                      PlannedHours |
+                      AssignedHours |
+                      WorkedHours
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-sm-3 margin-top-10">
+                  <div class="row">
+                      <label class="col-sm-12 control-label">Remedial Team Member: </label>
+                      <mat-chip-list class="col-sm-12" selectable="false">
+                          <mat-chip
+                              disableRipple="true">
+                              RemedialTeamMember
+                              <mat-icon
+                                  popoverTitle="Remarks" outsideClick="true" placement="right" container="body"
+                                  matTooltip="Click here to view the reason" class="rem-icon">comment</mat-icon>
+                          </mat-chip>
+                      </mat-chip-list>
+                  </div>
+              </div>
+              <div class="col-sm-6 margin-top-10">
+                  <div class="row">
+                      <label class="col-sm-12 control-label">Preferred Team Members: </label>
+                      <mat-chip-list class="col-sm-12">
+                          <mat-chip class="l-orange">
+                            FirstTeamMemberName</mat-chip>
+                          <mat-chip class="l-orange">
+                            SecondTeamMemberName</mat-chip>
+                          <mat-chip class="l-orange">
+                            ThirdTeamMemberName</mat-chip>
+                          <mat-chip>No</mat-chip>
+                      </mat-chip-list>
+                  </div>
+              </div>
+          </div>
+       
+          <div class="col-sm-12 no-padding" style="margin-top: 10px;">
+              <div class="pull-right">
+                  <button class="btn-default"
+                      mat-raised-button
+                      matStepperNext type="button">
+                      <mat-icon>arrow_forward</mat-icon> &nbsp;Next
+                  </button>
+              </div>
+          </div>
+      </mat-step>
+      <mat-step>
+          <ng-template matStepLabel>Action Specific History</ng-template>
+          <div class="col-sm-12" style="background: #007ad91f; margin-top:10px">
+              <div class="col-sm-12 no-padding" style="margin-top:10px;">
+                  <div class="col-sm-3">
+                      <div class="col-sm-6 no-padding">
+                          <b>Ref No.:</b>
+                      </div>
+                      <div class="col-sm-6 no-padding">
+                        QuoteNo
+                      </div>
+                  </div>
+                  <div class="col-sm-3">
+                      <div class="col-sm-6 no-padding">
+                          <b>Site:</b>
+                      </div>
+                      <div class="col-sm-6 no-padding">
+                        SiteName
+                      </div>
+                  </div>
+                  <div class="col-sm-3">
+                      <div class="col-sm-6 no-padding">
+                          <b>SOW:</b>
+                      </div>
+                      <div class="col-sm-6 no-padding">
+                        SowName
+                      </div>
+                  </div>
+                  <div class="col-sm-3">
+                      <div class="col-sm-6 no-padding">
+                          <b>Task:</b>
+                      </div>
+                      <div class="col-sm-6 no-padding">
+                        TaskName
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-12 no-padding" style="margin-top:10px">
+                  <div class="col-sm-3">
+                      <div class="col-sm-6 no-padding">
+                          <b>Action:</b>
+                      </div>
+                      <div class="col-sm-6 no-padding">
+                        ActionName
+                      </div>
+                  </div>
+                  <div class="col-sm-3">
+                      <div class="col-sm-6 no-padding">
+                          <b>Job Code (Title):</b>
+                      </div>
+                      <div class="col-sm-6 no-padding">
+                        JobCode | JobCodeTitle
+                      </div>
+                  </div>
+                  <div class="col-sm-3">
+                      <div class="col-sm-6 no-padding">
+                          <b>Planned Hours:</b>
+                      </div>
+                      <div class="col-sm-6 no-padding">
+                        PlannedHours
+                      </div>
+                  </div>
+                  <div class="col-sm-3">
+                      <div class="col-sm-6 no-padding">
+                          <b>Due Date:</b>
+                      </div>
+                      <div class="col-sm-6 no-padding">
+                        date : 'y-MM-dd'
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="form-group row">
+              <div class="table-responsive w-100" style="padding: 10px 14px 0 14px!important; max-height: 200px;">
+                  <table class="table table-striped table-bordered table-hover">
+                      <thead class="tbl-head">
+                          <tr>
+                              <th rowspan="2" style="vertical-align: middle;">Scheduled Date</th>
+                              <th rowspan="2" style="vertical-align: middle;">Assigned To</th>
+                              <th colspan="4" style="vertical-align: middle;" class="text-center">Hours</th>
+                              <th rowspan="2" style="vertical-align: middle;">Status</th>
+                              <th rowspan="2" style="vertical-align: middle;">Remarks</th>
+                              <th rowspan="2" style="vertical-align: middle;">Updated By</th>
+                              <th rowspan="2" style="vertical-align: middle;">Updated On</th>
+                          </tr>
+                          <tr>
+                              <th style="vertical-align: middle;" class="text-center">Planned</th>
+                              <th style="vertical-align: middle;" class="text-center">Assigned</th>
+                              <th style="vertical-align: middle;" class="text-center">Worked</th>
+                              <th style="vertical-align: middle;" class="text-center">Remaining</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr *ngFor="let item of [1,2,3,4,5]">
+                              <td>ScheduledDate</td>
+                              <td>AssignedToUserName</td>
+                              <td class="text-center">PlannedHours</td>
+                              <td class="text-center">AssignedHours</td>
+                              <td class="text-center">WorkedHours</td>
+                              <td class="text-center">RemainingHours</td>
+                              <td>Status</td>
+                              <td>Remarks<a
+                                      class="anchor"
+                                      mwlConfirmationPopover popoverTitle="Remarks" 
+                                      hideCancelButton="true" hideConfirmButton="true" closeOnOutsideClick="true"
+                                      appendToBody="true" placement="left">...view more
+                                  </a></td>
+                              <td>CreatedByUserName</td>
+                              <td>date : 'y-MM-dd, h:mm a'</td>
+                          </tr>
+                      </tbody>
+                      <td colspan="10" style="text-align: center !important"> No data
+                          available </td>
+                  </table>
+              </div>
+          </div>
+          <div class="pull-right">
+              <button mat-raised-button class="btn-default" type="button" matStepperPrevious>
+                  <mat-icon>arrow_back</mat-icon>&nbsp;Back
+              </button>
+              </div>
+      </mat-step>
+  </mat-horizontal-stepper>
+</div>
+<mat-dialog-actions align="start" class="pull-right">
+  <button mat-raised-button class="btn-default" type="button" (click)="close()">
+      <mat-icon>cancel</mat-icon>&nbsp;Close
+  </button>
+  <button popoverTitle="Remarks" outsideClick="true" containerClass="max-w-5" placement="left" (click)="close()"
+      style="color:red;" mat-raised-button class="btn-default" type="button">
+      <mat-icon>delete_forever</mat-icon>&nbsp;Unassign Action
+  </button>
+  <button mat-raised-button class="btn-primary" type="button" (click)="close()">
+      <mat-icon>send</mat-icon>&nbsp;
+      Submit
+  </button>
+</mat-dialog-actions>
+
+<ng-template #popTemplate>
+  <div>
+      <textarea class="form-control txtarea" rows="4" cols="100" placeholder="Enter Remarks" maxlength="500"
+          autocomplete="off"></textarea>
+      <button type="button" class="btn btn-success margin-top-5">Unassign</button>
+  </div>
+</ng-template>

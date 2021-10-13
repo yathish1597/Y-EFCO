@@ -1,0 +1,24 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "plugins": [{ "name": "@angular/language-service" }],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom"],
+    "paths": {
+      "exceljs": ["node_modules/exceljs/dist/exceljs.min"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "node_modules/jqwidgets-scripts/jqwidgets-ts/angular_jqxkanban.ts"
+  ]
+}

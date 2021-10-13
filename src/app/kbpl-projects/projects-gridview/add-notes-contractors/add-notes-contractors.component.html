@@ -1,0 +1,68 @@
+<h1 mat-dialog-title class="custom-header" style="font-weight: 300; margin-bottom: 10px !important;background-color:#286ba5 !important">
+  Add Note
+</h1>
+  <form >
+
+<div mat-dialog-content>
+<div class="col-sm-12 no-padding">
+<div fxLayout="row" style="margin-top: 10px">
+    <div class="form-group col-sm-12">
+        <div class="row">
+          <div class="form-group col-sm-12">
+            <div class="col-sm-6 no-padding">
+                <label class=" col-sm-12 control-label">{{isProject == true?'Project Number':'Project  Number'}}: </label>
+                <div class="col-sm-12">
+                  <span class="control-label">
+                    247884</span>
+                </div>
+              </div>
+              
+              <div class="col-sm-6 no-padding">
+                  <label class="col-sm-12 control-label add-member-label" >Activity Date: </label>
+                  <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="dt1"  style="margin-left: 15px;">
+                          <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+                  <mat-error class="col-sm-12"
+                            >
+                            Please enter activity date</mat-error>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+          
+              <div class="form-group col-sm-12" style="margin-left: 5px;">
+                  <label class="col-sm-12 control-label add-member-label">Remarks: </label>
+                  <div class="col-sm-12">
+                      <textarea maxlength="999"
+                       formControlName="remarks" placeholder="Enter Remarks"
+                        class="form-control"
+                        
+                         rows="2" style="height: auto !important;"
+                          ng-reflect-name="Enter remarks"></textarea>
+                      <mat-error
+                              >
+                              Please enter remarks</mat-error>
+                  </div>
+            </div>
+         
+
+        </div>
+       
+        
+      </div>
+  </div>
+
+</div>
+</div>
+<mat-dialog-actions align="center">
+  <button mat-raised-button class="add-dark-hover btn-default" type="button" (click)="close(null)" >
+    <mat-icon>cancel</mat-icon> &nbsp;Cancel
+  </button>
+<button *ngIf="!isSaveBtnClicked" mat-raised-button class="add-hover btn-primary" type="submit" (click)="close(null)">
+  <mat-icon>send</mat-icon>&nbsp;Save
+</button>
+<button *ngIf="isSaveBtnClicked" mat-raised-button class="add-hover btn-primary" disabled>
+  <i class='fas fa-spinner fa-spin'></i>&nbsp;Saving..
+</button>
+
+</mat-dialog-actions>
+</form>

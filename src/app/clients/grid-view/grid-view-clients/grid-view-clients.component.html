@@ -1,0 +1,26 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>Grid View Configuration </h1>
+</div> 
+<p>Please select the required columns in the grid, to view grid with specific columns</p>
+<div mat-dialog-content style="overflow:hidden!important;">
+  <form class="form-horizontal" novalidate  style="margin-top:10px">
+    <mat-checkbox  class="col-sm-4" >Client Name</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Job Orders</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Contact Name</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Industry</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Email</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Phone Number</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Street Address</mat-checkbox>
+
+    <mat-checkbox  class="col-sm-4" >State</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Date Created</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Status</mat-checkbox>
+  </form>
+</div>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary" (click)="close()"><mat-icon>send</mat-icon>Configure</button>
+  <button mat-raised-button class="btn-default" (click)="close()"><mat-icon>cancel</mat-icon>Cancel</button>
+</mat-dialog-actions>
+
+

@@ -1,0 +1,51 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+    Projects
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div id="divQuotesGrid" class="table-responsive">
+      <p><b>Client Name: </b>Amazon</p>
+      <table matSort id="example2" class="table table-bordered table-hover">
+        <thead class="tbl-head">
+          <tr>
+            <th >Project Name</th>
+            <th >Project Status</th>
+            <th class="text-center">Target Date</th>
+            <th>Project Status</th>
+            <th class="text-center">% Completion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of totalProjects">
+            <td >{{item.projectname}}</td>
+            <td >{{item.taskStatus}}</td>
+            <td style="text-align: center!important;">{{item.targetDate}}</td>
+            <td >
+              <a 
+              [ngClass]="item.status1 ? 'status1' : 'status1 Red'"
+              mwlConfirmationPopover
+              [popoverTitle]="popoverStatusTitle"
+              [popoverMessage]="popoverStatusMessage"
+              placement="left"
+              (confirm)="cancelClicked = true"
+              (cancel)="cancelClicked = true">
+              {{item.status1?'Active':'Inactive'}}
+          </a>
+      </td>
+            <td style="text-align: center!important;">{{item.perCompletion}}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<mat-dialog-actions class="col-sm-12" align="end">
+  <button mat-raised-button class="CancelClass" (click)="close()">
+    <mat-icon>cancel</mat-icon>&nbsp;Close
+  </button>
+</mat-dialog-actions>

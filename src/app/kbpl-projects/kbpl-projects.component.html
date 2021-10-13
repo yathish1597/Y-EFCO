@@ -1,0 +1,30 @@
+<div class="row-wrap">
+    <div class="w-100">        
+        <div class="row p-0 m-0">
+            <div class="col-sm-12 p-0 m-0">
+                <div class="pills">
+                    <ul class="nav nav-pills">
+                        <li routerLinkActive="active">
+                            <a mat-raised-button class="navtabWidth"
+                             [routerLink]="['/joborders/gridview']">
+                                <mat-icon>grid_on</mat-icon> Grid view
+                            </a>
+                        </li>
+                        <li routerLinkActive="active">
+                            <a mat-raised-button class="navtabWidth"
+                             [routerLink]="['/joborders/kanbanview']">
+                                <mat-icon>crop_square</mat-icon> Kanban view
+                            </a>
+                        </li>
+                        <li routerLinkActive="active">
+                            <a mat-raised-button class="navtabWidth" 
+                            [routerLink]="['/joborders/scheduling']">
+                                <mat-icon>list</mat-icon>Archives
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

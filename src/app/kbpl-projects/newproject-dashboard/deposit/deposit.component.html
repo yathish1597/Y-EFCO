@@ -1,0 +1,256 @@
+<div class="container-fluid">
+
+
+<mat-card class="col-sm-12 custom-layout mt-5" style="background-color: #dbe8f3;margin-bottom: 25px; ">
+
+    <div class="col-sm-6 margin-top-10">
+      <div class="col-sm-6">
+        <label>Unit:</label>
+        <span>&nbsp;&nbsp;5</span>
+      </div>
+      <div class="col-sm-6">
+        <label>POW amount:</label>
+        <span>&nbsp;&nbsp; - </span>
+      </div>
+  
+    </div>
+    <div class="col-sm-6 ">
+      <div class="col-sm-5">
+        <label>Remarks:</label>
+        <span>&nbsp;&nbsp;Valve Repair</span>
+      </div>
+      <div class="col-sm-5">
+        <label>Completion Date:</label>
+        <span>&nbsp;&nbsp;12/09/2021</span>
+      </div>
+      <div class="col-sm-1 no-padding">
+        <mat-icon class="pull-right" style="cursor:pointer;color: #2da3ff;" (click)="openSowDailog()">
+          edit</mat-icon>
+      </div>
+    </div>
+  </mat-card>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <button  mat-raised-button class="btn-primary float-right" routerLink="/joborders/joborder-dashboard/project-execution">Back</button>
+      <button  mat-raised-button class="btn-primary float-right mr-2" (click)="allFields.push(1)">Add Item</button>
+      <button mat-raised-button color="primary" class="float-right filters-hover margin-right-10"
+                                (click)="filterToggle = !filterToggle">
+                                <mat-icon>filter_list</mat-icon> Revenue
+                            </button>
+    </div>
+  </div>
+
+
+  <!-- Filter details -->
+  <div fxLayout="row wrap">
+    <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100" *ngIf="filterToggle">
+        <mat-card class="filter">
+            <mat-card-content>
+                <div class="row col-sm-12">
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">Amount as per plan:</div>
+                        <div class="col-sm-8">
+                            <input type="text" placeholder="Enter Amount " class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">
+                          Amount dispersed till date:
+                        </div>
+                        <div class="col-sm-8">
+                          <input type="text" placeholder="Enter Amount " class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">Inch Dia as per POW:</div>
+                        <div class="col-sm-8">
+                          <input type="text" placeholder="Enter Inch Dia " class="form-control">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row col-sm-12 mt-5">
+
+
+                    <div class="col-sm-12">
+                        <a (click)="filterToggle = !filterToggle" class="pull-right"
+                        style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                        <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                    </a>
+                        <button mat-raised-button class="float-right ml-2"
+                        (click)="filterToggle = !filterToggle"   style="background-color:#37474f; color:#fff !important;">
+                           Close
+                        </button>
+                  
+                       
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+    </div>
+</div>
+  
+
+
+<!-- Table 1 -->
+  <div class="row mt-2">
+    <div class="col-sm-12">
+      <table class="table table-bordered table-responsive" id="tableScroll">
+          <tr class="tbl-head">
+            <th style="vertical-align: middle;" rowspan="2" >S.No</th>
+            <th style="vertical-align: middle;" rowspan="2">Employee Code</th>
+            <th style="vertical-align: middle;" rowspan="2">Name</th>
+            <th style="vertical-align: middle;" rowspan="2">Description</th>
+            <th style="vertical-align: middle;" rowspan="2">Comments</th>
+            <th style="vertical-align: middle;text-align: center !important;"  colspan="2">Request</th>
+            <th style="vertical-align: middle;text-align: center !important;"  colspan="2">Deposited</th>
+            <th style="vertical-align: middle;" rowspan="2">Bank</th>
+            <th style="vertical-align: middle;" rowspan="2">Cumulative</th>
+            <th  style="vertical-align: middle;" rowspan="2">Actions</th>
+          </tr>
+         
+
+          <tr class="tbl-head">
+            <th style="vertical-align: middle;">Date</th>
+            <th style="vertical-align: middle;">Amount</th>
+            <th style="vertical-align: middle;">Date</th>
+            <th style="vertical-align: middle;">Amount</th>
+          </tr>
+      
+      
+          <tr *ngFor="let item of allFields;let i = index;">
+            <td>{{i+1}}</td>
+            <td style="vertical-align: middle;">
+              <mat-select id="idSelect" [(value)]="selectedID"   style="width: 150px; " (valueChange)="changeEmp($event)" placeholder = "Employee ID" class="form-control">
+                <mat-option *ngFor = "let id of empID " [value]="id"> {{id.title}}</mat-option>
+              </mat-select>
+            </td>
+            <td style="vertical-align: middle;">
+              <mat-select id="empSelect" [(value)]="selectedEmp"   style="width: 150px; " (valueChange)="changeID($event)" placeholder = "Employee Name" class="form-control">
+                <mat-option *ngFor = "let emp of empName " [value]="emp"> {{emp.name}}</mat-option>
+              </mat-select>
+            </td>
+            <td style="vertical-align: middle;">
+              <mat-select   style="width: 200px; " placeholder = "Select Description" class="form-control">
+                <mat-option *ngFor = "let item of description " [value]="item"> {{item.name}}</mat-option>
+              </mat-select>
+            </td>
+            <td style="vertical-align: middle;">
+              <textarea name="" id="" ></textarea>
+            </td>
+            <td style="vertical-align: middle;">
+              <input type="date" class="form-control">
+            </td>
+            <td style="vertical-align: middle;">
+              <input type="number" placeholder="Enter Amount" class="form-control" style="width: 120px;">
+            </td>
+            <td style="vertical-align: middle;">
+              <input type="date" class="form-control">
+            </td>
+            <td style="vertical-align: middle;">
+              <input type="number"placeholder="Enter Amount" class="form-control" style="width: 120px;">
+            </td>
+            <td style="vertical-align: middle;">
+              <input type="text" class="form-control" style="width: 120px;">
+            </td>
+            <td style="vertical-align: middle;">
+              <input type="number" class="form-control" style="width: 120px;">
+            </td>
+            <td class="text-center">
+              <a><i class="fa fa-save green" matTooltip="Save" style="cursor: pointer;"></i></a>
+              <a *ngIf="allFields.length > 1"><i class="fa fa-trash red" matTooltip="Delete" (click)="removeItem(i)"
+                  style="cursor: pointer;"></i></a>
+            </td>
+          </tr>
+       
+      </table>
+    </div>
+  </div>
+
+
+  <!-- Table 2 -->
+  <!-- <div class="row mt-3">
+    <div class="col-sm-12">
+      <table class="table table-bordered table-responsive">
+        <thead class="tbl-head">
+            <th>S.No</th>
+            <th>Asset Log</th>
+            <th>Budget</th>
+            <th>12.09.21</th>
+            <th>13.09.21</th>
+            <th>14.09.21</th>
+            <th>15.09.21</th>
+            <th>16.09.21</th>
+            <th>17.09.21</th>
+            <th>Cumulative</th>
+            <th>Balance</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of assetLog;let i = index;">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+
+          </tr>
+
+        </tbody>
+      </table>
+      
+    </div>
+  </div> -->
+
+  <div class="row p-0 m-0">
+    <div class="col-sm-12 p-0 m-0">
+      <div id="grid-table-container" class="table-responsive" style="width:100%">
+        <table matSort id="example2" class="table table-bordered table-hover">
+          <thead class="tbl-head" *ngFor="let item of assetLogHeading">
+            <th>{{item.tblHeading}}</th>
+            <th>{{item.tblHeading2}}</th>
+            <th>{{item.tblHeading3}}</th>
+            <th>{{item.tblHeading4}}</th>
+            <th>{{item.tblHeading5}}</th>
+            <th>{{item.tblHeading6}}</th>
+            <th>{{item.tblHeading7}}</th>
+            <th>{{item.tblHeading8}}</th>
+            <th>{{item.tblHeading9}}</th>
+            <th>{{item.tblHeading10}}</th>
+            <th>{{item.tblHeading11}}</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of assetLog;let i = index;">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+          </tr>
+
+        </tbody>
+        </table>
+        <!-- <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+          [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator> -->
+      </div>
+    </div>
+  </div>
+
+  <button class="mine" mat-fab (click)="scrollGrid('right');">
+    <mat-icon style="color:#37474f">fast_forward</mat-icon>
+  </button>
+  <button class="mine" mat-fab style="margin-right: 78px !important;" (click)="scrollGrid('left');">
+    <mat-icon style="color:#37474f">fast_rewind</mat-icon>
+  </button>
+
+  <div class="col-sm-12 mt-3 p-0  text-center">
+    <button class="btn btn-primary add-hover" style="font-size:larger !important;" routerLink="/joborders/joborder-dashboard/POW/daily-report">Save &
+      Continue</button>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<button mat-icon-button [matMenuTriggerFor]="userMenu" #userMenuTrigger="matMenuTrigger">
+    <mat-icon title="View Profile">account_circle</mat-icon>
+</button>
+
+<mat-menu #userMenu="matMenu" [overlapTrigger]="false" class="toolbar-dropdown-menu user-menu">
+        <mat-toolbar color="primary">
+            <div fxLayout="row" fxLayoutAlign="space-around center" class="user-info">
+                <img src="../../../../assets/profile_pic.png" alt="profile_pic" width="80" class="rounded mat-elevation-z6">
+                <p>Admin<br> </p>
+                </div>
+            </mat-toolbar>
+            <a *ngIf="userType == 'carrier' &&  hasPermissions" mat-menu-item [routerLink]="['/transreport/carriers/subscriptions']">
+                <mat-icon>person</mat-icon>
+                <span>Subscriptions</span>
+            </a>
+            <a mat-menu-item (click)="openUserDialogs(null)">
+                <mat-icon>person</mat-icon>
+                <span>Profile</span>
+            </a>
+            <a mat-menu-item (click)="openPasswordDialog()">
+                <mat-icon>vpn_key</mat-icon>
+                <span>Change Password</span>
+            </a>
+            <div class="divider"></div>
+            <a mat-menu-item (click)="logoutUser();">
+                <mat-icon>power_settings_new</mat-icon>
+                <span>Log out</span>
+            </a>
+        </mat-menu>

@@ -1,0 +1,186 @@
+<div class="col-sm-12 margin-top-10">
+  <div class="row">
+      <table id="example1" class="table table-striped table-bordered table-hover" matSort
+          (matSortChange)="sortData($event)">
+          <thead class="tbl-head">
+              <tr class="tr-grid-header">
+                  <!-- <th style="vertical-align: middle; width:35px">Inst
+                </th> -->
+                  <th mat-sort-header="1" class="v-a-m" style="width:85px">Created</th>
+                  <th mat-sort-header="2" class="v-a-m" style="width:75px">Ref No.</th>
+                  <!-- <th mat-sort-header="3" *ngIf="(isSuperAdmin || isAM)">Project Manager</th> -->
+                  <th mat-sort-header="4" class="v-a-m">Site Name</th>
+                  <th mat-sort-header="5" class="v-a-m">SOW</th>
+                  <th mat-sort-header="6" class="v-a-m">Street Address</th>
+                  <th mat-sort-header="7" class="v-a-m">Task Name</th>
+                  <th mat-sort-header="8" class="v-a-m" style="min-width:130px;">Actions</th>
+                  <th mat-sort-header="9" class="v-a-m" style="width:71px">Job Code</th>
+                  <th mat-sort-header="10" class="v-a-m text-center" style="width:63px">Planned
+                      Hours</th>
+                  <th mat-sort-header="11" class="v-a-m" style="width:86px;">Due Date</th>
+                  <th mat-sort-header="12" class="v-a-m" style=" width:8% !important;">Schedule Date</th>
+                  <th mat-sort-header="13" class="v-a-m text-center" style="width:4% !important;">
+                      Assigned Hours</th>
+                  <th mat-sort-header="14" class="v-a-m" style="min-width:145px;">Assigned User</th>
+                  <th mat-sort-header="15" class="text-center v-a-m">Status</th>
+                  <th class="text-center">Manage</th>
+              </tr>
+          </thead>
+          <tbody *ngFor="let item of actionListPM; let j = index" [ngClass]="{'review-border': !item.IsPMScheduler}">
+              <tr>
+                  <!-- (click)="ViewInstructions(item.Notes)" -->
+                  <!-- <td [attr.rowspan]="item.DetailsList.length"
+                    style="vertical-align: middle; text-align: center;"><a
+                        matTooltip="View Instructions" style="color:#237ad9;cursor: pointer;"
+                        (click)="editAction(item.ManageActionId, item.LogHourId)">
+                        <mat-icon>speaker_notes</mat-icon>
+                    </a></td> -->
+                  <td [attr.rowspan]="item.DetailsList.length" style="vertical-align: middle;">
+                      {{item.CreatedDate | date : 'y-MM-dd, h:mm a'}} </td>
+                  <td [attr.rowspan]="item.DetailsList.length" style="vertical-align: middle;">
+
+                      <a matTooltip="Click to View Details" class="anchor" target="_blank"
+                          [routerLink]="['/IBW/manage/' + ((item.IsProject == false) ? 'quotes-dashboard/' :'projects-dashboard/') + item.EncryptedQuoteId +
+                         '/' + item.EncryptedQuoteNum + '/' + item.EncryptedProjectType + '/manage/' + item.EncryptedSiteId + '/' + item.EncryptedSowId]">
+                          {{item.QuoteNo}}
+                      </a>
+                  </td>
+                  <!-- <td [attr.rowspan]="item.DetailsList.length" *ngIf="(isSuperAdmin || isAM)"
+                    style="vertical-align: middle;">{{item.ProjectManagerName}}</td> -->
+                  <td [attr.rowspan]="item.DetailsList.length" style="vertical-align: middle;">
+                      {{item.SiteName}}</td>
+                  <td [attr.rowspan]="item.DetailsList.length" style="vertical-align: middle;">
+                      {{item.SowName}}</td>
+                  <td [attr.rowspan]="item.DetailsList.length" style="vertical-align: middle;">
+                      {{ item.SiteStreetAddress? item.SiteStreetAddress +', '+item.SiteCity:'-'}}</td>
+                  <td [attr.rowspan]="item.DetailsList.length" style="vertical-align: middle;">
+                      {{item.TaskName}}</td>
+                  <td [attr.rowspan]="item.DetailsList.length" style="vertical-align: middle;">
+                      <a [ngClass]="{'r-n':((item.DueDateOption == 'Fixed Date - Action must be completed ON this specific date') 
+                    || (item.DueDateOption == 'Flex Date - Action must be completed on OR before this specific date'&& item.IsDueToday)), 
+                     'b-n': (item.DueDateOption == 'Flex Date - Action must be completed on OR before this specific date' && !item.IsDueToday),
+                     'g-n':(item.DueDateOption == 'To be scheduled later') }" class="anchor"
+                          (click)="openActionDialog(item)"><b>{{item.ActionName}}</b></a>
+                  </td>
+                  <td [attr.rowspan]="item.DetailsList.length" style="vertical-align: middle;"
+                      [ngClass]="{'inactive-red' : item.JobCodeStatus == false}"
+                      title="{{item.JobCode}} ({{item.JobCodeTitle}})">{{item.JobCode}}</td>
+                  <!-- <td [attr.rowspan]="item.DetailsList.length" style="vertical-align: middle;"
+                    class="text-center" *ngIf="item.UnScheduled == true">
+                    <a *ngIf="item.Rescheduled == null || item.Rescheduled == false"
+                        (click)="openActionLogModal(item.ManageActionId, item.QuoteNo, item.SiteName, item.SowName, item.ActionName, item.TaskName, item.JobCode, item.JobCodeTitle)"
+                        style="color: #007ad9; cursor: pointer;">{{item.PlannedHours ? item.PlannedHours.toFixed(2) : '-'}}
+                        <span
+                            style="color:red;">({{(item.PlannedHours - item.TotalScheduledHours).toFixed(2)}})</span></a>
+                    <a *ngIf="item.Rescheduled == true && item.TotalScheduledHours > 0"
+                        (click)="openActionLogModal(item.ManageActionId, item.QuoteNo, item.SiteName, item.SowName, item.ActionName, item.TaskName, item.JobCode, item.JobCodeTitle)"
+                        style="color: #007ad9; cursor: pointer;">{{item.PlannedHours ? item.PlannedHours.toFixed(2) : '-'}}
+                        <span
+                            style="color:red;">({{(item.TotalScheduledHours).toFixed(2)}})</span></a>
+                            <span *ngIf="item.Rescheduled == true && item.TotalScheduledHours == 0">{{item.PlannedHours ? item.PlannedHours.toFixed(2) : '-'}}</span>
+                </td> -->
+
+                  <td [attr.rowspan]="item.DetailsList.length" style="vertical-align: middle;" class="text-center"
+                      *ngIf="item.UnScheduled == true">
+                      <span *ngIf="item.Rescheduled == null || item.Rescheduled == false">{{item.PlannedHours ? item.PlannedHours.toFixed(2) : '-'}}
+                          <span style="color:red;">({{(item.PlannedHours - item.TotalScheduledHours).toFixed(2)}})</span></span>
+                      <span *ngIf="item.Rescheduled == true && item.TotalScheduledHours > 0">
+                          {{item.PlannedHours ? item.PlannedHours.toFixed(2) : '-'}}
+                          <span style="color:red;">({{(item.TotalScheduledHours).toFixed(2)}})</span></span>
+                      <span
+                          *ngIf="item.Rescheduled == true && item.TotalScheduledHours == 0">{{item.PlannedHours ? item.PlannedHours.toFixed(2) : '-'}}</span>
+                  </td>
+                  <td [attr.rowspan]="item.DetailsList.length" style="vertical-align: middle;" class="text-center"
+                      *ngIf="item.UnScheduled == null || item.UnScheduled == false">
+                      {{item.PlannedHours.toFixed(2)}}
+                  </td>
+                  <td [attr.rowspan]="item.DetailsList.length" class="text-center" style="vertical-align: middle;"
+                      *ngIf="item.DueDate == null || item.DueDate == '1970-01-01T00:00:00'">
+                      <a class="anchor" (click)="openDueDateDialog(item)">Pending</a>
+                  </td>
+                  <td [attr.rowspan]="item.DetailsList.length" class="text-center" style="vertical-align: middle;"
+                      *ngIf="item.DueDate != null && item.DueDate.length > 0 && item.DueDate != '1970-01-01T00:00:00'">
+                      <a class="anchor" (click)="openDueDateDialog(item)">{{item.DueDate | date : 'y-MM-dd'}}</a>
+                  </td>
+                  <td class="text-center" style="vertical-align: middle;">
+                      {{item.DetailsList[0].AssignedOn == null ? '-' : item.DetailsList[0].AssignedOn}}
+                  </td>
+                  <td class="text-center" style="vertical-align: middle;">
+                      {{(item.DetailsList[0].AssignedHours == null || item.DetailsList[0].AssignedHours == '')?'-':item.DetailsList[0].AssignedHours.toFixed(2)}}
+                  </td>
+                  <td style="vertical-align: middle;">
+                      <span [ngClass]="{'inactive-red': item.DetailsList[0].AssignedUserStatus == false}">
+                          {{(item.DetailsList[0].AssignedTo == null || item.DetailsList[0].AssignedTo == '')?'-':item.DetailsList[0].AssignedTo}}
+                      </span>
+
+                  </td>
+                  <td class="text-center" style="vertical-align: middle;">
+                      <a *ngIf="item.DetailsList[0].DetailId != null && item.DetailsList[0].LogHoursId != null"
+                          class="anchor" [ngClass]="{'inactive-red':item.DetailsList[0].Approved==false}"
+                          (click)="openTimesheetAndExpenses(item.DetailsList[0].DetailId)">
+                          {{item.DetailsList[0].Approved==null?'Pending PM Review':'Rejected'}}
+                      </a>
+                      <span
+                          *ngIf="item.DetailsList[0].DetailId == null && item.DetailsList[0].LogHoursId == null">-</span>
+                      <span *ngIf="item.DetailsList[0].DetailId != null && item.DetailsList[0].LogHoursId == null">
+                          Scheduled
+                      </span>
+                  </td>
+                  <td class="text-center v-a-m">
+                      <a (click)="getActionsByUserSchDate(item.DetailsList[0].AssignedUser, item.DetailsList[0].AssignedOn, item.DetailsList[0].AssignUserList,j,0)"
+                          [matTooltip]=""
+                          [ngClass]="{'disable-custom' : item.DetailsList[0].AssignedTo == null || item.DetailsList[0].AssignedTo == '' || item.DetailsList[0].AssignedTo == '-'}"
+                          class="edit-icon">
+                          <i class="fas fa-info-circle" style="color:#237ad9; font-size: 19px;"></i>
+                      </a>
+                      <i (click)="openAddPhoneNotesDialog(item.ManageActionId, item.DetailsList[0].DetailId, item.DetailsList[0].ActionCompletionStatus)"
+                          class="fas fa-arrow-circle-right"
+                          style="cursor: pointer;font-size: 18px;color: #238b22e8;"></i>
+                  </td>
+
+              </tr>
+              <ng-container *ngFor="let det of item.DetailsList; let i = index">
+                  <tr *ngIf="i > 0">
+                      <td *ngIf="i > 0 " class="text-center" style="vertical-align: middle;">
+                          {{det.AssignedOn == null ? '-' : det.AssignedOn}}
+                      </td>
+                      <td *ngIf="i > 0 " class="text-center" style="vertical-align: middle;">
+                          {{(det.AssignedHours == null || det.AssignedHours == '')?'-':det.AssignedHours.toFixed(2)}}
+                      </td>
+                      <td *ngIf="i > 0 " style="vertical-align: middle;"
+                          [ngClass]="{'inactive-red': det.AssignedUserStatus == false}">
+                          {{(det.AssignedTo == null || det.AssignedTo == '')?'-':det.AssignedTo}}
+
+                      </td>
+                      <td *ngIf="i > 0 " class="text-center" style="vertical-align: middle;">
+                          <a *ngIf="det.DetailId != null && det.LogHoursId != null" class="anchor"
+                              [ngClass]="{'inactive-red':det.Approved==false}"
+                              (click)="openTimesheetAndExpenses(det.DetailId)">
+                              {{det.Approved==null?'Pending PM Review':'Rejected'}}
+                          </a>
+                          <span *ngIf="det.DetailId == null && det.LogHoursId == null">-</span>
+                          <span *ngIf="det.DetailId != null && det.LogHoursId == null">
+                              Scheduled
+                          </span>
+                      </td>
+                      <td *ngIf="i > 0 " class="text-center v-a-m">
+                          <a (click)="getActionsByUserSchDate(det.AssignedUser, det.AssignedOn, det.AssignUserList, j, i)"
+                              [matTooltip]=""
+                              [ngClass]="{'disable-custom' : det.AssignedTo == null || det.AssignedTo == '' || det.AssignedTo == '-'}"
+                              class="edit-icon">
+                              <i class="fas fa-info-circle" style="color:#237ad9; font-size: 19px;"></i>
+                          </a>
+                          <i (click)="openAddPhoneNotesDialog(item.ManageActionId, det.DetailId, det.ActionCompletionStatus)"
+                              class="fas fa-arrow-circle-right"
+                              style="cursor: pointer;font-size: 18px;color: #238b22e8;"></i>
+                      </td>
+                  </tr>
+              </ng-container>
+          </tbody>
+          <td *ngIf="actionListPM?.length == 0" [attr.colspan]="16" style="text-align: center !important"> No data
+              available </td>
+      </table>
+      <mat-paginator class="col-sm-12" [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+          [pageSizeOptions]="[5, 10, 25, 50, 100]" (page)="handlePage($event)" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

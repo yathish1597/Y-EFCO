@@ -1,0 +1,270 @@
+<h1 mat-dialog-title class="custom-header" style="background-color:#286ba5 !important;height:50px">
+  New Action</h1>
+<div mat-dialog-content>
+  <mat-horizontal-stepper class="action-modal">
+      <mat-step>
+
+          <ng-template matStepLabel>Action Details</ng-template>
+          <form>
+              <div class="col-sm-12 border-class">
+                  <div class="col-sm-12" style="margin-bottom: 15px">
+                      <div class="col-sm-3 no-padding">
+                          <div class="col-sm-12 div-padding">
+                              <label class="add-member-label">Ref No:&nbsp;</label>
+                          </div>
+                          <div class="col-sm-12 div-padding">
+                              <input type="text"
+                                  class="form-control" placeholder="-Enter Ref. No.-">
+                              <mat-autocomplete>
+                                  <mat-option>
+                                    R-025012
+                                  </mat-option>
+                              </mat-autocomplete>
+                          </div>
+                      </div>
+                      <div class="col-sm-3 no-padding">
+                          <div class="col-sm-12 div-padding">
+                              <label class="add-member-label">Site:&nbsp;</label>
+                          </div>
+                          <div class="col-sm-12 div-padding">
+                              <mat-select placeholder="-Select Site-" class="form-control">
+                                  <mat-option>
+                                      001 Default
+                                  </mat-option>
+                              </mat-select>
+                          </div>
+                        
+                      </div>
+                      <div class="col-sm-3 no-padding">
+                          <div class="col-sm-12 div-padding">
+                              <label class="add-member-label">SOW:&nbsp;</label>
+                          </div>
+                          <div class="col-sm-12 div-padding">
+                              <mat-select
+                                  placeholder="-Select Sow-" class="form-control">
+                                  <mat-option class="option">
+                                      A.Default
+                                  </mat-option>
+                              </mat-select>
+                          </div>
+                          
+                      </div>
+                      <div class="col-sm-3 no-padding">
+                          <div class="col-sm-12 div-padding">
+                              <label class="add-member-label">Task:&nbsp;</label>
+                          </div>
+                          <div class="col-sm-12 div-padding ">
+                              <mat-select placeholder="-Select Task-"
+                                  class="form-control">
+                                  <mat-option value="[0]">Quote</mat-option>
+                                  <mat-option value="[1]">Administration</mat-option>
+                                  <mat-option value="[2]">Research</mat-option>
+                                  <mat-option value="[3]">Field</mat-option>
+                                  <mat-option value="[4]">Drafting</mat-option>
+                                  <mat-option value="[5]">Quality control</mat-option>
+                              
+                              </mat-select>
+                          </div>
+                          
+                      </div>
+                  </div>
+
+                  <div class="col-sm-12">
+                      <div class="col-sm-3 no-padding">
+                          <div class="col-sm-12 div-padding">
+                              <label class="add-member-label">Action:&nbsp;</label>
+                          </div>
+                          <div class="col-sm-12 div-padding">
+                              <mat-select class="form-control"
+                                 placeholder="Select an Action">
+                                 <mat-option value="[0]">1st Draft Corrections</mat-option>
+                                 <mat-option value="[1]">1st Draft Review</mat-option>
+                                 <mat-option value="[2]">Field Design</mat-option>
+                                 <mat-option value="[3]">Field Drafting</mat-option>
+                                 <mat-option value="[4]">Field QC</mat-option>
+                                 <mat-option value="[5]">Field Work</mat-option>
+                                 <mat-option value="[6]">Prepare Quotation</mat-option>
+                                  <mat-option value="[7]">Project Setup</mat-option>
+                                  <mat-option value="[8]">Quote Review</mat-option>
+                                  <mat-option value="[9]">Quote Revision</mat-option>
+                                  <mat-option value="[10]">Research Request</mat-option>
+                                  <mat-option value="[11]">Others</mat-option>
+                              </mat-select>
+
+                          </div>
+
+                         
+                      </div>
+                      <div class="col-sm-3 no-padding">
+                          <div class="col-sm-12 div-padding">
+                              <label class="add-member-label">Job Code:&nbsp;</label>
+                          </div>
+                          <div class="col-sm-12 div-padding">
+                              <mat-select class="form-control" placeholder="-Job Code-">
+                                  <mat-optgroup>
+                                    <mat-option value="[0]">AA(Admin Assistant)</mat-option>
+                                    <mat-option value="[1]">BSM(Business Services Manager)</mat-option>
+                                    <mat-option value="[2]">CCAD1(Constrution CAD 1)</mat-option>
+                                    <mat-option value="[3]">EA(Executive Assistant)</mat-option>
+                                    <mat-option value="[4]">FM(Finance Manager)</mat-option>
+                                    <mat-option value="[5]">FS(Field Supervisor)</mat-option>
+                                    <mat-option value="[6]">IIT(IT Technician)</mat-option>
+                                     <mat-option value="[7]">PM(Project Manager)</mat-option>
+                                     <mat-option value="[8]">QA(Quotes Administrator)</mat-option>
+                                     
+                                  </mat-optgroup>
+                              </mat-select>
+                          </div>
+                      </div>
+
+                      <div class="col-sm-3 no-padding">
+                          <div class="col-sm-12 div-padding">
+                              <label class="add-member-label">Planned Hours:&nbsp;</label>
+                          </div>
+                          <div class="col-sm-12 div-padding">
+                              <input
+                                  type="text" class="form-control"
+                                  placeholder="-Enter Planned Hours-">
+                          </div>
+                      </div>
+                      <div class="col-sm-3 no-padding">
+                          <div class="row">
+                              <div class="col-sm-5">
+                                  <div class="col-sm-12 div-padding">
+                                      <label class="">Rate:&nbsp;</label>
+                                  </div>
+                                  <div class="col-sm-12 div-padding">
+                                      <span>$0.00</span>
+                                  </div>
+                              </div>
+                              <div class="col-sm-7">
+                                  <div class="col-sm-12 div-padding">
+                                      <label>Cost:&nbsp;</label>
+                                  </div>
+                                  <div class="col-sm-12 div-padding">
+                                      <span>$0.00</span>
+                                  </div>
+                              </div>
+                          </div>
+
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-12 no-padding">
+                  <div class="pull-right">
+                      <button mat-raised-button class="btn-success" type="submit" mat-button>
+                          Save & Continue
+                      </button>
+                  </div>
+              </div>
+          </form>
+      </mat-step>
+      <mat-step>
+          <ng-template matStepLabel>Due Date</ng-template>
+          <form>
+              <div>
+                  <div class="form-group col-sm-8">
+                      <label class="col-sm-12 add-member-label">Select due date urgency: </label>
+                      <div class="col-sm-12">
+                          <mat-radio-group>
+                              <mat-radio-button style="font-weight:400"  [value]="true">Fixed Date - Action must be completed ON this specific date</mat-radio-button>
+                              <mat-radio-button style="font-weight:400"  [value]="true">Flex Date - Action must be completed on OR before this specific date</mat-radio-button>
+                              <mat-radio-button style="font-weight:400"  [value]="true">To be scheduled later</mat-radio-button>
+                          </mat-radio-group>
+                      </div>
+                  </div>
+                  <div class="form-group col-sm-4">
+                      <label class="col-sm-12 add-member-label">Due Date:
+                      </label>
+                      <div class="col-sm-12">
+                        <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="dt1"  style="margin-left: 0px;">
+                        <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+                      </div>
+
+                  </div>
+                  <div class="form-group col-sm-8">
+                      <label class="col-sm-12 add-member-label">Do you have a preferred Team Member to complete this
+                          action? </label>
+                      <div class="col-sm-12">
+                          <mat-radio-group>
+                              <mat-radio-button [value]="true"><span style="font-weight:400">Yes</span>
+                              </mat-radio-button>
+                              <mat-radio-button style="margin-left:10px" [value]="false"><span
+                                      style="font-weight:400">No</span></mat-radio-button>
+                          </mat-radio-group>
+                      </div>
+                  </div>
+
+                  <div class="form-group col-sm-8">
+                      <label class="col-sm-12 add-member-label">Is this a remedial action request: </label>
+                      <div class="col-sm-12">
+                          <mat-radio-group>
+                              <mat-radio-button [value]="true"><span style="font-weight:400">Yes</span>
+                              </mat-radio-button>
+                              <mat-radio-button style="margin-left:10px" [value]="false"><span
+                                      style="font-weight:400">No</span></mat-radio-button>
+                          </mat-radio-group>
+                      </div>
+                  </div>
+              </div>
+              <div class="pull-right" style="margin-top:20px;">
+                  <button mat-raised-button class="btn-default" type="button"
+                       style="margin-right: 5px;" matStepperPrevious>
+                      <mat-icon>keyboard_backspace</mat-icon>&nbsp;Back
+                  </button>
+                  <button style="margin-left: 5px;" mat-raised-button class="btn-success" type="submit">
+                      Save & Continue
+                  </button>
+              </div>
+          </form>
+
+      </mat-step>
+      <mat-step>
+
+          <ng-template matStepLabel>Notes</ng-template>
+          <form>
+              <div class="col-sm-12 no-padding">
+                  <div class="row">
+                      <div class="col-sm-12 add-member-label">
+                          <label>Attach File: </label>
+                      </div>
+                      <div class="col-sm-12">
+                          <input #myInput type="file" id="file" multiple="multiple"
+                               />
+                      </div>
+                  </div>
+
+
+              </div>
+              <div class="col-sm-12 no-padding margin-top-15">
+                  <div class="col-sm-12 no-padding">
+                      <label class="add-member-label">Instructions: </label>
+                  </div>
+                  <app-ngx-editor height="70px" minHeight="50px"
+                      [placeholder]="'Enter Details'" [spellcheck]="true"></app-ngx-editor>
+              </div>
+              <div class="pull-right" style="margin-top:20px;">
+                  <button mat-raised-button class="btn-default" type="button" style="margin-right: 5px;" mat-button
+                      matStepperPrevious>
+                      <mat-icon>keyboard_backspace</mat-icon>&nbsp;Back
+                  </button>
+                  <button mat-raised-button class="btn-success" type="submit" mat-button>
+                      Save
+                  </button>
+              </div>
+          </form>
+      </mat-step>
+  </mat-horizontal-stepper>
+
+  <ng-template #viewContainerRef></ng-template>
+
+</div>
+
+<mat-dialog-actions align="center">
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()">
+      <mat-icon>cancel</mat-icon>&nbsp;Cancel
+  </button>
+  <button  mat-raised-button class="add-hover btn-primary">
+      <mat-icon>send</mat-icon>&nbsp;Submit
+  </button>
+</mat-dialog-actions>

@@ -1,0 +1,436 @@
+<div class="container-fluid">
+
+  <div class="row mt-4">
+    <div class="col-sm-12">
+      <div class="row">
+
+        <div class="col-sm-3">
+          <mat-card class=" pb-2"
+            style="border-radius: 5px;    background-image: linear-gradient(to top, #f3f3f1 0%, #f5f4f0 1%, #ffffff 31%, #ffffff 75%, #f3f3f3 100%);">
+            <div class="row">
+              <div class="col-9">
+                <div class="row">
+                  <div class="col-12">
+                    <h4> Clients</h4>
+                  </div>
+                  <div class="col-12">
+                    <h5 class="text-primary pt-1">Total</h5>
+                  </div>
+                  <div class="col-12">
+                    <h4 class="mb-0 d-inline-block  pt-1">40</h4> &nbsp; <mat-icon
+                      style="font-size: 16px;font-weight: bold;" class="text-success">arrow_upward</mat-icon>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2">
+                <mat-icon style="font-size: 40px;margin-top: 10px; color: #007ad9;">business_center</mat-icon>
+              </div>
+            </div>
+
+          </mat-card>
+        </div>
+
+        <div class="col-sm-3">
+          <mat-card class=" pb-2"
+            style="border-radius: 5px;    background-image: linear-gradient(to top, #f3f3f1 0%, #f5f4f0 1%, #ffffff 31%, #ffffff 75%, #f3f3f3 100%);">
+            <div class="row">
+              <div class="col-9">
+                <div class="row">
+                  <div class="col-12">
+                    <h4>Job Orders</h4>
+                  </div>
+                  <div class="col-12">
+                    <h5 class="text-warning pt-1">Active</h5>
+                  </div>
+                  <div class="col-12">
+                    <h4 class="mb-0 d-inline-block  pt-1">59</h4> &nbsp; <mat-icon
+                      style="font-size: 16px;font-weight: bold;" class="text-success">arrow_upward</mat-icon>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2">
+                <mat-icon style="font-size: 37px;margin-top: 10px;" class="text-warning">attach_money</mat-icon>
+              </div>
+            </div>
+
+          </mat-card>
+        </div>
+
+        <div class="col-sm-3">
+          <mat-card class=" pb-2"
+            style="border-radius: 5px;    background-image: linear-gradient(to top, #f3f3f1 0%, #f5f4f0 1%, #ffffff 31%, #ffffff 75%, #f3f3f3 100%);">
+            <div class="row">
+              <div class="col-9">
+                <div class="row">
+                  <div class="col-12">
+                    <h4> Job Orders</h4>
+                  </div>
+                  <div class="col-12">
+                    <h5 class="text-success pt-1">Total</h5>
+                  </div>
+                  <div class="col-12">
+                    <h4 class="mb-0 d-inline-block  pt-1">58</h4> &nbsp; <mat-icon
+                      style="font-size: 16px;font-weight: bold;" class="text-success">arrow_upward</mat-icon>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2">
+                <mat-icon style="font-size: 40px;margin-top: 10px;" class="text-success">checklist</mat-icon>
+              </div>
+            </div>
+
+          </mat-card>
+        </div>
+
+        <div class="col-sm-3">
+          <mat-card class=" pb-2"
+            style="border-radius: 5px;    background-image: linear-gradient(to top, #f3f3f1 0%, #f5f4f0 1%, #ffffff 31%, #ffffff 75%, #f3f3f3 100%);">
+            <div class="row">
+              <div class="col-9">
+                <div class="row">
+                  <div class="col-12">
+                    <h4> Job Orders</h4>
+                  </div>
+                  <div class="col-12">
+                    <h5 class=" pt-1" style="color: #ff6152;">Archieved</h5>
+                  </div>
+                  <div class="col-12">
+                    <h4 class="mb-0 d-inline-block  pt-1">22</h4> &nbsp; <mat-icon
+                      style="font-size: 16px; font-weight: bold;" class="text-success">arrow_upward</mat-icon>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2">
+                <mat-icon style="font-size: 40px;margin-top: 10px;color:#ff6152">money_off</mat-icon>
+              </div>
+            </div>
+
+          </mat-card>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row-wrap mt-4">
+    <div class="flex-p w-100">
+      <div class="row">
+        <div class="col-sm-12 p-0 m-0">
+          <div class="row p-0 m-0" style="margin-bottom:7px;">
+            <div class="col-sm-6 pl-0">
+              <div class="flex-p">
+                <app-kbpl-projects></app-kbpl-projects>
+              </div>
+            </div>
+            <div class="col-sm-6 pr-0">
+              <div class="flex-p">
+                <button mat-raised-button class="pull-right  btn-primary" (click)="openAddProjectDialog(null)">
+                  <mat-icon>add</mat-icon> Add Job Order
+                </button>
+                <button mat-raised-button class="pull-right  btn-primary margin-right-10">
+                  <mat-icon>archive</mat-icon> Move To Archives
+                </button>
+                <button mat-raised-button class="pull-right  btn-primary margin-right-10"
+                  (click)="openGridColumnsDialog()">
+                  <mat-icon>grid_on</mat-icon> Grid Columns
+                </button>
+                <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+                  (click)="filterToggle = !filterToggle">
+                  <mat-icon>filter_list</mat-icon> Filter
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div fxLayout="row wrap" *ngIf="filterToggle" style="margin-bottom: 10px">
+            <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+              <mat-card class="filter">
+                <mat-card-content>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="col-sm-4 newMarginClass">
+                        Keyword:
+                      </div>
+                      <div class="col-sm-8">
+                        <input type="text" placeholder="Search by any record" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="col-sm-4 newMarginClass">
+                        Client Name:
+                      </div>
+                      <div class="col-sm-8">
+                        <mat-select class="form-control" placeholder="Select Client">
+                          <mat-option [value]="0">Raj</mat-option>
+                          <mat-option [value]="1">Teja</mat-option>
+                          <mat-option [value]="2">Krishna</mat-option>
+                          <mat-option [value]="3">Sai</mat-option>
+                          <mat-option [value]="3">Neeraja</mat-option>
+                        </mat-select>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="col-sm-4 newMarginClass">
+                        Status:
+                      </div>
+                      <div class="col-sm-8">
+                        <mat-select class="form-control" placeholder="Select Status">
+                          <mat-option [value]="0">Initiated</mat-option>
+                          <mat-option [value]="1">In Progress</mat-option>
+                          <mat-option [value]="2">Awarded</mat-option>
+                          <mat-option [value]="3">Completed</mat-option>
+                          <mat-option [value]="3">On Hold</mat-option>
+                        </mat-select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row" style="padding-top:10px !important">
+                    <div class="col-sm-4" style="margin-top: 4px;">
+                      <div class="col-sm-4 newMarginClass">
+                        Date Type:
+                      </div>
+                      <mat-radio-group aria-label="Select an option">
+                        <mat-radio-button value="2" style="margin-left: 8px;" checked>Start </mat-radio-button>
+                        <mat-radio-button value="3" style="margin-left: 25px;">Target</mat-radio-button>
+                      </mat-radio-group>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="col-sm-4 newMarginClass">
+                        To Date:
+                      </div>
+                      <div class="col-sm-8">
+                        <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                          [owlDateTimeTrigger]="dt6" [owlDateTime]="dt6" name="dt6">
+                        <owl-date-time [pickerType]="'calendar'" #dt6></owl-date-time>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="col-sm-4 newMarginClass">
+                        From Date:
+                      </div>
+                      <div class="col-sm-8">
+                        <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                          [owlDateTimeTrigger]="dt7" [owlDateTime]="dt7" name="dt7">
+                        <owl-date-time [pickerType]="'calendar'" #dt7></owl-date-time>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row" style="padding-top:10px !important">
+                    <div class="col-lg-1" style="margin-left:80% !important;">
+                      <button mat-raised-button class="pull-right btn-primary">
+                        <mat-icon>youtube_searched_for</mat-icon> Search
+                      </button>
+
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+                      <button mat-raised-button style="background-color:#37474f; color:#fff !important;">
+                        <mat-icon>settings_backup_restore</mat-icon> Clear
+                      </button>
+
+                    </div>
+                    <a (click)="filterToggle = !filterToggle" class="pull-right"
+                      style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                      <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                    </a>
+
+                  </div>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row" style="margin-top:20px">
+
+    <!-- <button class="btn btn-primary" > <a href="https://docs.google.com/spreadsheets/d/1AtyyloulOHz9aBGgn1ViAKHQ-6FMMQ6F/edit?usp=sharing&ouid=107024266101199685060&rtpof=true&sd=true" 
+      style="color: white;" target="blank" >preview</a> </button> -->
+
+    <!-- <ngx-doc-viewer url="https://drive.google.com/file/d/1ta0Tud3qEItG0jMjNBXQW6fB6oEwjFdF/view?usp=sharing" viewer="google"
+  style="width:100%;height:93vh;"> -->
+
+    <!-- <ngx-extended-pdf-viewer [src]="https://drive.google.com/file/d/1ta0Tud3qEItG0jMjNBXQW6fB6oEwjFdF/view?usp=sharing" useBrowserLocale="true" height="80vh"></ngx-extended-pdf-viewer> -->
+
+
+    <!-- <ngx-extended-pdf-viewer [src]='../assets/Work Progress Report.pdf' useBrowserLocale="true" [delayFirstView]="250"
+      height="80vh"></ngx-extended-pdf-viewer> -->
+
+
+
+    <div class="col-xs-12" style="margin-left:10px">
+      <div id="grid-table-container" class="table-responsive" style="overflow-x: hidden;">
+        <table matSort id="example2" class="table table-bordered table-hover">
+          <thead class="tbl-head ">
+            <tr>
+              <th class="text-center">Select</th>
+              <th>Project Code</th>
+              <th class="text-center">Client</th>
+              <th class="text-left">Job Title</th>
+
+              <th class="text-center">Contact Name</th>
+              <th class="text-center">Email</th>
+              <th class="text-center">Phone</th>
+              <th class="text-center" style="width:100px">Start Date</th>
+              <th class="text-center" style="width:100px">Due Date</th>
+              <th class="text-center">ETA</th>
+              <th class="vert-align-mid" style="width: 107px;">Completion</th>
+              <th class="text-center">Job Card</th>
+              <th class="text-center">Team</th>
+              <th class="text-center">POW</th>
+              <th class="text-center">Notes</th>
+              <th class="vert-align-mid">Work Progress</th>
+              <th class="text-center">Status</th>
+
+              <th class="text-center" style="width: 112px!important;">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of values;let i = index">
+              <td class="text-center" style="vertical-align: middle;">
+                <mat-checkbox></mat-checkbox>
+              </td>
+              <td style="vertical-align: middle;">
+                <a routerLink="/joborders/joborder-dashboard/" class="mt-3" target="_blank"
+                  style="color: cornflowerblue;cursor: pointer;">{{item.projectmanager}}</a>
+              </td>
+              <td style="vertical-align: middle;" class="text-center">
+                {{item.projectname}}
+              </td>
+
+              <td class="text-left" style="vertical-align: middle;">{{item.contracts}}
+              </td>
+
+
+
+
+              <td class="text-center" style="vertical-align: middle;">
+                {{item.contact}}
+              </td>
+              <td class="text-center" style="vertical-align: middle;">
+                {{item.email}}
+
+              </td>
+              <td class="text-center" style="vertical-align: middle;">
+                {{item.phone}}
+
+              </td>
+
+              <td class="text-center" style="vertical-align: middle;">
+                {{item.startDate}}
+
+              </td>
+              <td class="text-center" style="vertical-align: middle;">
+                {{item.targetDate}}
+
+              </td>
+              <td class="text-center !important" style="vertical-align: middle;color: white;">
+                <div class="etadatediff">
+                  {{item.eta}}
+                </div>
+              </td>
+              <td class="text-center" style="vertical-align: middle;">
+                <div class="row">
+                  <div class="col-sm-12 text-center" style="vertical-align: middle;">
+                    <div class="row my-4">
+                      <div class="col-sm-12" style="vertical-align: middle;">
+                        <div class=" card-header rounded card-header-first"
+                          style="background-color: transparent;border: 0px;">
+                          <div (click)="changeProgress(item.focus,i)" class="circle">
+                            <div *ngIf="!item.focus || item.focus == 0">
+                              <img src="assets/outlook/focus_3.png" alt="new">
+                            </div>
+                            <div *ngIf="item.focus == 25">
+                              <img src="assets/outlook/focus_4.png" alt="weak">
+                            </div>
+                            <div *ngIf="item.focus == 50">
+                              <img src="assets/outlook/focus_0.png" alt="okay">
+                            </div>
+                            <div *ngIf="item.focus == 75">
+                              <img src="assets/outlook/focus_1.png" alt="good">
+                            </div>
+                            <div *ngIf="item.focus == 100">
+                              <img src="assets/outlook/focus_2.png" alt="excellent">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="text-center" style="color: #007ad9;vertical-align: middle; cursor: pointer;"
+                routerLink="/joborders/joborder-dashboard/jobcards">
+                {{item.jobcard}}
+              </td>
+              <td class="text-center" style="color: #007ad9;vertical-align: middle; cursor: pointer;"
+                routerLink="/joborders/joborder-dashboard/team">
+                {{item.team}}
+              </td>
+              <td class="text-center" style="color: #007ad9;vertical-align: middle; cursor: pointer;"
+                routerLink="/joborders/joborder-dashboard/POW">
+                View
+              </td>
+
+              <td style="vertical-align: middle;">
+                {{item.notes}}
+
+              </td>
+
+              <!-- <td class="text-center" style="color: #007ad9;vertical-align: middle; cursor: pointer;"
+                    (click)="  downloadPdf() ">
+                    Download
+                  </td> -->
+              <!-- <td class="text-center" style="color: #007ad9;vertical-align: middle; cursor: pointer;">
+                    <a href="https://docs.google.com/spreadsheets/d/1AtyyloulOHz9aBGgn1ViAKHQ-6FMMQ6F/edit?usp=sharing&ouid=107024266101199685060&rtpof=true&sd=true" 
+                    target="blank" >preview</a>
+              </td> -->
+              <td class="text-center" style="color: #007ad9;vertical-align: middle; cursor: pointer;">
+                <a href="https://docs.google.com/spreadsheets/d/1AtyyloulOHz9aBGgn1ViAKHQ-6FMMQ6F/edit?usp=sharing&ouid=107024266101199685060&rtpof=true&sd=true"
+                  target="blank">Preview</a>
+              </td>
+              <td style="text-align: center!important;vertical-align: middle;">
+                <mat-select [style.background]="item.stageColour" style="min-width: 120px;" [(value)]="item.Status"
+                  placeholder="--Select Stage --" class='form-control'>
+                  <ng-container *ngFor='let option of statusOptions'>
+                    <mat-option [style.background-color]="option.colorCode" class='option' [value]="option.value">
+                      {{option.name}}</mat-option>
+                  </ng-container>
+                </mat-select>
+              </td>
+
+              <td class="text-center" style="vertical-align: middle;">
+                <a style="cursor: pointer;margin-right:0px;margin-left: -5px; vertical-align: middle;"
+                  matTooltip="Update Project" (click)="openAddProjectDialog(item)">
+                  <i class="fa fa-edit" style="color: cornflowerblue;font-size: medium;"></i>
+                </a>
+
+                <a><i class="fa fa-trash red" matTooltip="Delete Project"
+                    style="cursor: pointer;font-size: medium;"></i></a>
+              </td>
+
+            </tr>
+
+          </tbody>
+        </table>
+        <button class="mine" mat-fab (click)="scrollGrid('right');">
+          <mat-icon style="color:#37474f">fast_forward</mat-icon>
+        </button>
+        <button class="mine" mat-fab style="margin-right: 78px !important;" (click)="scrollGrid('left');">
+          <mat-icon style="color:#37474f">fast_rewind</mat-icon>
+        </button>
+        <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+          [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

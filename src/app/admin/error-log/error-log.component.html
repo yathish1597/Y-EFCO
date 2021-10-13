@@ -1,0 +1,94 @@
+<div class="row-wrap">
+  <div class="w-100">
+    <div fxLayout="row">
+      <div class="col-xs-6">
+
+      </div>
+
+      <div class="col-xs-6">
+        <div class="flex-p" style="margin-top: 15px;margin-bottom: 18px;">
+          <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+            (click)="filterToggle = !filterToggle">
+            <mat-icon>filter_list</mat-icon> Filter
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Filter details -->
+<div fxLayout="row wrap ">
+  <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100" *ngIf="filterToggle">
+    <mat-card class="filter">
+      <mat-card-content>
+        <div class="row col-sm-12">
+
+          <div class="col-sm-3 ">
+            <div class="col-sm-4 newMarginClass mt-2"> Data Range :</div>
+            <div class="col-sm-8">
+              <input class="form-control" class="form-control" placeholder="Select Data Range">
+
+            </div>
+          </div>
+          <div class="col-sm-9">
+            <div class="float-right col-sm-12">
+              <a (click)="filterToggle = !filterToggle" class="pull-right"
+                style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+              </a>
+              <button mat-raised-button class="float-right ml-2">
+                Search
+              </button>
+              <button mat-raised-button class="pull-right btn-primary">
+                Clear
+              </button>
+  
+  
+            </div>
+          </div>
+
+
+
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</div>
+
+
+
+<!-- Table -->
+
+<div class="row" style="margin-top:20px">
+  <div class="col-xs-12" style="margin-left:10px">
+    <div id="grid-table-container" class="table-responsive" style="width:99.2%">
+      <table matSort id="example2" class="table table-bordered table-hover">
+        <thead class="tbl-head ">
+          <tr>
+            <th> Date & Time</th>
+            <th>User Name</th>
+            <th>Error</th>
+            <th>URL</th>
+            <th>Type</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="values == null || values.length == 0">
+            <td colspan="12" class="text-center">No records found</td>
+          </tr>
+          <tr *ngFor="let item of values;let i = index">
+
+
+          </tr>
+
+        </tbody>
+      </table>
+      <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+        [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+</div>

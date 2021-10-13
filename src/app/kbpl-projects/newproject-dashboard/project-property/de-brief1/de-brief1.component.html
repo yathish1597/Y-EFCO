@@ -1,0 +1,495 @@
+<form style="overflow-x:auto!important">
+  <!-- <input type="hidden" id="JobOrderId" name="JobOrderId" value="6zgrHSFQz3s-3D-"> -->
+  <table class="table table-bordered margin-top-10" style="min-width:700px!important">
+    <thead>
+      <tr class="theadcolor">
+        <td style="border-right:none!important">
+          <!-- <img src="/Content/Images/efco.png" class="padding-left-5 padding-top-5"> -->
+        </td>
+        <td class="text-center" colspan="6" style="border-left:none!important">
+          <label style="position:relative; right:9%; font-size:22px!important" class="label-bold">EFCO Maschinenbau
+            India Private Limited</label><br>
+          <label style="position:relative; right:9%; font-size:14px!important" class="label-bold">Kick-Off/De-Brief</label>
+        </td>
+      </tr>
+
+      <tr class="tbl-head" style="border-top: 1px solid #d8d0d0;">
+        <th class="theader" colspan="3">Operations</th>
+        <th class="text-center theader">Planned</th>
+        <th class="text-center theader">Actuals</th>
+        <th class="text-center theader">Variance</th>
+        <th class="text-center theader">Variance %</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td colspan="3">Starting from factory<input type="hidden" name="POWvariance[0].OperationsObjectives"
+            value="Starting from factory"></td>
+        <td>
+          <input class="form-control"  placeholder="MM/DD/YYYY" (keypress)="false"
+          [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="dt1">
+        <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+          </td>
+        <td> <input class="form-control"  placeholder="MM/DD/YYYY" (keypress)="false"
+          [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" name="dt2">
+        <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time></td>
+        <td><input id="0_Variance" class="form-control text-center " type="text" name="POWvariance[0].Variance"
+            value=""></td>
+        <td><input id="0_VariancePercent" class="form-control text-center" type=""
+            name="POWvariance[0].VariancePercent" value=""></td>
+      </tr>
+      <tr>
+        <td colspan="3">Work start<input type="hidden" name="POWvariance[1].OperationsObjectives" value="Work start"></td>
+        <td> <input class="form-control"  placeholder="MM/DD/YYYY" (keypress)="false"
+          [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3" name="dt3">
+        <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time></td>
+        <td> <input class="form-control"  placeholder="MM/DD/YYYY" (keypress)="false"
+          [owlDateTimeTrigger]="dt4" [owlDateTime]="dt4" name="dt4">
+        <owl-date-time [pickerType]="'calendar'" #dt4></owl-date-time></td>
+        <td><input id="1_Variance" class="form-control text-center" type="text" name="POWvariance[1].Variance" value="">
+        </td>
+        <td><input id="1_VariancePercent" class="form-control text-center" type=""
+            name="POWvariance[1].VariancePercent" value=""></td>
+      </tr>
+      <tr>
+        <td colspan="3">Work completion<input type="hidden" name="POWvariance[2].OperationsObjectives" value="Work completion"></td>
+        <td> <input class="form-control"  placeholder="MM/DD/YYYY" (keypress)="false"
+          [owlDateTimeTrigger]="dt5" [owlDateTime]="dt5" name="dt5">
+        <owl-date-time [pickerType]="'calendar'" #dt5></owl-date-time></td>
+        <td> <input class="form-control"  placeholder="MM/DD/YYYY" (keypress)="false"
+          [owlDateTimeTrigger]="dt6" [owlDateTime]="dt6" name="dt6">
+        <owl-date-time [pickerType]="'calendar'" #dt6></owl-date-time></td>
+        <td><input id="2_Variance" class="form-control text-center" type="text" name="POWvariance[2].Variance" value="">
+        </td>
+        <td><input id="2_VariancePercent" class="form-control text-center" type=""
+            name="POWvariance[2].VariancePercent" value=""></td>
+      </tr>
+      <tr>
+        <td  colspan="3">Reaching factory<input type="hidden" name="POWvariance[3].OperationsObjectives" value="Reaching factory">
+        </td>
+        <td> <input class="form-control"  placeholder="MM/DD/YYYY" (keypress)="false"
+          [owlDateTimeTrigger]="dt7" [owlDateTime]="dt7" name="dt7">
+        <owl-date-time [pickerType]="'calendar'" #dt7></owl-date-time></td>
+        <td> <input class="form-control"  placeholder="MM/DD/YYYY" (keypress)="false"
+          [owlDateTimeTrigger]="dt8" [owlDateTime]="dt8" name="dt8">
+        <owl-date-time [pickerType]="'calendar'" #dt8></owl-date-time></td>
+        <td><input id="3_Variance" class="form-control text-center" type="text" name="POWvariance[3].Variance" value="">
+        </td>
+        <td><input id="3_VariancePercent" class="form-control text-center"
+            name="POWvariance[3].VariancePercent" value=""></td>
+      </tr>
+
+      <tr class="tbl-head">
+        <th class="theader" colspan="3">Objectives and Target</th>
+        <th class="text-center theader">Planned</th>
+        <th class="text-center theader">Actuals</th>
+        <th class="text-center theader">Variance</th>
+        <th class="text-center theader">Variance %</th>
+      </tr>
+      <tr>
+
+        <td colspan="3">Mandays<input type="hidden" name="POWvariance[4].OperationsObjectives" value="Man Days"></td>
+        <td><input placeholder="Enter Number" class="form-control text-center numbers" id="4_Planned" type="text"
+            name="POWvariance[4].Planned" value="681" onkeyup="CalculateVarianaceAndVariancePercent(4)"></td>
+        <td><input placeholder="Enter Number" class="form-control text-center numbers" id="4_Actuals" type="text"
+            name="POWvariance[4].Actuals" value="13" onkeyup="CalculateVarianaceAndVariancePercent(4)"></td>
+        <td><input class="form-control text-center" id="4_Variance" type="text" name="POWvariance[4].Variance"
+            value="-668"></td>
+        <td><input class="form-control text-center" id="4_VariancePercent" type="text"
+            name="POWvariance[4].VariancePercent" value="-98.09"></td>
+      </tr>
+      <tr>
+        <td colspan="3">Inch Dia<input type="hidden" name="POWvariance[5].OperationsObjectives" value="Inch Dia"></td>
+        <td><input placeholder="Enter Number" class="form-control text-center numbers" id="5_Planned" type="text"
+            name="POWvariance[5].Planned" value="2.25" onkeyup="CalculateVarianaceAndVariancePercent(5)"></td>
+        <td><input placeholder="Enter Number" class="form-control text-center numbers" id="5_Actuals" type="text"
+            name="POWvariance[5].Actuals" value="" onkeyup="CalculateVarianaceAndVariancePercent(5)"></td>
+        <td><input class="form-control text-center" id="5_Variance" type="text" name="POWvariance[5].Variance"
+            value="-2"></td>
+        <td><input class="form-control text-center" id="5_VariancePercent" type="text"
+            name="POWvariance[5].VariancePercent" value="-100.00"></td>
+      </tr>
+      <tr>
+        <td  colspan="3"class="theader">Mandays / Inch Dia		          <input type="hidden" name="POWvariance[6].OperationsObjectives"
+            value="No. of persons"></td>
+        <td><input placeholder="Enter Number" class="form-control text-center numbers" id="6_Planned" type="text"
+            name="POWvariance[6].Planned" value="" onkeyup="CalculateVarianaceAndVariancePercent(6)"></td>
+        <td><input placeholder="Enter Number" class="form-control text-center numbers" id="6_Actuals" type="text"
+            name="POWvariance[6].Actuals" value="" onkeyup="CalculateVarianaceAndVariancePercent(6)"></td>
+        <td><input class="form-control text-center" id="6_Variance" type="text" name="POWvariance[6].Variance" value="">
+        </td>
+        <td><input class="form-control text-center" id="6_VariancePercent" type="text"
+            name="POWvariance[6].VariancePercent" value=""></td>
+      </tr>
+
+      <tr>
+        <td  colspan="3"class="theader">No. of Persons<input type="hidden" name="POWvariance[6].OperationsObjectives"
+            value="No. of persons"></td>
+        <td><input placeholder="Enter Number" class="form-control text-center numbers" id="6_Planned" type="text"
+            name="POWvariance[6].Planned" value="" onkeyup="CalculateVarianaceAndVariancePercent(6)"></td>
+        <td><input placeholder="Enter Number" class="form-control text-center numbers" id="6_Actuals" type="text"
+            name="POWvariance[6].Actuals" value="" onkeyup="CalculateVarianaceAndVariancePercent(6)"></td>
+        <td><input class="form-control text-center" id="6_Variance" type="text" name="POWvariance[6].Variance" value="">
+        </td>
+        <td><input class="form-control text-center" id="6_VariancePercent" type="text"
+            name="POWvariance[6].VariancePercent" value=""></td>
+      </tr>
+      <tr>
+        <td  colspan="3"class="theader">Mandays<input type="hidden" name="POWvariance[6].OperationsObjectives"
+            value="No. of persons"></td>
+        <td class="text-center">Actuals</td>
+        <td class="text-center" colspan="3">Effect due to any addition in Mandays		
+        </td>
+       
+      </tr>
+      <tr>
+        <td colspan="3" class="theader">Hydro-test Mandays<input type="hidden" name="POWvariance[7].OperationsObjectives"
+            value="Hydrotesting"></td>
+        <td><input placeholder="Enter Number" id="7_Planned" class="form-control text-center numbers" type="text"
+            name="POWvariance[7].Planned" value="" onkeyup="CalculateVarianaceAndVariancePercent(7)"></td>
+        <td><input placeholder="Enter Number" id="7_Actuals" class="form-control text-center numbers" type="text"
+            name="POWvariance[7].Actuals" value="" onkeyup="CalculateVarianaceAndVariancePercent(7)"></td>
+        <td><input id="7_Variance" class="form-control text-center" type="text" name="POWvariance[7].Variance" value="">
+        </td>
+        <td><input id="7_VariancePercent" class="form-control text-center" type="text"
+            name="POWvariance[7].VariancePercent" value=""></td>
+      </tr>
+      <tr>
+        <td colspan="3" class="theader">Idle (Due to wrong ticketing, no work)<input type="hidden"
+            name="POWvariance[8].OperationsObjectives" value="Idle (Due to wrong ticketing, no work)"></td>
+        <td><input placeholder="Enter Number" id="8_Planned" class="form-control text-center numbers" type="text"
+            name="POWvariance[8].Planned" value="" onkeyup="CalculateVarianaceAndVariancePercent(8)"></td>
+        <td><input placeholder="Enter Number" id="8_Actuals" class="form-control text-center numbers" type="text"
+            name="POWvariance[8].Actuals" value="" onkeyup="CalculateVarianaceAndVariancePercent(8)"></td>
+        <td><input id="8_Variance" class="form-control text-center" type="text" name="POWvariance[8].Variance" value="">
+        </td>
+        <td><input id="8_VariancePercent" class="form-control text-center" type="text"
+            name="POWvariance[8].VariancePercent" value=""></td>
+      </tr>
+      <tr>
+        <td colspan="3" class="theader">Re-Work (Due to EFCO's problem)<input type="hidden"
+            name="POWvariance[9].OperationsObjectives" value="Re-Work (Due to EFCO's problem)"></td>
+        <td><input placeholder="Enter Number" id="9_Planned" class="form-control text-center numbers" type="text"
+            name="POWvariance[9].Planned" value="" onkeyup="CalculateVarianaceAndVariancePercent(9)"></td>
+        <td><input placeholder="Enter Number" id="9_Actuals" class="form-control text-center numbers" type="text"
+            name="POWvariance[9].Actuals" value="" onkeyup="CalculateVarianaceAndVariancePercent(9)"></td>
+        <td><input id="9_Variance" class="form-control text-center" type="text" name="POWvariance[9].Variance" value="">
+        </td>
+        <td><input id="9_VariancePercent" class="form-control text-center" type="text"
+            name="POWvariance[9].VariancePercent" value=""></td>
+      </tr>
+
+      <tr class="tbl-head">
+        <th colspan="3" class="theader"><label class="label-bold">Others</label></th>
+        <th class="text-center theader">Planned (<i class="fa fa-rupee"></i>)</th>
+        
+        <th class="text-center theader">Return (<i class="fa fa-rupee"></i>)</th>
+        
+        <th class="text-center theader">Actual used (<i class="fa fa-rupee"></i>)</th>
+        <th class="text-center theader">Variation</th>
+      </tr>
+      <tr>
+        <td  colspan="3"class="theader">Consumables<input type="hidden" name="POWvariance[10].OperationsObjectives"
+            value="Consumables"></td>
+        <td><input placeholder="Enter Number" id="10_Planned" class="form-control text-center numbers" type="text"
+            name="POWvariance[10].Planned" value="" onkeyup="CalculateVarianaceAndVariancePercent(10)"></td>
+        <td><input placeholder="Enter Number" id="10_Actuals" class="form-control text-center numbers" type="text"
+            name="POWvariance[10].Actuals" value="" onkeyup="CalculateVarianaceAndVariancePercent(10)"></td>
+        <td><input id="10_Variance" class="form-control text-center" type="text" name="POWvariance[10].Variance"
+            value=""></td>
+        <td><input id="10_VariancePercent" class="form-control text-center" type="text"
+            name="POWvariance[10].VariancePercent" value=""></td>
+      </tr>
+      <tr class="tbl-head">
+        <td class="theader" colspan="7"><label class="label-bold">Comments by Head, Operations</label><input
+            type="hidden" name="POWVarianceComments[3].commentsBy" value="Comments by Head, Operations"></td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <textarea placeholder="Enter Comments" class="form-control" rows="4" id="32_comments"
+            name="POWVarianceComments[3].comments"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <th class="theader text-center">Name</th>
+        <td colspan="2"><input placeholder="Enter Name" class="form-control" id="32_name"
+            name="POWVarianceComments[3].name"></td>
+        <th class="theader text-center">Signature & Date</th>
+        <td colspan="3"><input placeholder="Signature & Date" class="form-control datepicker" id="32_date"
+            name="POWVarianceComments[3].date"></td>
+      </tr>
+      <tr class="tbl-head">
+        <td colspan="2"></td>
+        <td class="theader text-center" colspan="2"><label class="label-bold">Planned</label></td>
+        <td class="theader text-center" colspan="2"><label class="label-bold">Actuals</label></td>
+        <td class="theader text-center"><label class="label-bold">Variance</label></td>
+      </tr>
+      <tr>
+        <td>Revenue<input type="hidden" name="POWvariance[11].OperationsObjectives" value="Revenue"></td>
+        <td>BD</td>
+        <td><input type="text" class="form-control" id="11_Planned" name="POWvariance[11].Planned" value=""
+            onkeyup="CalculateVarianaceAndVariancePercent(11)"></td>
+        <td rowspan="2" class="text-center">Percentage</td>
+        <td><input type="text" class="form-control" id="11_Actuals" name="POWvariance[11].Actuals" value=""
+            onkeyup="CalculateVarianaceAndVariancePercent(11)"></td>
+        <td rowspan="2" class="text-center">Percentage</td>
+        <td><input type="text" class="form-control" id="11_VariancePercent" name="POWvariance[11].VariancePercent"
+            value=""></td>
+      </tr>
+      <tr>
+        <td>Inch Dia</td>
+        <td>BD</td>
+        <td><input type="text" class="form-control" id="12_Planned" readonly="" value="2.25"
+            onkeyup="CalculateVarianaceAndVariancePercent(12)"></td>
+        <td><input type="text" class="form-control" id="12_Actuals" readonly="" value=""
+            onkeyup="CalculateVarianaceAndVariancePercent(12)"></td>
+        <td><input type="text" class="form-control" id="12_VariancePercent" readonly="" value="-100.00"></td>
+      </tr>
+
+      <tr>
+
+        <td>Tour Expenditure<input type="hidden" name="POWvariance[12].OperationsObjectives" value="Tour Expenditure">
+        </td>
+
+        <td>OPS/ACC</td>
+
+        <td><input type="text" class="form-control" id="13_Planned" name="POWvariance[12].Planned" value="10000.00"
+            readonly="" onkeyup="CalculateVarianaceAndVariancePercent(13)"></td>
+        <td><input type="text" class="form-control" id="13_Planned_Percentage"></td>
+        <td><input type="text" class="form-control" id="13_Actuals" name="POWvariance[12].Actuals" value=""
+            onkeyup="CalculateVarianaceAndVariancePercent(13)"></td>
+        <td><input type="text" class="form-control" id="13_Actuals_Percentage"></td>
+        <td><input type="text" class="form-control" id="13_VariancePercent" name="POWvariance[12].VariancePercent"
+            value=""></td>
+      </tr>
+      <tr>
+        <td>Wages<input type="hidden" name="POWvariance[13].OperationsObjectives" value="Wages"></td>
+        <td>OPS/ACC</td>
+        <td><input type="text" class="form-control" id="14_Planned" readonly="" value="7356693"
+            name="POWvariance[13].Planned" onkeyup="CalculateVarianaceAndVariancePercent(14)"></td>
+        <td><input type="text" class="form-control" id="14_Planned_Percentage"></td>
+        <td><input type="text" class="form-control" id="14_Actuals" readonly="" value="6681850"
+            name="POWvariance[13].Actuals" onkeyup="CalculateVarianaceAndVariancePercent(14)"></td>
+        <td><input type="text" class="form-control" id="14_Actuals_Percentage"></td>
+        <td><input type="text" class="form-control" id="14_VariancePercent" name="POWvariance[13].VariancePercent"></td>
+      </tr>
+      <tr>
+        <td>Contract Expenditure<input type="hidden" name="POWvariance[14].OperationsObjectives"
+            value="Contract Expenditure"></td>
+        <td>OPS/ACC</td>
+        <td><input type="text" class="form-control" name="POWvariance[14].Planned" value="" id="15_Planned"
+            onkeyup="CalculateVarianaceAndVariancePercent(15)"></td>
+        <td><input type="text" class="form-control" id="15_Planned_Percentage"></td>
+        <td><input type="text" class="form-control" name="POWvariance[14].Actuals" value="" id="15_Actuals"
+            onkeyup="CalculateVarianaceAndVariancePercent(15)"></td>
+        <td><input type="text" class="form-control" id="15_Actuals_Percentage"></td>
+        <td><input type="text" class="form-control" name="POWvariance[14].VariancePercent" value=""
+            id="15_VariancePercent"></td>
+      </tr>
+      <tr>
+        <td>Supervisor Incentive<input type="hidden" name="POWvariance[15].OperationsObjectives"
+            value="Supervisor Incentive"></td>
+        <td>ACC</td>
+        <td><input type="text" class="form-control" name="POWvariance[15].Planned" value="" id="16_Planned"
+            onkeyup="CalculateVarianaceAndVariancePercent(16)"></td>
+        <td><input type="text" class="form-control" id="16_Planned_Percentage"></td>
+        <td><input type="text" class="form-control" name="POWvariance[15].Actuals" value="" id="16_Actuals"
+            onkeyup="CalculateVarianaceAndVariancePercent(16)"></td>
+        <td><input type="text" class="form-control" id="16_Actuals_Percentage"></td>
+        <td><input type="text" class="form-control" name="POWvariance[15].VariancePercent" value=""
+            id="16_VariancePercent"></td>
+      </tr>
+      <tr>
+        <td>Sales Commission<input type="hidden" name="POWvariance[16].OperationsObjectives" value="Sales Commission">
+        </td>
+        <td>ACC</td>
+        <td><input type="text" class="form-control" name="POWvariance[16].Planned" id="17_Planned"
+            onkeyup="CalculateVarianaceAndVariancePercent(17)"></td>
+        <td><input type="text" class="form-control" id="17_Planned_Percentage"></td>
+        <td><input type="text" class="form-control" name="POWvariance[16].Actuals" value="" id="17_Actuals"
+            onkeyup="CalculateVarianaceAndVariancePercent(17)"></td>
+        <td><input type="text" class="form-control" id="17_Actuals_Percentage"></td>
+        <td><input type="text" class="form-control" name="POWvariance[16].VariancePercent" value=""
+            id="17_VariancePercent"></td>
+      </tr>
+      <tr>
+        <td>Agent Commission<input type="hidden" name="POWvariance[17].OperationsObjectives" value="Agent Commission">
+        </td>
+        <td>BD</td>
+        <td><input type="text" class="form-control" name="POWvariance[17].Planned" id="18_Planned"
+            onkeyup="CalculateVarianaceAndVariancePercent(18)"></td>
+        <td><input type="text" class="form-control" id="18_Planned_Percentage"></td>
+        <td><input type="text" class="form-control" name="POWvariance[17].Actuals" value="" id="18_Actuals"
+            onkeyup="CalculateVarianaceAndVariancePercent(18)"></td>
+        <td><input type="text" class="form-control" id="18_Actuals_Percentage"></td>
+        <td><input type="text" class="form-control" name="POWvariance[17].VariancePercent" value=""
+            id="18_VariancePercent"></td>
+      </tr>
+      <tr>
+        <td>Miscellaneous<input type="hidden" name="POWvariance[18].OperationsObjectives" value="Miscellaneous"></td>
+        <td>BD</td>
+        <td><input type="text" class="form-control" name="POWvariance[18].Planned" id="19_Planned"
+            onkeyup="CalculateVarianaceAndVariancePercent(19)"></td>
+        <td><input type="text" class="form-control" id="19_Planned_Percentage"></td>
+        <td><input type="text" class="form-control" name="POWvariance[18].Actuals" value="" id="19_Actuals"
+            onkeyup="CalculateVarianaceAndVariancePercent(19)"></td>
+        <td><input type="text" class="form-control" id="19_Actuals_Percentage"></td>
+        <td><input type="text" class="form-control" name="POWvariance[18].VariancePercent" value=""
+            id="19_VariancePercent"></td>
+      </tr>
+      <tr>
+        <td>Consumables<input type="hidden" name="POWvariance[19].OperationsObjectives" value="Consumables"></td>
+        <td>Store</td>
+        <td><input type="text" class="form-control" name="POWvariance[19].Planned" value="" id="20_Planned"
+            onkeyup="CalculateVarianaceAndVariancePercent(20)"></td>
+        <td><input type="text" class="form-control" id="20_Planned_Percentage"></td>
+        <td><input type="text" class="form-control" name="POWvariance[19].Actuals" value="" id="20_Actuals"
+            onkeyup="CalculateVarianaceAndVariancePercent(20)"></td>
+        <td><input type="text" class="form-control" id="20_Actuals_Percentage"></td>
+        <td><input type="text" class="form-control" name="POWvariance[19].VariancePercent" value=""
+            id="20_VariancePercent"></td>
+      </tr>
+      <tr>
+        <td>Total Expenditure<input type="hidden" name="POWvariance[20].OperationsObjectives" value="Total Expenditure">
+        </td>
+        <td>Acc</td>
+        <td><input type="text" class="form-control" readonly="" id="21_Planned" name="POWvariance[20].Planned"></td>
+        <td><input type="text" class="form-control" readonly="" id="21_Planned_Percentage"></td>
+        <td><input type="text" class="form-control" readonly="" id="21_Actuals" name="POWvariance[20].Actuals"></td>
+        <td><input type="text" class="form-control" readonly="" id="21_Actuals_Percentage"></td>
+        <td><input type="text" class="form-control" readonly="" id="21_VariancePercent"
+            name="POWvariance[20].VariancePercent"></td>
+      </tr>
+      <tr>
+        <td>Site Contribution<input type="hidden" name="POWvariance[21].OperationsObjectives" value="Site Contribution">
+        </td>
+        <td>Objectives</td>
+        <td><input type="text" class="form-control" readonly="" id="22_Planned" name="POWvariance[21].Planned"></td>
+        <td><input type="text" class="form-control" readonly="" id="22_Planned_Percentage"></td>
+        <td><input type="text" class="form-control" readonly="" id="22_Actuals" name="POWvariance[21].Actuals"></td>
+        <td><input type="text" class="form-control" readonly="" id="22_Actuals_Percentage"></td>
+        <td><input type="text" class="form-control" readonly="" id="22_VariancePercent"
+            name="POWvariance[21].VariancePercent"></td>
+      </tr>
+      <tr>
+        <td>Expenditure/Inch Dia<input type="hidden" name="POWvariance[22].OperationsObjectives"
+            value="Expenditure/Inch Dia"></td>
+        <td><input type="text" class="form-control" name="POWvariance[22].Planned" value="2.25" id="23_Planned"
+            onkeyup="CalculateVarianaceAndVariancePercent(23)"></td>
+        <td><input type="text" class="form-control" readonly="" id="23_Pre_Planned"></td>
+        <td><input type="text" class="form-control" id="23_Planned_Percentage"></td>
+        <td><input type="text" class="form-control" readonly="" id="23_Actuals" name="POWvariance[22].Actuals"></td>
+        <td><input type="text" class="form-control" id="23_Actuals_Percentage"></td>
+        <td><input type="text" class="form-control" id="23_VariancePercent" name="POWvariance[22].VariancePercent"></td>
+      </tr>
+      <tr>
+        <td>Expenditure/Mandays<input type="hidden" name="POWvariance[23].OperationsObjectives"
+            value="Expenditure/Mandays"></td>
+        <td><input type="text" class="form-control" name="POWvariance[23].Planned" value="681" id="24_Planned"
+            onkeyup="CalculateVarianaceAndVariancePercent(24)"></td>
+        <td><input type="text" class="form-control" readonly="" id="24_Pre_Planned"></td>
+        <td><input type="text" class="form-control" id="24_Planned_Percentage"></td>
+        <td><input type="text" class="form-control" readonly="" id="24_Actuals" name="POWvariance[23].Actuals"></td>
+        <td><input type="text" class="form-control" id="24_Actuals_Percentage"></td>
+        <td><input type="text" class="form-control" id="24_VariancePercent" name="POWvariance[23].VariancePercent"></td>
+      </tr>
+      <tr>
+        <td>Revenue/Inch Dia<input type="hidden" name="POWvariance[24].OperationsObjectives" value="Revenue/Inch Dia">
+        </td>
+        <td><input type="text" class="form-control" name="POWvariance[24].Planned" value="2.25" id="25_Planned"
+            onkeyup="CalculateVarianaceAndVariancePercent(25)"></td>
+        <td><input type="text" class="form-control" readonly="" id="25_Pre_Planned"></td>
+        <td><input type="text" class="form-control" id="25_Planned_Percentage"></td>
+        <td><input type="text" class="form-control" readonly="" id="25_Actuals" name="POWvariance[24].Actuals"></td>
+        <td><input type="text" class="form-control" id="25_Actuals_Percentage"></td>
+        <td><input type="text" class="form-control" id="25_VariancePercent" name="POWvariance[24].VariancePercent"></td>
+      </tr>
+      <tr>
+        <td>Revenue/Mandays<input type="hidden" name="POWvariance[25].OperationsObjectives" value="Revenue/Mandays">
+        </td>
+        <td><input type="text" class="form-control" name="POWvariance[25].Planned" value="681" id="26_Planned"
+            onkeyup="CalculateVarianaceAndVariancePercent(26)"></td>
+        <td><input type="text" class="form-control" readonly="" id="26_Pre_Planned"></td>
+        <td><input type="text" class="form-control" id="26_Planned_Percentage"></td>
+        <td><input type="text" class="form-control" readonly="" id="26_Actuals" name="POWvariance[25].Actuals"></td>
+        <td><input type="text" class="form-control" id="26_Actuals_Percentage"></td>
+        <td><input type="text" class="form-control" id="26_VariancePercent" name="POWvariance[25].VariancePercent"></td>
+      </tr>
+      <tr>
+        <td>Remarks/Kick off meeting
+        </td>
+        <td colspan="6" style="vertical-align: middle;" >
+          <input class="form-control"
+            name="POWVarianceComments[0].commentsBy"				
+                      
+            >
+        </td>
+      </tr>
+
+      <tr class="tbl-head">
+        <td class="theader" colspan="7"><label class="label-bold">Comments by Head, Accounts</label><input type="hidden"
+            name="POWVarianceComments[0].commentsBy" value="Comments by Head, Accounts"></td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <textarea placeholder="Enter Comments" name="POWVarianceComments[0].comments" class="form-control" rows="4"
+            id="29_comments"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <th class="theader text-center">Name</th>
+        <td colspan="2"><input placeholder="Enter Name" class="form-control" id="29_name"
+            name="POWVarianceComments[0].name"></td>
+        <th class="theader text-center">Signature & Date</th>
+        <td colspan="3"><input placeholder="Signature & Date" class="form-control datepicker" id="29_date"
+            name="POWVarianceComments[0].date"></td>
+      </tr>
+
+      <tr class="tbl-head">
+        <td class="theader" colspan="7"><label class="label-bold">Comments by Head, Marketing</label><input
+            type="hidden" name="POWVarianceComments[1].commentsBy" value="Comments by Head, Marketing"></td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <textarea placeholder="Enter Comments" class="form-control" rows="4" id="30_comments"
+            name="POWVarianceComments[1].comments"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <th class="theader text-center">Name</th>
+        <td colspan="2"><input placeholder="Enter Name" class="form-control" id="30_name"
+            name="POWVarianceComments[1].name"></td>
+        <th class="theader text-center">Signature & Date</th>
+        <td colspan="3"><input placeholder="Signature & Date" class="form-control datepicker" id="30_date"
+            name="POWVarianceComments[1].date"></td>
+      </tr>
+
+      <tr class="tbl-head">
+        <td class="theader" colspan="7"><label class="label-bold">Comments by M.D.</label><input type="hidden"
+            name="POWVarianceComments[2].commentsBy" value="Comments by M.D."></td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <textarea placeholder="Enter Comments" class="form-control" rows="4" id="31_comments"
+            name="POWVarianceComments[2].comments"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <th class="theader text-center">Name</th>
+        <td colspan="2"><input placeholder="Enter Name" class="form-control" id="31_name"
+            name="POWVarianceComments[2].name"></td>
+        <th class="theader text-center">Signature & Date</th>
+        <td colspan="3"><input placeholder="Signature & Date" class="form-control datepicker" id="31_date"
+            name="POWVarianceComments[2].date"></td>
+      </tr>
+    </tbody>
+
+  </table>
+</form>
+<div class="row">
+  <div class="col-sm-12 mt-3 p-0  text-center">
+    <button class="btn btn-primary add-hover" style="font-size:larger !important;"  routerLink="/joborders/joborder-dashboard/POW/de-brief2">Save &
+      Continue</button>
+  </div>
+</div>

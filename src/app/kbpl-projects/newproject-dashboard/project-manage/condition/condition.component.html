@@ -1,0 +1,527 @@
+<!-- <button style=" color:#fff !important;cursor: pointer;margin-bottom: 5px;" class="pull-right btn  btn-primary"
+  matTooltip="Add Item" (click)="allFields.push(1)">
+  <i class="fa fa-plus"> </i> Add Item 
+</button> -->
+<div id="grid-table-container" class="table-responsive" style="margin-left: 10px;">
+  <table id="example2" class="table table-bordered">
+    <thead class="tbl-head">
+      <tr class="tr-grid-header">
+        <th class="text-center" style="width: 150px;">Valve Parts</th>
+        <th class="text-center" style="width: 150px;">Observations</th>
+        <th class="text-center" style="width: 100px;">Spares to be Replaced</th>
+        
+        <th class="text-center"> Repair Procedure as per API RP621</th>
+        <!-- <th class="text-center">Actions</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <ng-container>
+          <td>
+            Body
+          </td>
+          <td style="width:250px">
+            <div class="form-group">
+              <mat-select placeholder=" Select" class="form-control" required>
+                <mat-option value="1">Rusted</mat-option>
+                <mat-option value="2">Corroded</mat-option>
+                <mat-option value="3">Eroded </mat-option>
+                <mat-option value="4">Crack Found</mat-option>
+                <mat-option value="5">No Damage Observed</mat-option>
+                <mat-option value="6">Not Applicable</mat-option>
+                <mat-option value="7">Damaged</mat-option>
+                <mat-option value="8">Remarks </mat-option>
+
+              </mat-select>
+            </div>
+          </td>
+          <td style="width: 200px">
+          <input type="text" placeholder="Enter Spares" class="form-control mb-3" >
+          </td>
+          <td style="width: 200px;" class="text-center"  ><textarea style="width: 280px;" name="" id="" ></textarea>
+          </td>
+        </ng-container>
+      </tr>
+      <tr>
+        <ng-container>
+          <td>
+            Bonnet
+          </td>
+          <td style="width:250px">
+            <div class="form-group">
+              <mat-select placeholder=" Select" class="form-control" required>
+                <mat-option value="1">Rusted</mat-option>
+                <mat-option value="2">Corroded</mat-option>
+                <mat-option value="3">Eroded </mat-option>
+                <mat-option value="4">Crack Found</mat-option>
+                <mat-option value="5">No Damage Observed</mat-option>
+                <mat-option value="6">Not Applicable</mat-option>
+                <mat-option value="7">Damaged</mat-option>
+                <mat-option value="8">Remarks </mat-option>
+
+              </mat-select>
+            </div>
+          </td>
+          <td style="width: 200px">
+          <input type="text" placeholder="Enter Spares" class="form-control mb-3" >
+          </td>
+          <td style="width: 200px;" class="text-center"  ><textarea style="width: 280px;" name="" id="" ></textarea>
+          </td>
+        </ng-container>
+      </tr>
+      <tr>
+        <ng-container>
+          <td>
+            Flange - Inlet
+          </td>
+          <td style="width:250px">
+            <div class="form-group">
+              <mat-select placeholder=" Select" class="form-control" required>
+                <mat-option value="1">Rusted</mat-option>
+                <mat-option value="2">Corroded</mat-option>
+                <mat-option value="3">Eroded </mat-option>
+                <mat-option value="4">Crack Found</mat-option>
+                <mat-option value="5">No Damage Observed</mat-option>
+                <mat-option value="6">Not Applicable</mat-option>
+                <mat-option value="7">Damaged</mat-option>
+                <mat-option value="8">Remarks </mat-option>
+
+              </mat-select>
+            </div>
+          </td>
+          <td style="width: 200px">
+          <input type="text" placeholder="Enter Spares" class="form-control mb-3" >
+          </td>
+          <td style="width: 200px;" class="text-center"  ><textarea style="width: 280px;" name="" id="" ></textarea>
+          </td>
+        </ng-container>
+      </tr>
+      <tr>
+        <ng-container>
+          <td>
+            Flange - Outlet
+          </td>
+          <td style="width:250px">
+            <div class="form-group">
+              <mat-select placeholder=" Select" class="form-control" required>
+                <mat-option value="1">Rusted</mat-option>
+                <mat-option value="2">Corroded</mat-option>
+                <mat-option value="3">Eroded </mat-option>
+                <mat-option value="4">Crack Found</mat-option>
+                <mat-option value="5">No Damage Observed</mat-option>
+                <mat-option value="6">Not Applicable</mat-option>
+                <mat-option value="7">Damaged</mat-option>
+                <mat-option value="8">Remarks </mat-option>
+
+              </mat-select>
+            </div>
+          </td>
+          <td style="width: 200px">
+          <input type="text" placeholder="Enter Spares" class="form-control mb-3" >
+          </td>
+          <td style="width: 200px;" class="text-center"  ><textarea style="width: 280px;" name="" id="" ></textarea>
+          </td>
+        </ng-container>
+      </tr>
+      <tr>
+        <ng-container>
+          <td>
+            Handwheel / Gear box
+          </td>
+          <td style="width:250px">
+            <div class="form-group">
+              <mat-select placeholder=" Select" class="form-control" required>
+                <mat-option value="1">Rusted</mat-option>
+                <mat-option value="2">Corroded</mat-option>
+                <mat-option value="3">Eroded </mat-option>
+                <mat-option value="4">Crack Found</mat-option>
+                <mat-option value="5">No Damage Observed</mat-option>
+                <mat-option value="6">Not Applicable</mat-option>
+                <mat-option value="7">Damaged</mat-option>
+                <mat-option value="8">Remarks </mat-option>
+
+              </mat-select>
+            </div>
+          </td>
+          <td style="width: 200px">
+          <input type="text" placeholder="Enter Spares" class="form-control mb-3" >
+          </td>
+          <td style="width: 200px;" class="text-center"  ><textarea style="width: 280px;" name="" id="" ></textarea>
+          </td>
+        </ng-container>
+      </tr>
+      <tr>
+        <ng-container>
+          <td>
+            Studs / Nuts
+          </td>
+          <td style="width:250px">
+            <div class="form-group">
+              <mat-select placeholder=" Select" class="form-control" required>
+                <mat-option value="1">Rusted</mat-option>
+                <mat-option value="2">Corroded</mat-option>
+                <mat-option value="3">Eroded </mat-option>
+                <mat-option value="4">Crack Found</mat-option>
+                <mat-option value="5">No Damage Observed</mat-option>
+                <mat-option value="6">Not Applicable</mat-option>
+                <mat-option value="7">Damaged</mat-option>
+                <mat-option value="8">Remarks </mat-option>
+
+              </mat-select>
+            </div>
+          </td>
+          <td style="width: 200px">
+          <input type="text" placeholder="Enter Spares" class="form-control mb-3" >
+          </td>
+          <td style="width: 200px;" class="text-center"  ><textarea style="width: 280px;" name="" id="" ></textarea>
+          </td>
+        </ng-container>
+      </tr>
+      <tr>
+        <ng-container>
+          <td>
+            Stem (Spindle)
+          </td>
+          <td style="width:250px">
+            <div class="form-group">
+              <mat-select placeholder=" Select" class="form-control" required>
+                <mat-option value="1">Rusted</mat-option>
+                <mat-option value="2">Corroded</mat-option>
+                <mat-option value="3">Eroded </mat-option>
+                <mat-option value="4">Crack Found</mat-option>
+                <mat-option value="5">No Damage Observed</mat-option>
+                <mat-option value="6">Not Applicable</mat-option>
+                <mat-option value="7">Damaged</mat-option>
+                <mat-option value="8">Remarks </mat-option>
+
+              </mat-select>
+            </div>
+          </td>
+          <td style="width: 200px">
+          <input type="text" placeholder="Enter Spares" class="form-control mb-3" >
+          </td>
+          <td style="width: 200px;" class="text-center"  ><textarea style="width: 280px;" name="" id="" ></textarea>
+          </td>
+        </ng-container>
+      </tr>
+      <tr>
+        <ng-container>
+          <td>
+            Seat - Inlet
+          </td>
+          <td style="width:250px">
+            <div class="form-group">
+              <mat-select placeholder=" Select" class="form-control" required>
+                <mat-option value="1">Rusted</mat-option>
+                <mat-option value="2">Corroded</mat-option>
+                <mat-option value="3">Eroded </mat-option>
+                <mat-option value="4">Crack Found</mat-option>
+                <mat-option value="5">No Damage Observed</mat-option>
+                <mat-option value="6">Not Applicable</mat-option>
+                <mat-option value="7">Damaged</mat-option>
+                <mat-option value="8">Remarks </mat-option>
+
+              </mat-select>
+            </div>
+          </td>
+          <td style="width: 200px">
+          <input type="text" placeholder="Enter Spares" class="form-control mb-3" >
+          </td>
+          <td style="width: 200px;" class="text-center"  ><textarea style="width: 280px;" name="" id="" ></textarea>
+          </td>
+        </ng-container>
+      </tr>
+      <tr>
+        <ng-container>
+          <td>
+            Seat - Outlet
+          </td>
+          <td style="width:250px">
+            <div class="form-group">
+              <mat-select placeholder=" Select" class="form-control" required>
+                <mat-option value="1">Rusted</mat-option>
+                <mat-option value="2">Corroded</mat-option>
+                <mat-option value="3">Eroded </mat-option>
+                <mat-option value="4">Crack Found</mat-option>
+                <mat-option value="5">No Damage Observed</mat-option>
+                <mat-option value="6">Not Applicable</mat-option>
+                <mat-option value="7">Damaged</mat-option>
+                <mat-option value="8">Remarks </mat-option>
+
+              </mat-select>
+            </div>
+          </td>
+          <td style="width: 200px">
+          <input type="text" placeholder="Enter Spares" class="form-control mb-3" >
+          </td>
+          <td style="width: 200px;" class="text-center"  ><textarea style="width: 280px;" name="" id="" ></textarea>
+          </td>
+        </ng-container>
+      </tr>
+      <tr>
+        <ng-container>
+          <td>
+            Disc / Wedge / Ball Inlet
+          </td>
+          <td style="width:250px">
+            <div class="form-group">
+              <mat-select placeholder=" Select" class="form-control" required>
+                <mat-option value="1">Rusted</mat-option>
+                <mat-option value="2">Corroded</mat-option>
+                <mat-option value="3">Eroded </mat-option>
+                <mat-option value="4">Crack Found</mat-option>
+                <mat-option value="5">No Damage Observed</mat-option>
+                <mat-option value="6">Not Applicable</mat-option>
+                <mat-option value="7">Damaged</mat-option>
+                <mat-option value="8">Remarks </mat-option>
+
+              </mat-select>
+            </div>
+          </td>
+          <td style="width: 200px">
+          <input type="text" placeholder="Enter Spares" class="form-control mb-3" >
+          </td>
+          <td style="width: 200px;" class="text-center"  ><textarea style="width: 280px;" name="" id="" ></textarea>
+          </td>
+        </ng-container>
+      </tr>
+      <tr>
+        <ng-container>
+          <td>
+            Disc / Wedge / Ball Outlet
+          </td>
+          <td style="width:250px">
+            <div class="form-group">
+              <mat-select placeholder=" Select" class="form-control" required>
+                <mat-option value="1">Rusted</mat-option>
+                <mat-option value="2">Corroded</mat-option>
+                <mat-option value="3">Eroded </mat-option>
+                <mat-option value="4">Crack Found</mat-option>
+                <mat-option value="5">No Damage Observed</mat-option>
+                <mat-option value="6">Not Applicable</mat-option>
+                <mat-option value="7">Damaged</mat-option>
+                <mat-option value="8">Remarks </mat-option>
+
+              </mat-select>
+            </div>
+          </td>
+          <td style="width: 200px">
+          <input type="text" placeholder="Enter Spares" class="form-control mb-3" >
+          </td>
+          <td style="width: 200px;" class="text-center"  ><textarea style="width: 280px;" name="" id="" ></textarea>
+          </td>
+        </ng-container>
+      </tr>
+      <tr>
+        <ng-container>
+          <td>
+            Back Seat
+          </td>
+          <td style="width:250px">
+            <div class="form-group">
+              <mat-select placeholder=" Select" class="form-control" required>
+                <mat-option value="1">Rusted</mat-option>
+                <mat-option value="2">Corroded</mat-option>
+                <mat-option value="3">Eroded </mat-option>
+                <mat-option value="4">Crack Found</mat-option>
+                <mat-option value="5">No Damage Observed</mat-option>
+                <mat-option value="6">Not Applicable</mat-option>
+                <mat-option value="7">Damaged</mat-option>
+                <mat-option value="8">Remarks </mat-option>
+
+              </mat-select>
+            </div>
+          </td>
+          <td style="width: 200px">
+          <input type="text" placeholder="Enter Spares" class="form-control mb-3" >
+          </td>
+          <td style="width: 200px;" class="text-center"  ><textarea style="width: 280px;" name="" id="" ></textarea>
+          </td>
+        </ng-container>
+      </tr>
+      <tr>
+        <ng-container>
+          <td>
+            Gland packing / Soft seals
+          </td>
+          <td style="width:250px">
+            <div class="form-group">
+              <mat-select placeholder=" Select" class="form-control" required>
+                <mat-option value="1">Rusted</mat-option>
+                <mat-option value="2">Corroded</mat-option>
+                <mat-option value="3">Eroded </mat-option>
+                <mat-option value="4">Crack Found</mat-option>
+                <mat-option value="5">No Damage Observed</mat-option>
+                <mat-option value="6">Not Applicable</mat-option>
+                <mat-option value="7">Damaged</mat-option>
+                <mat-option value="8">Remarks </mat-option>
+
+              </mat-select>
+            </div>
+          </td>
+          <td style="width: 200px">
+          <input type="text" placeholder="Enter Spares" class="form-control mb-3" >
+          </td>
+          <td style="width: 200px;" class="text-center"  ><textarea style="width: 280px;" name="" id="" ></textarea>
+          </td>
+        </ng-container>
+      </tr>
+      <tr>
+        <ng-container>
+          <td>
+            Yoke nut
+          </td>
+          <td style="width:250px">
+            <div class="form-group">
+              <mat-select placeholder=" Select" class="form-control" required>
+                <mat-option value="1">Rusted</mat-option>
+                <mat-option value="2">Corroded</mat-option>
+                <mat-option value="3">Eroded </mat-option>
+                <mat-option value="4">Crack Found</mat-option>
+                <mat-option value="5">No Damage Observed</mat-option>
+                <mat-option value="6">Not Applicable</mat-option>
+                <mat-option value="7">Damaged</mat-option>
+                <mat-option value="8">Remarks </mat-option>
+
+              </mat-select>
+            </div>
+          </td>
+          <td style="width: 200px">
+          <input type="text" placeholder="Enter Spares" class="form-control mb-3" >
+          </td>
+          <td style="width: 200px;" class="text-center"  ><textarea style="width: 280px;" name="" id="" ></textarea>
+          </td>
+        </ng-container>
+      </tr>
+      <tr>
+        <ng-container>
+          <td>
+            Gland Bush
+          </td>
+          <td style="width:250px">
+            <div class="form-group">
+              <mat-select placeholder=" Select" class="form-control" required>
+                <mat-option value="1">Rusted</mat-option>
+                <mat-option value="2">Corroded</mat-option>
+                <mat-option value="3">Eroded </mat-option>
+                <mat-option value="4">Crack Found</mat-option>
+                <mat-option value="5">No Damage Observed</mat-option>
+                <mat-option value="6">Not Applicable</mat-option>
+                <mat-option value="7">Damaged</mat-option>
+                <mat-option value="8">Remarks </mat-option>
+
+              </mat-select>
+            </div>
+          </td>
+          <td style="width: 200px">
+          <input type="text" placeholder="Enter Spares" class="form-control mb-3" >
+          </td>
+          <td style="width: 200px;" class="text-center"  ><textarea style="width: 280px;" name="" id="" ></textarea>
+          </td>
+        </ng-container>
+      </tr>
+      <tr>
+        <ng-container>
+          <td>
+            Gland Follower
+          </td>
+          <td style="width:250px">
+            <div class="form-group">
+              <mat-select placeholder=" Select" class="form-control" required>
+                <mat-option value="1">Rusted</mat-option>
+                <mat-option value="2">Corroded</mat-option>
+                <mat-option value="3">Eroded </mat-option>
+                <mat-option value="4">Crack Found</mat-option>
+                <mat-option value="5">No Damage Observed</mat-option>
+                <mat-option value="6">Not Applicable</mat-option>
+                <mat-option value="7">Damaged</mat-option>
+                <mat-option value="8">Remarks </mat-option>
+
+              </mat-select>
+            </div>
+          </td>
+          <td style="width: 200px">
+          <input type="text" placeholder="Enter Spares" class="form-control mb-3" >
+          </td>
+          <td style="width: 200px;" class="text-center"  ><textarea style="width: 280px;" name="" id="" ></textarea>
+          </td>
+        </ng-container>
+      </tr>
+      <tr>
+        <ng-container>
+          <td>
+            I-Bolts
+          </td>
+          <td style="width:250px">
+            <div class="form-group">
+              <mat-select placeholder=" Select" class="form-control" required>
+                <mat-option value="1">Rusted</mat-option>
+                <mat-option value="2">Corroded</mat-option>
+                <mat-option value="3">Eroded </mat-option>
+                <mat-option value="4">Crack Found</mat-option>
+                <mat-option value="5">No Damage Observed</mat-option>
+                <mat-option value="6">Not Applicable</mat-option>
+                <mat-option value="7">Damaged</mat-option>
+                <mat-option value="8">Remarks </mat-option>
+
+              </mat-select>
+            </div>
+          </td>
+          <td style="width: 200px">
+          <input type="text" placeholder="Enter Spares" class="form-control mb-3" >
+          </td>
+          <td style="width: 200px;" class="text-center"  ><textarea style="width: 280px;" name="" id="" ></textarea>
+          </td>
+        </ng-container>
+      </tr>
+      <tr>
+        <ng-container>
+          <td>
+            Gasket / Pressure Seal Ring
+          </td>
+          <td style="width:250px">
+            <div class="form-group">
+              <mat-select placeholder=" Select" class="form-control" required>
+                <mat-option value="1">Rusted</mat-option>
+                <mat-option value="2">Corroded</mat-option>
+                <mat-option value="3">Eroded </mat-option>
+                <mat-option value="4">Crack Found</mat-option>
+                <mat-option value="5">No Damage Observed</mat-option>
+                <mat-option value="6">Not Applicable</mat-option>
+                <mat-option value="7">Damaged</mat-option>
+                <mat-option value="8">Remarks </mat-option>
+
+              </mat-select>
+            </div>
+          </td>
+          <td style="width: 200px">
+          <input type="text" placeholder="Enter Spares" class="form-control mb-3" >
+          </td>
+          <td style="width: 200px;" class="text-center"  ><textarea style="width: 280px;" name="" id="" ></textarea>
+          </td>
+        </ng-container>
+      </tr>
+      <tr>
+        <ng-container>
+          <th>
+            Signature of Incharge / Engineer Operation
+          </th>
+          <td style="width:250px">
+          
+          </td>
+          <th style="width: 200px; vertical-align: middle;">
+            Name:
+          </th>
+          <th style="width: 200px; vertical-align: middle;" class=""  > Date:
+          </th>
+        </ng-container>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+<div class="row justify-content-center mt-5">
+  <div class="col-auto">
+    <button mat-raised-button class="  btn-primary" routerLink="/joborders/joborder-dashboard/jobcard/replacement">Save & Continue</button>
+  </div>
+</div>

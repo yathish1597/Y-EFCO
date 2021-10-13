@@ -1,0 +1,142 @@
+<h1 mat-dialog-title class="custom-header" style="background-color:#286ba5 !important;height:50px;font-weight: bold !important;">{{data ? 'Update' : 'Create'}} Claim</h1>
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Overview</ng-template>
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">
+             User Name: </label>
+          <div class="col-sm-8">
+            <mat-select placeholder=" Select User Name" class="form-control" required >
+              <mat-option value="1">RajKumar Rampally</mat-option>
+              <mat-option value="2">Rajendraprasad nalla</mat-option>
+              <mat-option value="3">Divya Chamarthi	</mat-option>
+              <mat-option value="4">Sneha Gadam</mat-option>
+              <mat-option value="5">Rama Krishna</mat-option>
+            </mat-select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">
+             Client: </label>
+          <div class="col-sm-8">
+            <mat-select placeholder=" Select Cient" class="form-control" required >
+              <mat-option value="1">Adani kawai</mat-option>
+              <mat-option value="2">Talwandi Saboo</mat-option>
+              <mat-option value="3">Carin bhogiot	</mat-option>
+              <mat-option value="4">RCF Thal</mat-option>
+              <mat-option value="5">Lanco</mat-option>
+              <mat-option value="6">Prayagraj</mat-option>
+              <mat-option value="7">Balco</mat-option>
+            </mat-select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label"> Job Orders: </label>
+          <div class="col-sm-8">
+            <input type="input" class="form-control" placeholder="Enter Job Order">
+          </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="control-label col-sm-4 add-member-label">Start Date: </label>
+            <div class="col-sm-8">
+              <input type="date" class="form-control" id="step" placeholder="dd-mm-yyyy">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-4 add-member-label">End Date: </label>
+            <div class="col-sm-8">
+              <input type="date" class="form-control" id="step" placeholder="dd-mm-yyyy">
+            </div>
+          </div>
+
+     
+       
+        
+        
+      </form>
+       <!-- <mat-dialog-actions align="end">
+        <button mat-button matStepperNext  class="btn-success pull-right"><mat-icon>arrow_right_alt</mat-icon> Save</button>
+      </mat-dialog-actions>
+      <mat-dialog-actions align="end">
+        <button mat-button matStepperNext  class="btn-default pull-right" (click)="close()"><mat-icon>cancel</mat-icon> Close</button>
+      </mat-dialog-actions> -->
+      <mat-dialog-actions align="end">
+        <button mat-raised-button matStepperNext class="add-hover btn-success pull-right" type="submit"><mat-icon>save</mat-icon>&nbsp;Save</button>
+        <button mat-raised-button type="button" class="add-dark-hover btn-default pull-right" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Close</button>
+     </mat-dialog-actions>
+     
+    </form>
+  </mat-step>
+
+
+  <mat-step [stepControl]="secondFormGroup">
+    <ng-template matStepLabel>Claim Details</ng-template>
+    <button mat-raised-button style=" color:#fff !important;cursor: pointer;margin-bottom: 5px;" class="pull-right  btn-success" matTooltip="Add Claim"  (click)="allFields.push(1)" >
+      <mat-icon>add</mat-icon> 
+   </button>
+   <div id="grid-table-container" class="table-responsive" style="margin-left: 10px;">
+    <table id="example2" class="table table-bordered">
+      <thead class="tbl-head">
+          <tr class="tr-grid-header">
+              <th class="text-center"  style="width: 150px;">Category</th>
+              <th class="text-center"   style="width: 150px;">Description</th>
+              <th class="text-center"  style="width: 100px;">Attachments</th>
+              <th class="text-center" >Claim amount</th>
+              <th class="text-center">Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+        
+        <tr *ngFor="let item of allFields;let i = index;">
+            <ng-container>
+              <td >
+                <div class="form-group">
+              
+                  
+                    <mat-select placeholder=" Select Category" class="form-control" required >
+                      <mat-option value="1">Xerox</mat-option>
+                      <mat-option value="2">Consumables</mat-option>
+                      <mat-option value="3">Miscellanous	</mat-option>
+                      <mat-option value="4">Travel</mat-option>
+                      <mat-option value="5">Police/Security</mat-option>
+                      <mat-option value="6">Medical</mat-option>
+                      <mat-option value="7">	Local Conveyance</mat-option>
+                    </mat-select>
+                  
+                </div>
+              </td>
+                <td  ><input type="text"   placeholder="Enter Description" class="form-control"></td>
+                <td  ><input type="file" style="height: 30px;"   ></td>
+             
+                <td ><input type="text"  placeholder="Enter Claim amount" class="form-control"></td>
+                  <td class="text-center">
+                      <a ><i class="fa fa-save green" matTooltip="Save Claim" style="cursor: pointer;"  ></i></a>
+                      <a *ngIf="allFields.length > 1"><i class="fa fa-trash red" matTooltip="Delete Claim" (click)="removeItem(i)" style="cursor: pointer;"></i></a>
+                  </td>
+            </ng-container> 
+          </tr>
+      </tbody>
+  </table>
+    
+  </div>
+  <mat-dialog-actions align="end">
+    <button mat-raised-button class="add-hover btn-primary pull-right" type="submit" (click)="close()"><mat-icon>send</mat-icon>&nbsp;Submit</button>
+    <button mat-raised-button type="button" class="add-dark-hover btn-default pull-right" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+ </mat-dialog-actions>
+    
+ 
+  <!-- <mat-dialog-actions align="end">
+    <button  mat-raised-button color="primary" matStepperPrevious><mat-icon>keyboard_backspace</mat-icon> Back</button>
+    
+    <button  mat-raised-button  class="add-dark-hover btn-success" (click)="close()" ><mat-icon>done</mat-icon> Submit</button>
+  </mat-dialog-actions> -->
+   
+  </mat-step>
+     
+  
+
+</mat-horizontal-stepper>
+

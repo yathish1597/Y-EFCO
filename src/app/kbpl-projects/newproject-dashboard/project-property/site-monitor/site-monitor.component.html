@@ -1,0 +1,138 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 p-0">
+      <table class="table table-bordered">
+        <tr>
+          <th style="vertical-align: middle;">Customer</th>
+          <th>              <input type="text" class="form-control txtSkill number">          </th>
+          <th style="vertical-align: middle;">Contact Person          </th>
+          <th>              <input type="text" class="form-control txtSkill number">          </th>
+        </tr>
+        <tr>
+          <th style="vertical-align: middle;">Unit</th>
+          <th><input type="number" class="form-control txtSkill number">          </th>
+          <th style="vertical-align: middle;">Tel.No:</th>
+          <th><input type="number" class="form-control txtSkill number">          </th>
+        </tr>
+        <tr>
+          <th  style="vertical-align: middle;">Work Order No.</th>
+          <td colspan="3"><input type="text" class="form-control txtSkill number">  </td>
+        </tr>
+        <tr>
+          <th style="vertical-align: middle;">Site Incharge</th>
+          <th>              <input type="text" class="form-control txtSkill number">          </th>
+          <th style="vertical-align: middle;">Tel.No:         </th>
+          <th>              <input type="text" class="form-control txtSkill number">          </th>
+        </tr>
+        <tr>
+          <th></th>
+          <th class="text-center" style="width: 500px;">Planned</th>
+          <th class="text-center" colspan="2"  style="width: 466px;">Actual</th>
+        </tr>
+       
+        <tr>
+          <td class="" style="vertical-align: middle;">Date of</td>
+          <td><input class="form-control"  placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3" name="dt3">
+          <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time></td>
+          <td  colspan="2"><input class="form-control"  placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt4" [owlDateTime]="dt4" name="dt4">
+          <owl-date-time [pickerType]="'calendar'" #dt4></owl-date-time></td>
+        </tr>
+        <tr>
+          <td class="" style="vertical-align: middle;">Date of completion
+          </td>
+          <td><input class="form-control"  placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="dt1">
+          <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time></td>
+          <td  colspan="2"><input class="form-control"  placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" name="dt2">
+          <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time> </td>
+        </tr>
+        <tr>
+          <td class="" style="vertical-align: middle;">Manpower deployed          </td>
+          <td><input type="text" class="form-control txtSkill number"> </td>
+          <td  colspan="2"><input type="text" class="form-control txtSkill number"> </td>
+        </tr>
+        <tr>
+          <td class="" style="vertical-align: middle;">No. of mandays
+          </td>
+          <td><input type="text" class="form-control txtSkill number"> </td>
+          <td  colspan="2"><input type="text" class="form-control txtSkill number"> </td>
+        </tr>
+        <tr>
+          <td class="" style="vertical-align: middle;">Expenditure
+          </td>
+          <td><input type="text" class="form-control txtSkill number"> </td>
+          <td  colspan="2"><input type="text" class="form-control txtSkill number"> </td>
+        </tr>
+        <tr>
+          <td class="" style="vertical-align: middle;">Inch Dia          </td>
+          <td><input type="text" class="form-control txtSkill number"> </td>
+          <td  colspan="2"><input type="text" class="form-control txtSkill number"> </td>
+        </tr>
+      </table>
+      <h3 class=" mt-5 mb-3">Machines at Site:</h3>
+      <table class="table table-bordered">
+        <tr class="tbl-head">
+          <th class="text-center" style="vertical-align: middle;" rowspan="2">S.No</th>
+          <th class="col-sm-4 text-center" style="vertical-align: middle;" rowspan="2">Machine Description</th>
+          <th class="col-sm-4 text-center" style="vertical-align: middle;" colspan="2">Date of</th>
+          <th class="col-sm-4 text-center" style="vertical-align: middle;" rowspan="2">Remarks, when shifting from one site to another.</th>
+          <th class="text-center" style="vertical-align: middle;" rowspan="2">Action
+            <br>
+            <i class="fa fa-plus"(click)="allFields.push(1)"></i></th>
+        </tr>
+        <tr class="tbl-head">
+          <th class="text-center" style="vertical-align: middle;">Deployment</th>
+          <th class="text-center" style="vertical-align: middle;">Demobilization</th>
+        </tr>
+        <tr  *ngFor="let item of allFields;let i = index;">
+          <td>{{i+1}}.</td>
+          <td><input type="text" class="form-control txtSkill number"> </td>
+          <td><input class="form-control"  placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt5" [owlDateTime]="dt5" name="dt5">
+          <owl-date-time [pickerType]="'calendar'" #dt5></owl-date-time> </td>
+          <td><input class="form-control"  placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt6" [owlDateTime]="dt6" name="dt6">
+          <owl-date-time [pickerType]="'calendar'" #dt6></owl-date-time> </td>
+          <td><input type="text" class="form-control txtSkill number"> </td>
+          <td class="text-center">
+            <a *ngIf="allFields.length > 1"><i class="fa fa-trash red" matTooltip="Delete Claim"
+                (click)="removeItem(i)" style="cursor: pointer;"></i></a>
+
+          </td>
+        </tr>
+      
+      </table>
+      <table class="table table-bordered">
+        <tr class="tbl-head">
+          <th>Designation</th>
+          <th>Name</th>
+          <th>Signature</th>
+          <th>Date</th>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;">Site Incharge</td>
+          <td><input type="text" class="form-control txtSkill number"></td>
+          <td><input type="text" class="form-control txtSkill number"></td>
+          <td><input class="form-control"  placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt9" [owlDateTime]="dt9" name="dt9">
+          <owl-date-time [pickerType]="'calendar'" #dt9></owl-date-time></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;">Manager Operations</td>
+          <td><input type="text" class="form-control txtSkill number"></td>
+          <td><input type="text" class="form-control txtSkill number"></td>
+          <td><input class="form-control"  placeholder="MM/DD/YYYY" (keypress)="false"
+            [owlDateTimeTrigger]="dt10" [owlDateTime]="dt10" name="dt10">
+          <owl-date-time [pickerType]="'calendar'" #dt10></owl-date-time></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-sm-12 p-0 mt-3  text-center">
+      <button class="btn btn-primary add-hover"  style="font-size:larger !important;" routerLink="/joborders/joborder-dashboard/POW/man-days">Save &
+        Continue</button>
+    </div>
+  </div>
+</div>

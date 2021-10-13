@@ -1,0 +1,11 @@
+.rotate
+{
+  // -ms-writing-mode: tb-rl;
+  // -webkit-writing-mode: vertical-rl;
+  // writing-mode: vertical-rl;
+  // transform: rotate(360deg);
+  // white-space: nowrap;
+  max-width: 40px !important;
+  transform: rotate(90deg); border: none !important; 
+  padding-right: 70px !important;
+}

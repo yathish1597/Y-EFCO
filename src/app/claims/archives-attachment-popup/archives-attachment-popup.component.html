@@ -1,0 +1,45 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>Attachments</h1>
+</div> 
+
+<div mat-dialog-content style="overflow:hidden!important;">
+ <button mat-raised-button style=" color:#fff !important;cursor: pointer;margin-bottom: 5px;" class="pull-right  btn-success" matTooltip="Add Attachment"  (click)="allFields.push(1)" >
+      <mat-icon>add</mat-icon> Add
+   </button>
+   <div id="grid-table-container" class="table-responsive" style="margin-left: 10px;">
+    <table id="example2" class="table table-bordered">
+      <thead class="tbl-head">
+          <tr class="tr-grid-header">
+              <th class="text-center"  style="width: 100px;">SL No.</th>
+              <th class="text-center"  style="width: 100px;">File Name</th>
+              <th class="text-center">Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+        
+        <tr *ngFor="let item of allFields;let i = index;">
+            <ng-container>
+              <td class="text-center">
+                {{i+1}}
+              </td>
+                <td  ><input type="file" style="height: 30px;"   ></td>
+             
+                <td class="text-center">
+                  <a ><i class="fa fa-download blue" matTooltip="download" style="cursor: pointer;"  ></i></a>
+                  <a ><i class="fa fa-file blue" matTooltip="view image" style="cursor: pointer;"  ></i></a>
+                  <a *ngIf="allFields.length > 1"><i class="fa fa-trash red" matTooltip="Delete attachment" (click)="removeItem(i)" style="cursor: pointer;"></i></a>
+                 
+              </td>
+            </ng-container> 
+          </tr>
+      </tbody>
+  </table>
+    
+  </div>
+
+</div>
+
+<mat-dialog-actions class="justify-content-end mt-3" style="margin-right: 40px;" >
+  <button mat-raised-button class="add-hover btn-primary pull-right" type="submit" (click)="close()">Update</button>
+  <button mat-raised-button type="button" class="add-dark-hover btn-default pull-right" (click)="close()">Cancel</button>
+</mat-dialog-actions>

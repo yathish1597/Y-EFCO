@@ -1,0 +1,56 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+    Documents
+  </h1>
+</div>
+<div class="row">
+  <div class="col-lg-7">
+    <div class="row">
+      <div class="col-lg-2"> <Span>Name  </Span></div>
+      <div class="col-lg-6"><input type="text" class="form-control" placeholder="Enter Document Name"></div>
+      <div class="col-lg-4"><input type="file"></div>
+    </div>
+  </div>
+  
+  <div class="col-lg-4">
+    <button  mat-raised-button class="btn-primary"  style="margin-left: 60%;margin-bottom: 10px;"><mat-icon>add</mat-icon> Add</button>
+  </div>
+ 
+</div>
+
+<div class="row">
+ 
+  <div class="col-xs-12">
+    <div id="divQuotesGrid" class="table-responsive">
+      <table matSort id="example2" class="table table-bordered table-hover">
+        <thead class="tbl-head">
+          <tr>
+            <th >Name</th>
+           
+            <th class="text-center">Document</th>
+            <th class="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+            <td > {{item.name}}</td>
+            <td style="text-align: center!important;"><a href="https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf" target="_blank">View</a></td>
+            <td  class="text-center">
+              <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Item" (click)="openProjectDialog(item)">
+                  <i class="fa fa-edit" style="color: cornflowerblue"></i>
+              </a>
+              <a ><i class="fa fa-trash red" matTooltip="Delete Item"  style="cursor: pointer;"(click)="openDeleteDialog(item)"></i></a>
+          </td> 
+          </tr>          
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<mat-dialog-actions class="col-sm-12" align="end">
+  <button mat-raised-button class="CancelClass" (click)="close()">
+    <mat-icon>cancel</mat-icon>
+&nbsp;Close
+  </button>
+</mat-dialog-actions>

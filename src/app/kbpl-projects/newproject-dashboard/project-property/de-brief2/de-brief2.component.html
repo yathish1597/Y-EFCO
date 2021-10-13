@@ -1,0 +1,170 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3 class=" mt-5 mb-3">X. DETAILS OF MANPOWER BEING DEPUTED</h3>
+      <table class="table table-bordered" id="tblManpower">
+        <thead class="tbl-head">
+          <tr>
+            <td class="text-center" rowspan="2"><br><label class="label-bold">S.No</label></td>
+            <td class="text-center" rowspan="2" style="width:150px!important"><br><label class="label-bold">Name of the
+                Employee</label></td>
+            <td class="text-center" colspan="3"><label class="label-bold">Planned</label></td>
+            <td class="text-center" colspan="4"><label class="label-bold">Actuals</label></td>
+            <td class="text-center" rowspan="2"><br><label class="label-bold"
+                style="min-width:80px!important">Skill</label></td>
+            <td class="text-center" rowspan="2"><br><label class="label-bold">Interpersonal</label></td>
+            <td class="text-center" rowspan="2" style="width:80px!important"><br><label
+                class="label-bold">Action</label>
+              <br>
+              <i class="fa fa-plus" (click)="allFields.push(1)"></i>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center"><label class="label-bold">No of Days</label></td>
+            <td class="text-center"><label class="label-bold">Per Day Rate</label></td>
+            <td class="text-center"><label class="label-bold">Total Salary</label></td>
+            <td class="text-center"><label class="label-bold">Date In</label></td>
+            <td class="text-center"><label class="label-bold">Date Out</label></td>
+            <td class="text-center"><label class="label-bold">No of Days at Site</label></td>
+            <td class="text-center"><label class="label-bold">Total Salary</label></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of allFields;let i = index;">
+            <td class="text-center">
+              {{i+1}}.
+            </td>
+            <td>
+
+              <input type="text" class="hidden hdnManpowerId" id="hdnManpowerId-0" value="343">
+              <input type="text" class="hidden hdnUserId" id="hdnUserId-0" value="221">
+
+
+              <select class="form-control vcid" required="" id="txtName-0">
+                <option value="0">Select</option>
+                <option value="1">Admin Efco</option>
+                <option value="185">Amit Kumar</option>
+                <option value="125">BV Sudhakar</option>
+                <option value="215">Debasis Pattnaik</option>
+                <option value="218">Dinesh Reddy</option>
+                <option value="226">Divya Chamarthi</option>
+                <option value="175">Dudayala Krishna</option>
+                <option value="189">Koteswara Rao</option>
+                <option value="187">lokesh Kumar</option>
+                <option value="214">N SubbaRao</option>
+                <option value="106">Nalla Prasad</option>
+                <option value="217">Nanda Kumar</option>
+                <option value="219">Purushothaman J</option>
+                <option value="227">rajendraprasad nalla</option>
+                <option value="228">RajKumar Rampally</option>
+                <option value="221">Rama Krishna</option>
+                <option value="206">Ramya Reddy</option>
+                <option value="186">Sai Aswanth</option>
+                <option value="224">Sneha Gadam</option>
+                <option value="105">Srinivasa Reddy</option>
+                <option value="121">Sunil Patnaik</option>
+                <option value="129">Suresh Eppili</option>
+                <option value="183">Surya Prakash</option>
+                <option value="130">Vamshikumar Prabhugari</option>
+                <option value="123">Vasant Roy</option>
+                <option value="188">Vijay Surya</option>
+              </select>
+
+            </td>
+            <td>
+              <input type="text" class="form-control decimal txtDays" id="txtDays-0" placeholder="" maxlength="10">
+            </td>
+            <td>
+              <input type="text" class="form-control decimal txtRate" id="txtRate-0" placeholder="" maxlength="10">
+            </td>
+            <td>
+              <input type="text" class="form-control decimal txtPlannedSalary" id="txtPlannedSalary-0" placeholder=""
+                maxlength="10">
+            </td>
+            <td>
+              <input type="text" class="form-control  txtDateIn">
+            </td>
+            <td>
+              <input type="text" class="form-control  txtDateOut">
+            </td>
+            <td>
+              <input type="text" class="form-control decimal txtDaysAtSite" id="txtDaysAtSite-0" readonly=""
+                placeholder="" maxlength="10">
+            </td>
+            <td>
+              <input type="text" class="form-control decimal txtActualSalary" id="txtActualSalary-0" readonly=""
+                placeholder="" maxlength="10">
+            </td>
+            <td>
+              <input type="number" class="form-control txtSkill number">
+            </td>
+            <td>
+              <input type="number" class="form-control txtInterpersonal number">
+            </td>
+            <td class="text-center">
+              <a *ngIf="allFields.length > 1"><i class="fa fa-trash red" matTooltip="Delete Claim"
+                  (click)="removeItem(i)" style="cursor: pointer;"></i></a>
+
+            </td>
+          </tr>
+
+          <tr class="trTotal">
+            <td class="text-center"><label class="label-bold">Total</label></td>
+            <td></td>
+            <td class=""> <input type="text" class="form-control  txtDateOut"></td>
+            <td class=""> <input type="text" class="form-control  txtDateOut"></td>
+            <td class=""> <input type="text" class="form-control  txtDateOut"></td>
+            <td class=""><label class="label-bold margin-left-5" id=""></label></td>
+            <td class=""><label class="label-bold margin-left-5" id=""></label></td>
+            <td class=""> <input type="text" class="form-control  txtDateOut"></td>
+            <td class=""> <input type="text" class="form-control  txtDateOut"></td>
+            <td class=""><label class="label-bold margin-left-5" id=""></label></td>
+            <td class=""><label class="label-bold margin-left-5" id=""></label></td>
+            <td class=""><label class="label-bold margin-left-5" id=""></label></td>
+          </tr>
+          <tr>
+            <th colspan="2" style="vertical-align: middle;">
+              Name of the Supervisor:
+            </th>
+            <td class="" colspan="10"> <input type="text" class="form-control  txtDateOut"></td>
+          </tr>
+          <tr>
+            <th colspan="2" style="vertical-align: middle;">Signature:</th>
+            <th colspan="5"> <input type="text" class="form-control  txtDateOut"></th>
+            <th colspan="2" style="vertical-align: middle;">Date:</th>
+            <th colspan="3"> <input type="text" class="form-control  txtDateOut"></th>
+          </tr>
+
+        </tbody>
+      </table>
+      <table class="table table-bordered mt-5">
+        <tr class="tbl-head">
+          <th class="text-center">S.No</th>
+          <th class="text-center">Site Issue</th>
+          <th class="text-center">Yes/No</th>
+          <th class="text-center">Brief description of Problem encountered</th>
+        </tr>
+        <tr *ngFor="let item of items ; let i = index;">
+          <td class="text-center" style="vertical-align: middle;">{{i+1}}.</td>
+          <td style="vertical-align: middle;">{{item.siteissue}}
+          </td>
+          <td style="vertical-align: middle;">
+            <select class="form-control" placeholder="Select">
+              <option [value]="0">Select</option>
+              <option [value]="1">Yes</option>
+              <option [value]="2">No</option>
+            </select>
+          </td>
+          <td class="text-center" style="vertical-align: middle;">NA</td>
+        </tr>
+
+
+      </table>
+    </div>
+    <div class="col-sm-12 mt-3 p-0  text-center">
+      <button class="btn btn-primary add-hover" style="font-size:larger !important;"
+        routerLink="/joborders/joborder-dashboard/POW/consumables">Save &
+        Continue</button>
+    </div>
+  </div>
+</div>

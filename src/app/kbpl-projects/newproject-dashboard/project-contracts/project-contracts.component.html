@@ -1,0 +1,161 @@
+<div class="row" style="margin-bottom:19px; margin-right: -3px;margin-top:10px">
+    <div class="col-xs-5 ">
+    </div>
+    <div class="col-xs-7">
+        <div class="">
+            <button mat-raised-button class="pull-right  btn-primary" (click)="AddContract()">
+                <mat-icon>add</mat-icon> Add Member
+            </button>
+        </div>
+
+    </div>
+</div>
+<!-- Filter toggle -->
+<div fxLayout="row wrap" *ngIf="filterToggle" style="margin-bottom: 10px">
+    <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+        <mat-card class="filter">
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">
+                            Keyword:
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" placeholder="Search by any record" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">
+                            Client Name:
+                        </div>
+                        <div class="col-sm-8">
+                            <mat-select class="form-control" placeholder="Select Client">
+                                <mat-option [value]="0">Amazon</mat-option>
+                                <mat-option [value]="1">Flipkart</mat-option>
+                                <mat-option [value]="2">E-Square</mat-option>
+                                <mat-option [value]="3">Stonefield</mat-option>
+                            </mat-select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">
+                            Status:
+                        </div>
+                        <div class="col-sm-8">
+                            <mat-select class="form-control" placeholder="Select Status">
+                                <mat-option [value]="0">Initiated</mat-option>
+                                <mat-option [value]="1">In Progress</mat-option>
+                                <mat-option [value]="2">Pending</mat-option>
+                                <mat-option [value]="3">Completed</mat-option>
+                            </mat-select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" style="padding-top:10px !important">
+                    <div class="col-sm-4" style="margin-top: 4px;">
+                        <div class="col-sm-4 newMarginClass">
+                            Date Type:
+                        </div>
+                        <mat-radio-group aria-label="Select an option">
+                            <mat-radio-button value="1" checked style="margin-left: 10px;">Agreement </mat-radio-button>
+                            <mat-radio-button value="2" style="margin-left: 25px;">Start </mat-radio-button>
+                            <mat-radio-button value="3" style="margin-left: 25px;">Target</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">
+                            To Date:
+                        </div>
+                        <div class="col-sm-8">
+                            <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                                [owlDateTimeTrigger]="dt6" [owlDateTime]="dt6" name="dt6">
+                            <owl-date-time [pickerType]="'calendar'" #dt6></owl-date-time>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">
+                            From Date:
+                        </div>
+                        <div class="col-sm-8">
+                            <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                                [owlDateTimeTrigger]="dt7" [owlDateTime]="dt7" name="dt7">
+                            <owl-date-time [pickerType]="'calendar'" #dt7></owl-date-time>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="padding-top:10px !important">
+
+                    <div class="col-lg-1" style="margin-left:80% !important;">
+                        <button mat-raised-button class="pull-right btn-primary">
+                            <mat-icon>youtube_searched_for</mat-icon> Search
+                        </button>
+
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+                        <button mat-raised-button style="background-color:#37474f; color:#fff !important;">
+                            <mat-icon>settings_backup_restore</mat-icon> Clear
+                        </button>
+
+                    </div>
+                    <a (click)="filterToggle = !filterToggle" class="pull-right"
+                        style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                        <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                    </a>
+
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div class="row" style="margin-right: -3px; margin-left: -6px;">
+    <div class="col-xs-12">
+        <div id="grid-table-container" class="table-responsive">
+            <table matSort id="example2" class="table table-bordered table-hover">
+                <thead class="tbl-head">
+                    <tr>
+                        <th class="text-left">Employee Name</th>
+                        <th>Role(s)</th>
+                        <th>Contact#</th>
+                        <th class="text-center">Status</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of items">
+                        <td style="min-width: 50px !important;">
+                            {{item.ename}}
+                        </td>
+                        <td>{{item.role}}</td>
+                        <td style="width: 50px;">
+                            {{item.contact}}
+                        </td>
+                        <td class="text-center" style="color: blue;">{{item.status }}</td>
+                        <td class="text-center">
+                            <a style="cursor: pointer;margin-right:0px; " matTooltip="Update Contract Details"
+                                (click)="AddContract1(item)">
+                                <i class="fa fa-edit" (click)="editContract(item)"
+                                    style="color: cornflowerblue; font-size: medium;"></i>
+                            </a>
+                            <!-- <a class="anchor" matTooltip="Add Notes" (click)="AddProjectNotes()"
+                                style=" margin-left:0px">
+                                <mat-icon
+                                    style="cursor: pointer;color: #45c136f7;font-size: 20px;vertical-align: middle;">
+                                    rate_review
+                                </mat-icon>
+                            </a> -->
+                            <a><i class="fa fa-trash red" matTooltip="Delete Contract"
+                                    style="cursor: pointer;margin-left:0px;font-size: medium;"></i></a>
+
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            
+            <mat-paginator [pageSizeOptions]="[9, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+        </div>
+    </div>
+</div>

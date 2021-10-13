@@ -1,0 +1,136 @@
+<div class="row-wrap">
+  <div class="w-100">
+    <div fxLayout="row">
+      <div class="col-xs-6">
+
+      </div>
+
+      <div class="col-xs-6">
+        <div class="flex-p" style="margin-top: 15px;margin-bottom: 18px;">
+          <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+            (click)="filterToggle = !filterToggle">
+            <mat-icon>filter_list</mat-icon> Filter
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Filter details -->
+<div fxLayout="row wrap ">
+  <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100" *ngIf="filterToggle">
+    <mat-card class="filter">
+      <mat-card-content>
+        <div class="row col-sm-12">
+          <div class="col-sm-3">
+            <div class="col-sm-4 mt-2">
+              Screen :
+            </div>
+            <div class="col-sm-8">
+              <mat-select class="form-control" placeholder="Select Screen">
+                <mat-option [value]="0">
+                  Adani kawai
+                </mat-option>
+                <mat-option [value]="1">
+                  Talwandi Saboo
+                </mat-option>
+                <mat-option [value]="2">
+                  Carin bhogiot
+                </mat-option>
+                <mat-option [value]="3">
+                  RCF Thal
+                </mat-option>
+                <mat-option [value]="4">
+                  Lanco
+                </mat-option>
+                <mat-option [value]="5">
+                  Prayagraj
+                </mat-option>
+                <mat-option [value]="5">
+                  Balco
+                </mat-option>
+              </mat-select>
+            </div>
+          </div>
+          <div class="col-sm-3 mt-2">
+            <div class="col-sm-4 newMarginClass">Type :</div>
+            <div class="col-sm-8">
+              <mat-select class="form-control" placeholder="Select Type">
+                <mat-option [value]="0">
+                  Select Job Order
+                </mat-option>
+
+              </mat-select>
+            </div>
+          </div>
+          <div class="col-sm-3 mt-2">
+            <div class="col-sm-4 newMarginClass"> Data Range :</div>
+            <div class="col-sm-8">
+              <input class="form-control" class="form-control" placeholder="Select Data Range">
+
+            </div>
+          </div>
+          <div class="col-sm-3 mt-2">
+            <div class="">
+              <a (click)="filterToggle = !filterToggle" class="float-right"
+                style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+              </a>
+              <button mat-raised-button class="float-right ml-2">
+                Go
+              </button>
+              <button mat-raised-button class="float-right btn-primary">
+                Clear
+              </button>
+  
+  
+            </div>
+          </div>
+
+
+
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</div>
+
+
+
+<!-- Table -->
+
+<div class="row" style="margin-top:20px">
+  <div class="col-xs-12" style="margin-left:10px">
+    <div id="grid-table-container" class="table-responsive" style="width:99.2%">
+      <table matSort id="example2" class="table table-bordered table-hover">
+        <thead class="tbl-head ">
+          <tr>
+            <th> Event Source</th>
+            <th>Screen</th>
+            <th>Event Type</th>
+            <th>Event Description</th>
+            <th>User Name</th>
+            <th>Time Stamp</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of values;let i = index">
+            <td>{{item.eventsource }}</td>
+            <td>{{item.screen}}</td>
+            <td>{{item.eventtype}}</td>
+            <td>{{item.eventdescription}}</td>
+            <td>{{item.username}}</td>
+            <td>{{item.timestamp }}</td>
+
+          </tr>
+
+        </tbody>
+      </table>
+      <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+        [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+</div>

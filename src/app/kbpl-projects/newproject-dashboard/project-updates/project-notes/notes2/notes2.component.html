@@ -1,0 +1,42 @@
+<div class="row" >
+  <div class="col-sm-12 pr-0 mr-0 pl-0 ">
+    <div class="row" >
+        <div class="col-sm-6 ">
+        </div>
+        <div class="col-sm-6 " style="margin-top: -37px;margin-bottom: 20px;">
+          <div class="">
+            <button mat-raised-button class="pull-right  btn-primary" (click)="addQuotesNotes()" >
+              <mat-icon>add</mat-icon> Add Notes
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="grid-table-container" class="table-responsive" style="margin-left: 10px;" >
+          <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                  <tr>
+                     
+                      <th>Task</th>
+                      <th>Subject</th>
+                      <th>Description</th>
+                      <th style="width: 89px;">Date</th>
+                      <th>Submitted by</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let item of items">
+
+                      <td>{{item.task }}</td>
+                      <td>{{item.subject }}</td>
+                      <td>{{item.des }}</td>
+                      <td>{{item.date}}</td>
+                      <td>{{item.subBy }}</td>
+
+                  </tr>
+
+              </tbody>
+          </table>
+          <mat-paginator [pageSizeOptions]="[9, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+      </div>
+  </div>
+</div>

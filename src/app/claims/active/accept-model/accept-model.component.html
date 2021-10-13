@@ -1,0 +1,35 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>Claim Details</h1>
+</div> 
+
+<div mat-dialog-content style="overflow:hidden!important;">
+<div class="row">
+  <div class="col-sm-12">
+    <div class="row justify-content-center">
+      <div class="col-4 mt-2">
+        <h4>Claim Amount</h4>
+      </div>
+      <div class="col-6">
+        <input type="text" placeholder="Approval Amount"  class="form-control">
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 mt-3">
+    <div class="row justify-content-center">
+      <div class="col-4 mt-2">
+        <h4>Approved Amount</h4>
+      </div>
+      <div class="col-6">
+        <input type="text" placeholder="Approval Amount"  class="form-control">
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+</div>
+
+<mat-dialog-actions class="justify-content-end mt-3" style="margin-right: 40px;" >
+  <button mat-raised-button class="btn-success " (click)="close()">Approve</button>
+  <button mat-raised-button class="CancelClass" (click)="close()">Reject</button>
+</mat-dialog-actions>

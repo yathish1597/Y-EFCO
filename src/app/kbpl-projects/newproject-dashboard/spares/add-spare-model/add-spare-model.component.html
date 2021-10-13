@@ -1,0 +1,923 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>{{ data ? 'Edit' : 'Add' }} Spare</h1>
+</div> 
+
+<div >
+
+
+<div class="row" style="margin-left: 60px;">
+  <div class="form-group col">
+    <div class="row">
+        
+        <div class="col">
+          <label class="col-sm-12 add-member-label">Spare Type: </label>
+          <mat-select   style="width: 337px; " (valueChange)="changeModel($event)" placeholder = "Select Spare Type" class="form-control">
+            <mat-option *ngFor = "let catalog of catalogTitles " [value]="catalog"> {{catalog.title}}</mat-option>
+          </mat-select>
+        </div>
+    </div>
+</div>
+  <!-- <div class="form-group col-sm-12 pt-0">
+    <div class="row"> -->
+        <!-- <label class="col-sm-12 add-member-label">Spare Type: </label>
+        <div class="col-sm-5">
+          <mat-select (valueChange)="changeModel($event)" placeholder = "Select Spare Type" class="form-control">
+            <mat-option *ngFor = "let catalog of catalogTitles " [value]="catalog"> {{catalog.title}}</mat-option>
+          </mat-select>
+        </div> -->
+    <!-- </div>
+</div> -->
+</div>
+
+
+<!-- Gland Packing -->
+ <div class="row justify-content-center" *ngIf = "value == 1">
+      <div class="form-group col-sm-5">
+        <div class="row">
+            <label class="col-sm-12 add-member-label">Gland Packing Type: </label>
+            <div class="col-sm-12">
+              <mat-select  required placeholder = "Select Type" class="form-control">
+                <mat-option>Ring</mat-option>
+                <mat-option>Single Slit</mat-option>
+                <mat-option>Double Slit</mat-option>
+                
+              </mat-select>
+            </div>
+        </div>
+    </div>
+        <div class="form-group col-sm-5">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Material: </label>
+                <div class="col-sm-12">
+                  <mat-select  required placeholder = "Select Material" class="form-control">
+                    <mat-option>Graphite</mat-option>
+                    <mat-option>PTFE</mat-option>
+                    <mat-option>Asbestos</mat-option>
+                    <mat-option>Others</mat-option>
+                    
+                  </mat-select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-sm-5">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Outer Dia: </label>
+                <div class="col-sm-12">
+                  <input type="text" class="form-control" placeholder="Enter outer dia">
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group col-sm-5">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Inner Dia: </label>
+                <div class="col-sm-12">
+                  <input type="text" class="form-control" placeholder="Enter Inner dia">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group col-sm-5">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Thickness: </label>
+                <div class="col-sm-12">
+                  <input type="text" class="form-control" placeholder="Enter Thickness">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-sm-5">
+            <div class="row">
+                <label class="col-sm-12">No of Rings: </label>
+                <div class="col-sm-12">
+                  <input type="text" class="form-control" placeholder="Enter No of rings">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-sm-5">
+          <div class="row">
+              <label class="col-sm-12">Material Indent No. : </label>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" placeholder="Enter Material Indent No.">
+              </div>
+          </div>
+        </div>
+
+        <div class="form-group col-sm-5">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">Material Indent Date: </label>
+              <div class="col-sm-12">
+                <input class="form-control" placeholder="DD-MM-YYYY" type="date">
+              </div>
+          </div>
+      </div>
+
+      <div class="form-group col-sm-5">
+        <div class="row">
+            <label class="col-sm-12 add-member-label">Date of Receipt: </label>
+            <div class="col-sm-12">
+              <input class="form-control" placeholder="DD-MM-YYYY" type="date">
+            </div>
+        </div>
+   
+   
+   
+      </div>
+      
+      <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12 add-member-label">Remarks: </label>
+          <div class="col-sm-12">
+            <textarea name="" id="" class="form-control" style="height: 30px;"></textarea>
+          </div>
+      </div>
+       </div>
+
+       <div class="form-group col-sm-5">
+        <div class="row">
+            <label class="col-sm-12 add-member-label">Attachment 1: </label>
+            <div class="col-sm-12">
+             <input type="file" class="" style="height: 35px;outline:none; border: none;">
+            </div>
+        </div>
+         </div>
+
+         <div class="form-group col-sm-5">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">Attachment 2: </label>
+              <div class="col-sm-12">
+                <input type="file" class="" style="height:35px; border: none;">
+              </div>
+          </div>
+           </div>
+     
+
+
+   
+
+
+    </div>
+
+  <!-- Gaskets -->
+  <div class="row justify-content-center" *ngIf = "value == 2">
+    <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12 add-member-label">Gaskets Type: </label>
+          <div class="col-sm-12">
+            <mat-select  required placeholder = "Select Type" class="form-control">
+              <mat-option>Flat Metal Gasket</mat-option>
+              <mat-option>Spiral Wound Gasket</mat-option>
+              <mat-option>Others</mat-option>
+              
+            </mat-select>
+          </div>
+      </div>
+  </div>
+      <div class="form-group col-sm-5">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">Material: </label>
+              <div class="col-sm-12">
+                <mat-select  required placeholder = "Select Material" class="form-control">
+                  <mat-option>Graphite</mat-option>
+                  <mat-option>PTFE</mat-option>
+                  <mat-option>Soft iron</mat-option>
+                  <mat-option>Others</mat-option>
+                  
+                </mat-select>
+              </div>
+          </div>
+      </div>
+      <div class="form-group col-sm-5">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">Outer Dia: </label>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" placeholder="Enter outer dia">
+              </div>
+          </div>
+
+      </div>
+      <div class="form-group col-sm-5">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">Inner Dia: </label>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" placeholder="Enter Inner dia">
+              </div>
+          </div>
+
+      </div>
+
+      <div class="form-group col-sm-5">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">Thickness: </label>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" placeholder="Enter Thickness">
+              </div>
+          </div>
+      </div>
+
+
+      <div class="form-group col-sm-5">
+        <div class="row">
+            <label class="col-sm-12">Material Indent No. : </label>
+            <div class="col-sm-12">
+              <input type="text" class="form-control" placeholder="Enter Material Indent No.">
+            </div>
+        </div>
+      </div>
+
+      <div class="form-group col-sm-5">
+        <div class="row">
+            <label class="col-sm-12 add-member-label">Material Indent Date: </label>
+            <div class="col-sm-12">
+              <input class="form-control" placeholder="DD-MM-YYYY" type="date">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12 add-member-label">Date of Receipt: </label>
+          <div class="col-sm-12">
+            <input class="form-control" placeholder="DD-MM-YYYY" type="date">
+          </div>
+      </div>
+ 
+ 
+ 
+    </div>
+    
+    <div class="form-group col-sm-5">
+    <div class="row">
+        <label class="col-sm-12 add-member-label">Remarks: </label>
+        <div class="col-sm-12">
+          <textarea name="" id="" class="form-control" style="height: 94px;"></textarea>
+        </div>
+    </div>
+     </div>
+
+     <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12 add-member-label">Attachment 1: </label>
+          <div class="col-sm-12">
+           <input type="file" style="height: 35px; border: none;">
+          </div>
+
+          <label class="col-sm-12 add-member-label">Attachment 2: </label>
+          <div class="col-sm-12">
+            <input type="file" style="height:35px; border: none;">
+          </div>
+      </div>
+       </div>
+
+      
+   
+
+
+ 
+
+
+  </div>
+
+  <!-- Pressure Seal Ring -->
+  <div class="row justify-content-center" *ngIf = "value == 3">
+    <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12 add-member-label">Pressure Seal Ring Type: </label>
+          <div class="col-sm-12">
+            <mat-select  required placeholder = "Select Type" class="form-control">
+              <mat-option>Flat Seal</mat-option>
+              <mat-option>Tapper Seal</mat-option>
+              <mat-option>Others</mat-option>
+              
+            </mat-select>
+          </div>
+      </div>
+  </div>
+      <div class="form-group col-sm-5">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">Material: </label>
+              <div class="col-sm-12">
+                <mat-select  required placeholder = "Select Material" class="form-control">
+                  <mat-option>Graphite</mat-option>
+                  <mat-option>Graphite with Metal Coller</mat-option>
+                  <mat-option>Soft iron</mat-option>
+                  <mat-option>PTFE</mat-option>
+                  <mat-option>Others</mat-option>
+                  
+                </mat-select>
+              </div>
+          </div>
+      </div>
+      <div class="form-group col-sm-5">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">A-Outer Dia: </label>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" placeholder="Enter outer dia">
+              </div>
+          </div>
+
+      </div>
+      <div class="form-group col-sm-5">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">B-Inner Dia1: </label>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" placeholder="Enter Inner dia">
+              </div>
+          </div>
+
+      </div>
+      <div class="form-group col-sm-5">
+        <div class="row">
+            <label class="col-sm-12 add-member-label">E-Height 2: </label>
+            <div class="col-sm-12">
+              <input type="text" class="form-control" placeholder="Enter Inner dia">
+            </div>
+        </div>
+
+    </div>
+    <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12 add-member-label">C-Height 1: </label>
+          <div class="col-sm-12">
+            <input type="text" class="form-control" placeholder="Enter Inner dia">
+          </div>
+      </div>
+
+  </div>
+  <div class="form-group col-sm-5">
+    <div class="row">
+        <label class="col-sm-12 add-member-label">D-Inner Dia 2: </label>
+        <div class="col-sm-12">
+          <input type="text" class="form-control" placeholder="Enter Inner dia">
+        </div>
+    </div>
+
+</div>
+
+
+      <div class="form-group col-sm-5">
+        <div class="row">
+            <label class="col-sm-12">Material Indent No. : </label>
+            <div class="col-sm-12">
+              <input type="text" class="form-control" placeholder="Enter Material Indent No.">
+            </div>
+        </div>
+      </div>
+
+
+    <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12 add-member-label">Date of Receipt: </label>
+          <div class="col-sm-12">
+            <input class="form-control" placeholder="DD-MM-YYYY" type="date">
+          </div>
+      </div>
+ 
+ 
+ 
+    </div>
+    
+    <div class="form-group col-sm-5">
+    <div class="row">
+        <label class="col-sm-12 add-member-label">Remarks: </label>
+        <div class="col-sm-12">
+          <textarea name="" id="" class="form-control" style="height: 30px;"></textarea>
+        </div>
+    </div>
+     </div>
+
+     <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12 add-member-label">Attachment 1: </label>
+          <div class="col-sm-12">
+           <input type="file" class="" style="height: 35px; border: none;">
+          </div>
+      </div>
+       </div>
+
+       <div class="form-group col-sm-5">
+        <div class="row">
+            <label class="col-sm-12 add-member-label">Attachment 2: </label>
+            <div class="col-sm-12">
+              <input type="file" class="" style="height:35px; border: none;">
+            </div>
+        </div>
+         </div>
+
+         <div class="form-group col-sm-5">
+         
+           </div>
+  </div>
+
+  <!-- Other Seals -->
+  <div class="row justify-content-center" *ngIf = "value == 4">
+    <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12 add-member-label"> Type: </label>
+          <div class="col-sm-12">
+            <mat-select  required placeholder = "Select Type" class="form-control">
+              <mat-option>Spring Energizer</mat-option>
+              <mat-option>Piston Ring</mat-option> 
+              <mat-option>U - Cup</mat-option>
+              <mat-option>O - Ring</mat-option> 
+              <mat-option>C - Seal</mat-option>
+              <mat-option>Hydraulics</mat-option> 
+              <mat-option>Others</mat-option>
+            </mat-select>
+          </div>
+      </div>
+  </div>
+      <div class="form-group col-sm-5">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">Material: </label>
+              <div class="col-sm-12">
+                <mat-select  required placeholder = "Select Material" class="form-control">
+                  <mat-option>Viton</mat-option>
+                  <mat-option>PTFE</mat-option>
+                  <mat-option>FFKM</mat-option>
+                  <mat-option>Neoprene</mat-option>
+                  <mat-option>Polyurethane</mat-option>
+                  <mat-option>Others</mat-option>
+                  
+                </mat-select>
+              </div>
+          </div>
+      </div>
+      <div class="form-group col-sm-5">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">OD-Outer Dia: </label>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" placeholder="Enter outer dia">
+              </div>
+          </div>
+
+      </div>
+      <div class="form-group col-sm-5">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">ID-Inner Dia: </label>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" placeholder="Enter Inner dia">
+              </div>
+          </div>
+
+      </div>
+
+      <div class="form-group col-sm-5">
+        <div class="row">
+            <label class="col-sm-12">Thickness: </label>
+            <div class="col-sm-12">
+              <input type="text" class="form-control" placeholder="Enter Thickness">
+            </div>
+        </div>
+    </div>
+
+ 
+
+    <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12">Material Indent No. : </label>
+          <div class="col-sm-12">
+            <input type="text" class="form-control" placeholder="Enter Material Indent No.">
+          </div>
+      </div>
+    </div>
+
+    <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12 add-member-label">Material Indent Date: </label>
+          <div class="col-sm-12">
+            <input class="form-control" placeholder="DD-MM-YYYY" type="date">
+          </div>
+      </div>
+  </div>
+
+  <div class="form-group col-sm-5">
+    <div class="row">
+        <label class="col-sm-12 add-member-label">Date of Receipt: </label>
+        <div class="col-sm-12">
+          <input class="form-control" placeholder="DD-MM-YYYY" type="date">
+        </div>
+    </div>
+
+
+
+  </div>
+  
+  <div class="form-group col-sm-5">
+    <div class="row">
+        <label class="col-sm-12 add-member-label">Remarks: </label>
+        <div class="col-sm-12">
+          <textarea name="" id="" class="form-control" style="height: 94px;"></textarea>
+        </div>
+    </div>
+     </div>
+
+     <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12 add-member-label">Attachment 1: </label>
+          <div class="col-sm-12">
+           <input type="file" class="" style="height: 35px;  border: none;">
+          </div>
+
+          <label class="col-sm-12 add-member-label">Attachment 2: </label>
+          <div class="col-sm-12">
+            <input type="file" class="" style="height:35px;  border: none;">
+          </div>
+      </div>
+       </div>
+
+
+
+  </div>
+
+  <!-- Stud -->
+  <div class="row justify-content-center" *ngIf = "value == 5">
+    <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12 add-member-label">Pitch Type: </label>
+          <div class="col-sm-12">
+            <mat-select  required placeholder = "Select Type" class="form-control">
+              <mat-option>MM</mat-option>
+              <mat-option>Inch</mat-option> 
+            </mat-select>
+          </div>
+      </div>
+  </div>
+      <div class="form-group col-sm-5">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">Material Grade: </label>
+              <div class="col-sm-12">
+                <mat-select  required placeholder = "Select Material Grade" class="form-control">
+                  <!-- <mat-option>Graphite</mat-option>
+                  <mat-option>PTFE</mat-option>
+                  <mat-option>Soft iron</mat-option>
+                  <mat-option>Others</mat-option> -->
+                  
+                </mat-select>
+              </div>
+          </div>
+      </div>
+      <div class="form-group col-sm-5">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">OD-Outer Dia: </label>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" placeholder="Enter outer dia">
+              </div>
+          </div>
+
+      </div>
+      <div class="form-group col-sm-5">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">ID-Inner Dia: </label>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" placeholder="Enter Inner dia">
+              </div>
+          </div>
+
+      </div>
+
+      <div class="form-group col-sm-5">
+        <div class="row">
+            <label class="col-sm-12">H-Height: </label>
+            <div class="col-sm-12">
+              <input type="text" class="form-control" placeholder="Enter Height">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12 add-member-label">Pitch: </label>
+          <div class="col-sm-12">
+            <input type="text" class="form-control" placeholder="Enter Pitch">
+          </div>
+      </div>
+  </div>
+
+    <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12">Material Indent No. : </label>
+          <div class="col-sm-12">
+            <input type="text" class="form-control" placeholder="Enter Material Indent No.">
+          </div>
+      </div>
+    </div>
+
+    <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12 add-member-label">Material Indent Date: </label>
+          <div class="col-sm-12">
+            <input class="form-control" placeholder="DD-MM-YYYY" type="date">
+          </div>
+      </div>
+  </div>
+
+  <div class="form-group col-sm-5">
+    <div class="row">
+        <label class="col-sm-12 add-member-label">Date of Receipt: </label>
+        <div class="col-sm-12">
+          <input class="form-control" placeholder="DD-MM-YYYY" type="date">
+        </div>
+    </div>
+
+
+
+  </div>
+  
+  <div class="form-group col-sm-5">
+  <div class="row">
+      <label class="col-sm-12 add-member-label">Remarks: </label>
+      <div class="col-sm-12">
+        <textarea name="" id="" class="form-control" style="height: 30px;"></textarea>
+      </div>
+  </div>
+   </div>
+
+   <div class="form-group col-sm-5">
+    <div class="row">
+        <label class="col-sm-12 add-member-label">Attachment 1: </label>
+        <div class="col-sm-12">
+         <input type="file" class="" style="height: 35px; border: none;">
+        </div>
+    </div>
+     </div>
+
+     <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12 add-member-label">Attachment 2: </label>
+          <div class="col-sm-12">
+            <input type="file" class="" style="height:35px; border: none;">
+          </div>
+      </div>
+       </div>
+
+
+
+  </div>
+
+  <!-- Nut -->
+  <div class="row justify-content-center" *ngIf = "value == 6">
+    <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12 add-member-label">Pitch Type: </label>
+          <div class="col-sm-12">
+            <mat-select  required placeholder = "Select Type" class="form-control">
+              <mat-option>MM</mat-option>
+              <mat-option>Inch</mat-option> 
+            </mat-select>
+          </div>
+      </div>
+  </div>
+      <div class="form-group col-sm-5">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">Material Grade: </label>
+              <div class="col-sm-12">
+                <mat-select  required placeholder = "Select Material Grade" class="form-control">
+                  <!-- <mat-option>Graphite</mat-option>
+                  <mat-option>PTFE</mat-option>
+                  <mat-option>Soft iron</mat-option>
+                  <mat-option>Others</mat-option> -->
+                  
+                </mat-select>
+              </div>
+          </div>
+      </div>
+      <div class="form-group col-sm-5">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">OD-Outer Dia: </label>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" placeholder="Enter outer dia">
+              </div>
+          </div>
+
+      </div>
+      <div class="form-group col-sm-5">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">ID-Inner Dia: </label>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" placeholder="Enter Inner dia">
+              </div>
+          </div>
+
+      </div>
+
+      <div class="form-group col-sm-5">
+        <div class="row">
+            <label class="col-sm-12">H-Height: </label>
+            <div class="col-sm-12">
+              <input type="text" class="form-control" placeholder="Enter Height">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12 add-member-label">Pitch: </label>
+          <div class="col-sm-12">
+            <input type="text" class="form-control" placeholder="Enter Pitch">
+          </div>
+      </div>
+  </div>
+
+    <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12">Material Indent No. : </label>
+          <div class="col-sm-12">
+            <input type="text" class="form-control" placeholder="Enter Material Indent No.">
+          </div>
+      </div>
+    </div>
+
+    <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12 add-member-label">Material Indent Date: </label>
+          <div class="col-sm-12">
+            <input class="form-control" placeholder="DD-MM-YYYY" type="date">
+          </div>
+      </div>
+  </div>
+
+  <div class="form-group col-sm-5">
+    <div class="row">
+        <label class="col-sm-12 add-member-label">Date of Receipt: </label>
+        <div class="col-sm-12">
+          <input class="form-control" placeholder="DD-MM-YYYY" type="date">
+        </div>
+    </div>
+
+
+
+  </div>
+  
+  <div class="form-group col-sm-5">
+  <div class="row">
+      <label class="col-sm-12 add-member-label">Remarks: </label>
+      <div class="col-sm-12">
+        <textarea name="" id="" class="form-control" style="height: 30px;"></textarea>
+      </div>
+  </div>
+   </div>
+
+   <div class="form-group col-sm-5">
+    <div class="row">
+        <label class="col-sm-12 add-member-label">Attachment 1: </label>
+        <div class="col-sm-12">
+         <input type="file" class="" style="height: 35px; border: none;">
+        </div>
+    </div>
+     </div>
+
+     <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12 add-member-label">Attachment 2: </label>
+          <div class="col-sm-12">
+            <input type="file" class="" style="height:35px; border: none;">
+          </div>
+      </div>
+       </div>
+
+
+
+  </div>
+
+
+  <!-- Spring -->
+  <div class="row justify-content-center" *ngIf = "value == 7">
+   
+      <div class="form-group col-sm-5">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">Material Grade: </label>
+              <div class="col-sm-12">
+                <mat-select  required placeholder = "Select Material" class="form-control">
+                  <!-- <mat-option>Graphite</mat-option>
+                  <mat-option>PTFE</mat-option>
+                  <mat-option>Soft iron</mat-option>
+                  <mat-option>Others</mat-option> -->
+                  
+                </mat-select>
+              </div>
+          </div>
+      </div>
+      <div class="form-group col-sm-5">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">Outer Dia: </label>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" placeholder="Enter outer dia">
+              </div>
+          </div>
+
+      </div>
+      <div class="form-group col-sm-5">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">Chord Dia: </label>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" placeholder="Enter Chord dia">
+              </div>
+          </div>
+
+      </div>
+
+      <div class="form-group col-sm-5">
+        <div class="row">
+            <label class="col-sm-12">Length: </label>
+            <div class="col-sm-12">
+              <input type="text" class="form-control" placeholder="Enter Length">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12 add-member-label">No of Coils: </label>
+          <div class="col-sm-12">
+            <input type="text" class="form-control" placeholder="Enter No of Coils">
+          </div>
+      </div>
+  </div>
+
+  <div class="form-group col-sm-5">
+    <div class="row">
+        <label class="col-sm-12 add-member-label">No of springs: </label>
+        <div class="col-sm-12">
+          <input type="text" class="form-control" placeholder="Enter No of springs">
+        </div>
+    </div>
+</div>
+
+    <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12">Material Indent No. : </label>
+          <div class="col-sm-12">
+            <input type="text" class="form-control" placeholder="Enter Material Indent No.">
+          </div>
+      </div>
+    </div>
+
+    <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12 add-member-label">Material Indent Date: </label>
+          <div class="col-sm-12">
+            <input class="form-control" placeholder="DD-MM-YYYY" type="date">
+          </div>
+      </div>
+  </div>
+
+  <div class="form-group col-sm-5">
+    <div class="row">
+        <label class="col-sm-12 add-member-label">Date of Receipt: </label>
+        <div class="col-sm-12">
+          <input class="form-control" placeholder="DD-MM-YYYY" type="date">
+        </div>
+    </div>
+
+
+
+  </div>
+  
+  <div class="form-group col-sm-5">
+  <div class="row">
+      <label class="col-sm-12 add-member-label">Remarks: </label>
+      <div class="col-sm-12">
+        <textarea name="" id="" class="form-control" style="height: 30px;"></textarea>
+      </div>
+  </div>
+   </div>
+
+   <div class="form-group col-sm-5">
+    <div class="row">
+        <label class="col-sm-12 add-member-label">Attachment 1: </label>
+        <div class="col-sm-12">
+         <input type="file" class="" style="height: 35px; border: none;">
+        </div>
+    </div>
+     </div>
+
+     <div class="form-group col-sm-5">
+      <div class="row">
+          <label class="col-sm-12 add-member-label">Attachment 2: </label>
+          <div class="col-sm-12">
+            <input type="file" class="" style="height:35px; border: none;">
+          </div>
+      </div>
+       </div>
+
+
+
+  </div>
+
+
+</div>
+
+
+<div class="row">
+  <div class="col-sm-12">
+    <mat-dialog-actions class="justify-content-end mt-3" >
+      <button mat-raised-button class="btn-primary " (click)="close()">Go</button>
+      <button mat-raised-button class="btn-secondary " (click)="close()">Close</button>
+    
+    </mat-dialog-actions>
+    
+  </div>
+</div>

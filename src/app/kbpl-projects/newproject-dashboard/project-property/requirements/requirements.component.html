@@ -1,0 +1,574 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 p-0 ">
+      <h3 class=" mt-3 mb-3">I. SITE / ORDER DETAILS</h3>
+      <table class="table table-bordered mt-3">
+        <tbody>
+          <tr>
+            <td class="m-1" style="vertical-align: middle;"> Customer</td>
+            <td class="m-1" colspan="3">
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Enter Customer Name">
+            </td>
+          </tr>
+          <tr>
+            <td class="m-1" style="width: 150px !important; vertical-align: middle;">Unit</td>
+            <td class=" m-1" style="width: 150px !important;">
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Enter Unit">
+            </td>
+            <td class="m-1" style="width: 150px !important; vertical-align: middle;">Division</td>
+            <td class=" m-1" style="width: 150px !important;">
+              <select class="form-control" style="height: 37px;" placeholder="Select Division">
+                <option [value]="0">Boiler</option>
+                <option [value]="1">Turbine</option>
+                <option [value]="2">Boiler+Turbine</option>
+                <option [value]="3">Utility</option>
+                <option [value]="4">Others</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class="m-1" style="vertical-align: middle;">Work Order Number</td>
+            <td class=" m-1" colspan="3">
+              <input type="text" class="form-control p-1" style="height: 37px;" placeholder="Work Order Number">
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+      <table class="table table-bordered">
+
+        <thead class="tbl-head">
+          <tr>
+            <th class="text-center" colspan="5">Customer</th>
+          </tr>
+          <tr>
+            <th class="text-center" style="vertical-align: middle;">Name</th>
+            <th class="text-center" style="vertical-align: middle;">Designation</th>
+            <th class="text-center" style="vertical-align: middle;">Telephone</th>
+            <th class="text-center" style="vertical-align: middle;">Mobile</th>
+            <td class="text-center"><br><label class="label-bold">Action</label><br>
+              <i  class="fa fa-plus" 
+              (click)="allFields.push(1)" style="cursor:pointer"></i> </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor= "let item of allFields">
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Enter Name">
+
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Enter Designation">
+
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Enter telephone">
+
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Enter Mobile">
+
+            </td>
+            <td class=" text-center" style="vertical-align: middle;">
+              <a *ngIf="allFields.length > 1"><i class="fa fa-trash red" matTooltip="Delete" (click)="removeItem(i)" style="cursor: pointer;"></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class="mt-5 pt-4 mb-3">II. TEAM DETAILS & SITE PLANNING</h3>
+      <table class="table table-bordered">
+        <thead class="tbl-head">
+          <tr>
+            <th>Sl.No</th>
+            <th>Description of Work</th>
+            <th>Planned</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="vertical-align: middle;">1.</td>
+            <td style="vertical-align: middle;">Site Incharge</td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Enter Site-Incharge">
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">2.</td>
+            <td style="vertical-align: middle;">Hydrotest Incharge</td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Enter Hydr0test-Incharge">
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">3.</td>
+            <td style="vertical-align: middle;">QAP NO</td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Enter QAP NO">
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">4.</td>
+            <td style="vertical-align: middle;">Inch Diameter</td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Enter Inch Diameter">
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">5.</td>
+            <td style="vertical-align: middle;">Estimated Man Days</td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Enter Estimated Man Days">
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">6.</td>
+            <td style="vertical-align: middle;">Manpower Required</td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Enter Manpower Required">
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">7.</td>
+            <td style="vertical-align: middle;">Number of Days At Site</td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Enter Number of Days">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table table-bordered">
+        <tbody>
+          <tr class="tbl-head">
+            <td colspan="5" class="text-center " style="font-weight: bold;">
+              Planned
+            </td>
+          </tr>
+          <tr>
+            <td>Date of Starting from Factory</td>
+            <td>
+              <input class="form-control" style="height: 37px;" placeholder="MM/DD/YYYY" (keypress)="false"
+          [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" name="dt2">
+        <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
+            </td>
+          </tr>
+          <tr>
+            <td>Date of Work Start</td>
+            <td>
+              <input class="form-control" style="height: 37px;" placeholder="MM/DD/YYYY" (keypress)="false"
+              [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3" name="dt3">
+            <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>            </td>
+          </tr>
+          <tr>
+            <td>Date of Work Completion</td>
+            <td>
+              <input class="form-control" style="height: 37px;" placeholder="MM/DD/YYYY" (keypress)="false"
+              [owlDateTimeTrigger]="dt4" [owlDateTime]="dt4" name="dt4">
+            <owl-date-time [pickerType]="'calendar'" #dt4></owl-date-time>            </td>
+          </tr>
+          <tr>
+            <td>Date of Reaching Factory</td>
+            <td>
+              <input class="form-control" style="height: 37px;" placeholder="MM/DD/YYYY" (keypress)="false"
+              [owlDateTimeTrigger]="dt5" [owlDateTime]="dt5" name="dt5">
+            <owl-date-time [pickerType]="'calendar'" #dt5></owl-date-time>            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="mt-5 pt-4 mb-3">III. TEAM DETAILS & SITE PLANNING</h3>
+      <table class="table table-bordered">
+        <thead class="tbl-head">
+          <tr>
+            <th>S.NO</th>
+            <th>Event/Task</th>
+            <th>Required</th>
+            <th>Person Responsible</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td style="vertical-align: middle;">1.</td>
+            <td style="vertical-align: middle;">Manpower Gate Pass</td>
+            <td>
+              <select class="form-control" style="height: 37px;" placeholder="Select">
+                <option [value]="0">Select</option>
+                <option [value]="1">Yes</option>
+                <option [value]="2">No</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Person Responsible">
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">2.</td>
+            <td style="vertical-align: middle;">ESI and PF number / Challans </td>
+            <td>
+              <select class="form-control" style="height: 37px;" placeholder="Select">
+                <option [value]="0">Select</option>
+                <option [value]="1">Yes</option>
+                <option [value]="2">No</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Person Responsible">
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">3.</td>
+            <td style="vertical-align: middle;">Photographs of Employees </td>
+            <td>
+              <select class="form-control" style="height: 37px;" placeholder="Select">
+                <option [value]="0">Select</option>
+                <option [value]="1">Yes</option>
+                <option [value]="2">No</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Person Responsible">
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">4.</td>
+            <td style="vertical-align: middle;">EFCO ID proof, Other details - date of birth certificate etc.,
+            </td>
+            <td>
+              <select class="form-control" style="height: 37px;" placeholder="Select">
+                <option [value]="0">Select</option>
+                <option [value]="1">Yes</option>
+                <option [value]="2">No</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Person Responsible">
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">5.</td>
+            <td style="vertical-align: middle;">Plant specific statutory arrangement
+            </td>
+            <td>
+              <select class="form-control" style="height: 37px;" placeholder="Select">
+                <option [value]="0">Select</option>
+                <option [value]="1">Yes</option>
+                <option [value]="2">No</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Person Responsible">
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">6.</td>
+            <td style="vertical-align: middle;">Labour License
+            </td>
+            <td>
+              <select class="form-control" style="height: 37px;" placeholder="Select">
+                <option [value]="0">Select</option>
+                <option [value]="1">Yes</option>
+                <option [value]="2">No</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Person Responsible">
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">7.</td>
+            <td style="vertical-align: middle;">Security deposit
+            </td>
+            <td>
+              <select class="form-control" style="height: 37px;" placeholder="Select">
+                <option [value]="0">Select</option>
+                <option [value]="1">Yes</option>
+                <option [value]="2">No</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Person Responsible">
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">8.</td>
+            <td style="vertical-align: middle;">Physicial Fitness Certificate
+            </td>
+            <td>
+              <select class="form-control" style="height: 37px;" placeholder="Select">
+                <option [value]="0">Select</option>
+                <option [value]="1">Yes</option>
+                <option [value]="2">No</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Person Responsible">
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">9.</td>
+            <td style="vertical-align: middle;">Police verification, if required
+            </td>
+            <td>
+              <select class="form-control" style="height: 37px;" placeholder="Select">
+                <option [value]="0">Select</option>
+                <option [value]="1">Yes</option>
+                <option [value]="2">No</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Person Responsible">
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">10.</td>
+            <td style="vertical-align: middle;">Pay slip (if the persons don't have ESI)
+            </td>
+            <td>
+              <select class="form-control" style="height: 37px;" placeholder="Select">
+                <option [value]="0">Select</option>
+                <option [value]="1">Yes</option>
+                <option [value]="2">No</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Person Responsible">
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">11.</td>
+            <td style="vertical-align: middle;">Transit Insurance Policy
+            </td>
+            <td>
+              <select class="form-control" style="height: 37px;" placeholder="Select">
+                <option [value]="0">Select</option>
+                <option [value]="1">Yes</option>
+                <option [value]="2">No</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Person Responsible">
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">12.</td>
+            <td style="vertical-align: middle;">HUET/BIOSET certificates if any other certificates
+            </td>
+            <td>
+              <select class="form-control" style="height: 37px;" placeholder="Select">
+                <option [value]="0">Select</option>
+                <option [value]="1">Yes</option>
+                <option [value]="2">No</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Person Responsible">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class="mt-5 pt-4 mb-3">IV. JOB REQUIREMENTS </h3>
+      <table class="table table-bordered">
+        <thead class="tbl-head">
+          <tr>
+            <th>S.NO</th>
+            <th>Event/Task</th>
+            <th>Required</th>
+            <th>Person Responsible</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="vertical-align: middle;">1.</td>
+            <td style="vertical-align: middle;">Customer Scope Work reviewed against QAP, please make a list of
+              discrepancies if found.
+            </td>
+            <td>
+              <select class="form-control" style="height: 37px;" placeholder="Select">
+                <option [value]="0">Select</option>
+                <option [value]="1">Yes</option>
+                <option [value]="2">No</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Person Responsible">
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">2.</td>
+            <td style="vertical-align: middle;">Risk assessment & Contingency considered
+            </td>
+            <td>
+              <select class="form-control" style="height: 37px;" placeholder="Select">
+                <option [value]="0">Select</option>
+                <option [value]="1">Yes</option>
+                <option [value]="2">No</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Person Responsible">
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">3.</td>
+            <td style="vertical-align: middle;">Product Release Criteria
+            </td>
+            <td>
+              <select class="form-control" style="height: 37px;" placeholder="Select">
+                <option [value]="0">Select</option>
+                <option [value]="1">Yes</option>
+                <option [value]="2">No</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Person Responsible">
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">4.</td>
+            <td style="vertical-align: middle;">UT, X- Ray and Radiography
+            </td>
+            <td>
+              <select class="form-control" style="height: 37px;" placeholder="Select">
+                <option [value]="0">Select</option>
+                <option [value]="1">Yes</option>
+                <option [value]="2">No</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Person Responsible">
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">5.</td>
+            <td style="vertical-align: middle;">Other requirements which are not stated by the customer
+            </td>
+            <td>
+              <select class="form-control" style="height: 37px;" placeholder="Select">
+                <option [value]="0">Select</option>
+                <option [value]="1">Yes</option>
+                <option [value]="2">No</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Person Responsible">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class="mt-5 pt-4 mb-3">V. TRAVEL & STAY ARRANGEMENTS</h3>
+
+      <table class="table table-bordered">
+        <thead class="tbl-head">
+          <tr>
+            <th>S.No</th>
+            <th>Event/Task</th>
+            <th>Criteria</th>
+            <th>Person Responsible</th>
+            <th>By What Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="vertical-align: middle;">1.</td>
+            <td style="vertical-align: middle;">Travel Arrangements</td>
+            <td>
+              <select class="form-control" style="height: 37px;" placeholder="Select">
+                <option [value]="0">Select</option>
+                <option [value]="1">EFCO Own Vehicle</option>
+                <option [value]="2">Train</option>
+                <option [value]="3">Bus</option>
+                <option [value]="4">Flight</option>
+                <option [value]="5">Auto</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Enter Person Responsible">
+
+            </td>
+            <td>
+              <input class="form-control" style="height: 37px;" placeholder="MM/DD/YYYY" (keypress)="false"
+              [owlDateTimeTrigger]="dt9" [owlDateTime]="dt9" name="dt9">
+            <owl-date-time [pickerType]="'calendar'" #dt9></owl-date-time>
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">2.</td>
+            <td style="vertical-align: middle;">Travel Arrangements Return Trip
+            </td>
+            <td>
+              <select class="form-control" style="height: 37px;" placeholder="Select">
+                <option [value]="0">Select</option>
+                <option [value]="1">EFCO Own Vehicle</option>
+                <option [value]="2">Train</option>
+                <option [value]="3">Bus</option>
+                <option [value]="4">Flight</option>
+                <option [value]="5">Auto</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Enter Person Responsible">
+
+            </td>
+            <td>
+              <input class="form-control" style="height: 37px;" placeholder="MM/DD/YYYY" (keypress)="false"
+              [owlDateTimeTrigger]="dt8" [owlDateTime]="dt8" name="dt8">
+            <owl-date-time [pickerType]="'calendar'" #dt8></owl-date-time>
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">3.</td>
+            <td style="vertical-align: middle;">Accommodation
+            </td>
+            <td>
+              <select class="form-control" style="height: 37px;" placeholder="Select">
+                <option [value]="0">Select</option>
+                <option [value]="1">EFCO Own Vehicle</option>
+                <option [value]="2">Train</option>
+                <option [value]="3">Bus</option>
+                <option [value]="4">Flight</option>
+                <option [value]="5">Auto</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Enter Person Responsible">
+
+            </td>
+            <td>
+              <input class="form-control" style="height: 37px;" placeholder="MM/DD/YYYY" (keypress)="false"
+              [owlDateTimeTrigger]="dt7" [owlDateTime]="dt7" name="dt7">
+            <owl-date-time [pickerType]="'calendar'" #dt7></owl-date-time>
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle;">4.</td>
+            <td style="vertical-align: middle;">Transportation at Site
+            </td>
+            <td>
+              <select class="form-control" style="height: 37px;" placeholder="Select">
+                <option [value]="0">Select</option>
+                <option [value]="1">EFCO Own Vehicle</option>
+                <option [value]="2">Train</option>
+                <option [value]="3">Bus</option>
+                <option [value]="4">Flight</option>
+                <option [value]="5">Auto</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" class="form-control" style="height: 37px;" placeholder="Enter Person Responsible">
+
+            </td>
+            <td>
+              <input class="form-control" style="height: 37px;" placeholder="MM/DD/YYYY" (keypress)="false"
+              [owlDateTimeTrigger]="dt6" [owlDateTime]="dt6" name="dt6">
+            <owl-date-time [pickerType]="'calendar'" #dt6></owl-date-time>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-12 mt-3 p-0  text-center">
+      <button class="btn btn-primary add-hover" style="font-size:larger !important;" routerLink="/joborders/joborder-dashboard/POW/financial-details">Save &
+        Continue</button>
+    </div>
+  </div>
+</div>

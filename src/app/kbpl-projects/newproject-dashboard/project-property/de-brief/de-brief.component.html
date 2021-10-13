@@ -1,0 +1,140 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3 class=" mt-5 mb-3">VII. DETAILS OF VALVES TO BE RECONDITIONED</h3>
+      <table class="table table-bordered">
+        <thead class="theadcolor tbl-head">
+          <tr>
+            <td class="text-center" rowspan="2"><br><label class="label-bold">S.No</label></td>
+            <td class="text-center" rowspan="2"><br><label class="label-bold">Description</label></td>
+            <td class="text-center" style="width:100px" rowspan="2"><br><label class="label-bold">Size</label></td>
+            <td class="text-center" rowspan="2"><br><label class="label-bold">Class</label></td>
+            <td class="text-center" colspan="3"><label class="label-bold">Planned</label></td>
+            <td class="text-center" rowspan="2"><br><label class="label-bold">Action</label><br>
+              <i  class="fa fa-plus" 
+              (click)="allFields.push(1)" ></i> </td>
+
+          </tr>
+          <tr>
+            <td class="text-center"><label class="label-bold">Multiplying Factor</label></td>
+            <td class="text-center"><label class="label-bold">Qty</label></td>
+            <td class="text-center"><label class="label-bold">Inch Dia</label></td>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr *ngFor="let item of allFields;let i = index;">
+            <td class="" style="vertical-align: middle;">
+              {{i+1}}.
+            </td>
+            
+            <td>
+              <input type="text" class="form-control">
+            </td>
+            <td style="vertical-align: middle;">
+              <input type="number" class="form-control">
+            </td>
+            <td>
+              <select class="form-control ddlClass" id="ddlClass-0">
+                <option value="0" selected="">Select</option>
+                <option value="66">150#</option>
+                <option value="67">300#</option>
+                <option value="68">600#</option>
+                <option value="69">900#</option>
+                <option value="70">1500#</option>
+                <option value="173">2500#</option>
+                <option value="203">2680#</option>
+              </select>
+            </td>
+            <td>
+              <select class="form-control ddlFactor" id="ddlFactor-0">
+                <option value="0" selected="">Select</option>
+                <option value="71">0.5</option>
+                <option value="72">0.75</option>
+                <option value="73">1</option>
+                <option value="74">1.5</option>
+                <option value="75">2</option>
+              </select>
+            </td>
+            
+            <td><input type="text" class="form-control"></td>
+            <td> <input type="text" class="form-control"></td>
+            <td class=" text-center" style="vertical-align: middle;">
+              <a *ngIf="allFields.length > 1"><i class="fa fa-trash red" matTooltip="Delete Claim" (click)="removeItem(i)" style="cursor: pointer;"></i></a>
+            </td>
+          </tr>
+
+          <tr class="trTotal">
+            <td class="label-bold text-center" style="vertical-align: middle;" colspan="4"><label>Total</label></td>
+            <td></td>
+            <td> <input type="text" class="form-control"></td>
+            <td> <input type="text" class="form-control"></td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class=" mt-5 mb-3">VIII. MACHINES / TOOLS & TACKLES REQUIRED</h3>
+      <table class="table table-bordered" id="tblMachinesNewRow">
+        <thead class="theadcolor tbl-head">
+          <tr>
+            <td class="text-center"><br><label class="label-bold">S.No</label></td>
+            <td class="text-center" style="vertical-align: middle;"><label class="label-bold">Machines / Tools & Tackles </label></td>
+            <td class="text-center" style="vertical-align: middle;"><label class="label-bold">Quantity</label></td>
+            <td class="text-center" rowspan="2"><br><label class="label-bold">Action</label><br>
+              <i  class="fa fa-plus"
+              (click)="allFields1.push(1)" ></i> </td>
+
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr *ngFor="let item of allFields1;let i = index;">
+            <td class="" style="vertical-align: middle;">
+              {{i+1}}.
+            </td>
+            <td style="vertical-align: middle;"> <input type="text" class="form-control">
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+            <td class=" text-center" style="vertical-align: middle;">
+              <a *ngIf="allFields1.length > 1"><i class="fa fa-trash red" matTooltip="Delete Claim" (click)="removeItem1(i)" style="cursor: pointer;"></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class=" mt-5 mb-3">IX. LAPPING FOLIO</h3>
+      <table class="table table-bordered" id="tblMachinesNewRow">
+        <thead class="theadcolor tbl-head">
+          <tr>
+            <th>S.No</th>
+            <td class="text-center"><label style="vertical-align: middle;" class="label-bold">Description</label></td>
+            <td class="text-center"><label style="vertical-align: middle;" class="label-bold">As per plan of work</label></td>
+            <td class="text-center" rowspan="2"><br><label class="label-bold">Action</label><br>
+              <i  class="fa fa-plus" 
+              (click)="allFields2.push(1)" ></i> </td>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr *ngFor="let item of allFields2;let i = index;">
+            <td style="vertical-align: middle;">
+              {{i+1}}.
+            </td>
+            <td style="vertical-align: middle;"><input type="text" class="form-control">
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+            <td class=" text-center" style="vertical-align: middle;">
+              <a *ngIf="allFields2.length > 1"><i class="fa fa-trash red" matTooltip="Delete Claim" (click)="removeItem2(i)" style="cursor: pointer;"></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-12 mt-3 p-0  text-center">
+      <button class="btn btn-primary add-hover" style="font-size:larger !important;"  routerLink="/joborders/joborder-dashboard/POW/de-brief1">Save &
+        Continue</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,139 @@
+<div fxLayout="row wrap" #resizedDiv>
+  <div class="flex-p w-100 sizeAlign">
+    <div class="row" style="margin-bottom:24px;">
+      <div class="col-xs-6 ">
+      </div>
+      <div class="col-xs-6 ">
+        <div class="flex-p">
+          <button mat-raised-button class="pull-right  btn-primary" (click)="openUserDialog(null)">
+            <mat-icon>add</mat-icon> Add Document
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- <div fxLayout="row wrap" *ngIf="filterToggle">
+      <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+        <mat-card class="filter">
+          <mat-card-content>
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass">
+                  Keyword:
+                </div>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" placeholder="Enter Keyword">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass">
+                  Resource Type:
+                </div>
+                <div class="col-sm-8">
+                  <mat-select name="" id="" class="form-control" placeholder="Select Resource type">
+                    <mat-option [value]=0>Raw Materials</mat-option>
+                    <mat-option [value]=1>Machinery</mat-option>
+                    <mat-option [value]=2>Plants</mat-option>
+                    <mat-option [value]=3>Tools</mat-option>
+                    <mat-option [value]=4>No. of Workers</mat-option>
+                    <mat-option [value]=5>Subcontractors</mat-option>
+                    <mat-option [value]=6>Agencies</mat-option>
+
+                  </mat-select>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass">
+                  Resource Name:
+                </div>
+                <div class="col-sm-8">
+                  <mat-select class="form-control" placeholder="Search by Resource name">
+                    <mat-option>Crane</mat-option>
+                    <mat-option>Screws</mat-option>
+                    <mat-option>EarthMover</mat-option>
+                    <mat-option>Concreat Mixer</mat-option>
+                    <mat-option>Power Crane</mat-option>
+                  </mat-select>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row" style="padding-top:10px !important">
+
+              <div class="col-lg-1" style="margin-left:80%!important;">
+                <button mat-raised-button class="pull-right btn-primary">
+                  <mat-icon>youtube_searched_for</mat-icon> Search
+                </button>
+              </div>
+              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+                <button mat-raised-button style="background-color:#37474f; color:#fff !important">
+                  <mat-icon>settings_backup_restore</mat-icon> Clear
+                </button>
+              </div>
+              <a (click)="filterToggle = !filterToggle" class="pull-right"
+                style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+              </a>
+
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div> -->
+
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="grid-table-container" class="table-responsive">
+          <table matSort id="example2" class="table table-bordered table-hover">
+            <thead class="tbl-head">
+              <tr>
+
+                <th>Document Title</th>
+                <th>Variant Ref</th>
+                <th>Variant Name</th>
+                <th>Description</th>
+                <th class="text-center">Version Number</th>
+                <th class="text-center">Current Version</th>
+                <th class="text-center">Previous Version</th>
+                <th>Version Remarks</th>
+                <th class="text-center" style="width: 114px;">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+
+                <td>{{item.doc }}</td>
+                <td>{{item.variantRef }}</td>
+                <td>{{item.variantName }}</td>
+                <td>{{item.des }}</td>
+                <td class="text-center">{{item.verNum }}</td>
+                <td class="text-center"><a href="http://africau.edu/images/default/sample.pdf" target="_blank">View</a></td>
+                <td class="text-center"><a (click)="openpreviousDialog('add')" style="color:#007ad9;cursor:pointer;">{{item.preVer }}</a></td>
+                <td>{{item.verRem }}</td>
+                
+                <td class="text-center editDel">
+                  <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Item"
+                    (click)="opencontactDialog1()">
+
+                    <i class="fa fa-edit" style="color: cornflowerblue; font-size: medium;"></i>
+                  </a>
+                  <a style="cursor: pointer;margin-right:10px; " matTooltip="Append New Version" (click)="openNewDialog('add')">
+                    <i class="fa fa-plus" style="color: cornflowerblue; font-size: medium;"></i>
+                </a>
+                  <a><i class="fa fa-trash red" matTooltip="Delete Item" style="cursor: pointer; font-size: medium;"></i></a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,117 @@
+.margin-bottom-8{
+    margin-bottom: 8px;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    /* margin: .25em 0; */
+    margin: 0px !important;
+}
+
+.margin-top-10{
+    margin-top: 10px;
+}
+
+.color-red{
+    color: red !important;
+}
+
+.color-green{
+    color: green;
+}
+
+.color-grey{
+    color: grey;
+}
+
+.edit-icon{
+    margin-right: 0px !important;
+}
+
+.blue {
+    color: rgb(36, 97, 177) !important;
+}
+
+.green {
+    color: rgb(18, 161, 83) !important;
+}
+
+.gray {
+    color: gray !important;
+}
+
+.status-icon{
+    cursor: pointer;
+    font-size: 21px;
+    vertical-align: middle;
+}
+
+
+::ng-deep .ui-messages-close>.pi-times {
+    vertical-align: middle;
+}
+
+ ::ng-deep .ui-messages {
+    border: 1px solid;
+    margin: 0 0 0 0 !important;
+    padding: 1em 1em 1em .5em !important;
+    position: relative;
+}
+
+.b-n{
+    color: #2196f3 !important;
+  }
+  .g-n{
+    color: #5d5d5d !important;
+  }
+  .r-n{
+    color: red !important;
+  }
+
+  .custom-layout {
+    // background : linear-gradient(248deg, rgb(58, 44, 137) 15%, rgba(33,109,181,1) 85%) !important;
+    background : linear-gradient(248deg, #282775 15%, rgba(33,109,181,1) 85%) !important;
+    color: #fff !important;
+    padding-bottom: 10px !important;
+}
+::ng-deep .customAccordians>.ui-accordion>p-accordiontab>.ui-accordion-header {
+    margin-bottom: 9px !important;
+    width: 100% !important;
+}
+
+
+
+.unAwardedClass{
+    color: red !important;
+    cursor: pointer !important;
+}
+
+.thead-color {
+    background: #50636d !important;
+    color: #fff !important;
+}
+
+// ::ng-deep .expenses-new-p>.ui-accordion-header>a{
+// background-color: #b3d8f4 !important;
+// }
+// ::ng-deep .expenses-new-p>.ui-accordion-header>a{
+//     color: black !important;
+//     border: 0 !important;
+// }
+::ng-deep .expenses-new-p>.ui-accordion-content-wrapper>.ui-accordion-content{
+padding: 0px !important;
+}
+body .ui-accordion .ui-accordion-header a {
+    padding: 0.571em 1em;
+    border: 1px solid #c8c8c8;
+    color: #333333;
+    background-color: #fbe9ae!important;
+    color: #333333;
+    font-weight: 400;
+    transition: background-color 0.2s;
+}
+.mine {
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+    background-color: #e6e6e6 !important;
+}

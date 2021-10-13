@@ -1,0 +1,262 @@
+<!-- <div class="row" style="margin-top:20px">
+  <div class="col-xs-12" style="margin-left:10px">
+    <div id="grid-table-container" class="table-responsive" style="width:99.2%">
+      <table matSort id="example2" class="table table-bordered table-hover">
+        <thead class="tbl-head ">
+          <tr>
+            <th class="text-center">Select</th>
+            <th class="text-center">Project Code</th>
+            <th class="text-center">Client</th> 
+            <th class="text-left">Job Title</th>
+            
+            <th class="text-center">Contact Name</th>
+            <th class="text-center">Email</th>
+            <th class="text-center">Phone</th>
+            <th class="text-center" style="width:100px">Start Date</th>
+            <th class="text-center" style="width:100px">Due Date</th>
+            <th class="text-center">ETA</th>
+            <th class="vert-align-mid" style="width: 107px;">Completion</th>
+            <th class="text-center">Status</th>
+
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of values;let i = index"> 
+            <td class="text-center" style="vertical-align: middle;">
+              <mat-checkbox></mat-checkbox>
+            </td>
+            <td style="vertical-align: middle;">
+              <p routerLink="/joborders/newproject-dashboard/" class="mt-3" target="_blank"
+              style="color: cornflowerblue;cursor: pointer;">{{item.projectmanager}}</p>
+            </td>
+            <td style="vertical-align: middle;" class="text-center">
+              {{item.projectname}}
+            </td>
+
+            <td class="text-left" style="vertical-align: middle;">{{item.contracts}}
+            </td>
+           
+            
+
+
+            <td class="text-center" style="vertical-align: middle;">
+              {{item.contact}}
+            </td>
+            <td class="text-center" style="vertical-align: middle;">
+              {{item.email}} 
+
+            </td>
+            <td class="text-center" style="vertical-align: middle;">
+              {{item.phone}}
+
+            </td>
+
+            <td class="text-center" style="vertical-align: middle;">
+              {{item.startDate}}
+
+            </td>
+            <td class="text-center" style="vertical-align: middle;">
+              {{item.targetDate}}
+
+            </td>
+            <td class="text-center !important" style="vertical-align: middle;color: white;">
+              <div class="etadatediff">
+                {{item.eta}}
+              </div>
+            </td>
+            <td class="text-center" style="vertical-align: middle;">
+              <div class="row">
+                <div class="col-sm-12 text-center" style="vertical-align: middle;">
+                  <div class="row my-4">
+                    <div class="col-sm-12" style="vertical-align: middle;">
+                      <div class=" card-header rounded card-header-first"
+                        style="background-color: transparent;border: 0px;">
+                        <div (click)="changeProgress(item.focus,i)" class="circle">
+                          <div *ngIf="!item.focus || item.focus == 0">
+                            <img src="assets/outlook/focus_3.png" alt="new">
+                          </div>
+                          <div *ngIf="item.focus == 25">
+                            <img src="assets/outlook/focus_4.png" alt="weak">
+                          </div>
+                          <div *ngIf="item.focus == 50">
+                            <img src="assets/outlook/focus_0.png" alt="okay">
+                          </div>
+                          <div *ngIf="item.focus == 75">
+                            <img src="assets/outlook/focus_1.png" alt="good">
+                          </div>
+                          <div *ngIf="item.focus == 100">
+                            <img src="assets/outlook/focus_2.png" alt="excellent">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+
+
+            <td style="text-align: center!important;vertical-align: middle;">
+              <mat-select [style.background]="item.stageColour" style="min-width: 120px;"
+                [(value)]="item.Status" placeholder="--Select Stage --" class='form-control'>
+                <ng-container *ngFor='let option of statusOptions'>
+                  <mat-option [style.background]="option.colorCode" class='option' [value]="option.value">
+                    {{option.name}}</mat-option>
+                </ng-container>
+              </mat-select>
+            </td>
+
+          
+
+          </tr>
+
+        </tbody>
+      </table>
+      <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+        [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+</div> -->
+
+<div class="row m-0 p-0" style="margin-top:20px">
+  <div class="col-sm-12 m-0 p-0" >
+    <div id="grid-table-container" class="table-responsive" style="width:100%">
+      <table matSort id="example2" class="table table-bordered table-hover">
+        <thead class="tbl-head ">
+          <tr>
+            <th class="text-center">Select</th>
+            <th class="text-center">Project Code</th>
+            <th class="text-center">Client</th>
+            <th class="text-left">Job Title</th>
+            
+            <th class="text-center">Contact Name</th>
+            <th class="text-center">Email</th>
+            <th class="text-center">Phone</th>
+            <th class="text-center" style="width:100px">Start Date</th>
+            <th class="text-center" style="width:100px">Due Date</th>
+            <th class="text-center">ETA</th>
+            <th class="vert-align-mid" style="width: 107px;">Completion</th>
+            <th class="text-center">Job Card</th>
+            <th class="text-center">Team</th>
+            <th class="text-center">POW</th>
+            <th >Notes</th>
+
+            <th class="vert-align-mid">Work Progress</th>
+            <th class="text-center">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of values;let i = index"> 
+            <td class="text-center" style="vertical-align: middle;">
+              <mat-checkbox></mat-checkbox>
+            </td>
+            <td style="vertical-align: middle;">
+              <p routerLink="/joborders/joborder-dashboard/" class="mt-3" target="_blank"
+              style="color: cornflowerblue;cursor: pointer;">{{item.projectmanager}}</p>
+            </td>
+            <td style="vertical-align: middle;" class="text-center">
+              {{item.projectname}}
+            </td>
+
+            <td class="text-left" style="vertical-align: middle;">{{item.contracts}}
+            </td>
+           
+            
+
+
+            <td class="text-center" style="vertical-align: middle;">
+              {{item.contact}}
+            </td>
+            <td class="text-center" style="vertical-align: middle;">
+              {{item.email}} 
+
+            </td>
+            <td class="text-center" style="vertical-align: middle;">
+              {{item.phone}}
+
+            </td>
+
+            <td class="text-center" style="vertical-align: middle;">
+              {{item.startDate}}
+
+            </td>
+            <td class="text-center" style="vertical-align: middle;">
+              {{item.targetDate}}
+
+            </td>
+            <td class="text-center !important" style="vertical-align: middle;color: white;">
+              <div class="etadatediff">
+                {{item.eta}}
+              </div> 
+            </td>
+            <td class="text-center" style="vertical-align: middle;">
+              <div class="row">
+                <div class="col-sm-12 text-center" style="vertical-align: middle;">
+                  <div class="row my-4">
+                    <div class="col-sm-12" style="vertical-align: middle;">
+                      <div class=" card-header rounded card-header-first"
+                        style="background-color: transparent;border: 0px;">
+                        <div (click)="changeProgress(item.focus,i)" class="circle">
+                          <div *ngIf="!item.focus || item.focus == 0">
+                            <img src="assets/outlook/focus_3.png" alt="new">
+                          </div>
+                          <div *ngIf="item.focus == 25">
+                            <img src="assets/outlook/focus_4.png" alt="weak">
+                          </div>
+                          <div *ngIf="item.focus == 50">
+                            <img src="assets/outlook/focus_0.png" alt="okay">
+                          </div>
+                          <div *ngIf="item.focus == 75">
+                            <img src="assets/outlook/focus_1.png" alt="good">
+                          </div>
+                          <div *ngIf="item.focus == 100">
+                            <img src="assets/outlook/focus_2.png" alt="excellent">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="text-center" style="color: #007ad9;vertical-align: middle; cursor: pointer;" routerLink="/joborders/joborder-dashboard/jobcards">
+              {{item.jobcard}}
+            </td>
+            <td class="text-center" style="color: #007ad9;vertical-align: middle; cursor: pointer;" routerLink="/joborders/joborder-dashboard/team">
+              {{item.team}}
+            </td>
+            <td class="text-center" style="color: #007ad9;vertical-align: middle; cursor: pointer;" routerLink="/joborders/joborder-dashboard/POW">
+              View
+            </td>
+            <td  style="vertical-align: middle;">
+              {{item.notes}}
+
+            </td>
+            <td  class="text-center"  style="color: #007ad9;vertical-align: middle; cursor: pointer;" (click)="  downloadPdf()" >
+              Download
+            </td>
+            <td style="text-align: center!important;vertical-align: middle;">
+              <mat-select [style.background]="item.stageColour" style="min-width: 120px;"
+                [(value)]="item.Status" placeholder="--Select Stage --" class='form-control'>
+                <ng-container *ngFor='let option of statusOptions'>
+                  <mat-option [style.background]="option.colorCode" class='option' [value]="option.value">
+                    {{option.name}}</mat-option>
+                </ng-container>
+              </mat-select>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+      <button class="mine" mat-fab (click)="scrollGrid('right');">
+        <mat-icon style="color:#37474f">fast_forward</mat-icon>
+      </button>
+      <button class="mine" mat-fab style="margin-right: 78px !important;" (click)="scrollGrid('left');">
+        <mat-icon style="color:#37474f">fast_rewind</mat-icon>
+      </button>
+      <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+        [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+</div>

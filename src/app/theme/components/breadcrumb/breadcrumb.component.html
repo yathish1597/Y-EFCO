@@ -1,0 +1,13 @@
+<div fxLayout="row wrap" class="breadcrumb" *ngIf="router.url != '/'">
+    <div fxFlex="100" class="flex-p">
+        <h2 *ngIf="!description[moduleTitle][subTitle]" style="margin-top:0px;margin-bottom: 10px;font-weight:700; font-size: 25px !important">{{moduleTitle||'Dashboard'}}</h2>
+        <h2 *ngIf="description[moduleTitle][subTitle]" style="margin-top:0px;margin-bottom:15px;font-weight:400;">{{subTitle||'Dashboard'}}</h2>
+        <mat-card fxLayout="row" class="breadcrumb helptext bc">
+            <div fxFlex="100" class="flex-p" style="margin-bottom: 8px;">
+                <span *ngIf="!description[moduleTitle][subTitle]" class="page-title nomargin"> {{description[moduleTitle] || description['Dashboard']}} </span>
+                <span *ngIf="description[moduleTitle][subTitle]" class="page-title nomargin">{{description[moduleTitle][subTitle]}}</span>
+            </div>
+        </mat-card>
+
+    </div>
+</div>

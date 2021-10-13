@@ -1,0 +1,74 @@
+<h3 class="custom-header btn-primary" style="font-weight: 300; margin-bottom: 10px !important;" mat-dialog-title>
+    {{data ? 'Edit' : 'Add'}} Consumable
+</h3>
+<form>
+
+ <div mat-dialog-content>
+
+  <div class="">
+
+    <div class="row">
+        <label class="control-label col-sm-4 add-member-label">Material Code: </label>
+        <div class="col-sm-8 margin-bottom-15px">
+            <input type="text" class="form-control"  placeholder="Enter Material Code">
+        </div>
+    </div>
+    <div class="row mt-3">
+        
+    <label class="control-label col-sm-4 add-member-label">Description: </label>
+    <div class="col-sm-8 margin-bottom-15px">
+        <input type="text" class="form-control"  placeholder="Enter Description">
+    </div>
+
+    </div>
+    <div class="row mt-3">
+        
+    <label class="control-label col-sm-4 add-member-label">Size: </label>
+    <div class="col-sm-8 margin-bottom-15px">
+        <input type="text" class="form-control"  placeholder="Enter Size">
+    </div>
+
+    </div>
+    <div class="row mt-3">
+        
+    <label class="control-label col-sm-4 add-member-label">Rate: </label>
+    <div class="col-sm-8 margin-bottom-15px">
+        <input type="text" class="form-control"  placeholder="Enter Rate">
+    </div>
+    
+    </div>
+    <div class="row mt-3">
+        
+
+    <label class="control-label col-sm-4 add-member-label">UOM: </label>
+    <div class="col-sm-8 margin-bottom-15px">
+        <input type="text" class="form-control"  placeholder="Enter UOM">
+    </div>
+
+    </div>
+
+
+  
+</div>
+     
+ </div>
+
+ <mat-dialog-actions align="end" style="padding-top: 17px !important;">
+    <div class="row">
+        <div class="col-sm-12 p-0 pb-3">
+            <button 
+            (click)="close()" mat-raised-button style="background: #286ba5 !important" class="add-hover btn-success">
+              
+              <span>&nbsp;Save</span>
+          </button>
+     
+          <button (click)="close()" mat-raised-button class="add-dark-hover btn-default mr-2">
+           
+              <span>&nbsp;Cancel</span>
+          </button>
+        </div>
+    </div>
+    
+
+ </mat-dialog-actions>
+</form>

@@ -1,0 +1,33 @@
+<div class="row-wrap">
+    <div class="w-100">
+      <div fxLayout="row">
+        <div class="col-xs-12">
+          <div class="pills">
+            <ul class="nav nav-pills" style="margin-top: 15px;margin-bottom: 18px;">
+  
+              <li routerLinkActive="active">
+                <a mat-raised-button class="navtabWidth"
+                    routerLink="/dashboard/jobs">
+                  Jobs
+                </a>
+              </li>
+              <li routerLinkActive="active">
+                <a mat-raised-button class="navtabWidth"
+                    routerLink="/dashboard/claims">
+                  Claims
+                </a>
+              </li>
+              <li routerLinkActive="active">
+                <a mat-raised-button class="navtabWidth"
+                     routerLink="/dashboard/dailyreport">
+                  Daily Report
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+  <router-outlet></router-outlet>

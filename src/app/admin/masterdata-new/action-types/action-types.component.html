@@ -1,0 +1,63 @@
+<div fxLayout="row wrap">
+  <div class="w-100">
+      
+      <div class="row wrap my-4">
+          <div class="col-xs-12">
+                  
+              <button mat-raised-button class="pull-right add-hover btn-success margin-right-10" (click)="openActionTypeDialog(null)">
+                  <mat-icon>add</mat-icon> Add Action Type
+              </button>
+              <div class="col-sm-6 pull-right">
+                  <mat-select class='select-option form-control pull-right' placeholder="Any" style="width: 40%;margin:5px 10px 0 10px">
+                      <mat-option [value]="null">Any</mat-option>
+                      <mat-option [value]="true">Active</mat-option>
+                      <mat-option [value]="false">Inactive</mat-option>
+                  </mat-select>
+                  <label class="pull-right margin-top-10">Select Status :</label>
+              </div>
+              
+          </div>
+      </div>
+      
+      <div class="col-sm-12 margin-top-10" style="padding-left: 20px; padding-right: 10px;">
+          <div class="table-responsive">
+              <table matSort matSortActive="JobCode" matSortDirection="asc" class="table table-bordered table-hover">
+                  <thead class="tbl-head">
+                      <tr class="tr-grid-header">
+                          <th style="width: 200px;">Action Type</th>
+                          <th class="text-center" style="width: 200px;">Status</th>
+                          <th class="text-center" style="width: 200px;">Actions</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let item of items">
+
+                          <td>{{item.code}}</td>
+                          
+                          <td class="pad-left inner-screen text-center">
+                              <a>
+                                  <span *ngIf="!item.status" style="color: red">Inactive</span>
+                                  <span *ngIf="item.status">Active</span>
+                              </a>
+                          </td>
+
+                          <td class="text-center">
+                              <a  class="edit-icon" (click)="openActionTypeDialog(null)">
+                                  <i class="fa fa-edit"></i>
+                              </a>
+                              <a 
+                                  class="delete-icon">
+                                  <i class="fa fa-trash red"></i>
+                              </a>
+
+                          </td>
+
+                      </tr>
+
+                      </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>
+

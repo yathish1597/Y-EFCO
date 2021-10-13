@@ -1,0 +1,121 @@
+#actioncalendar::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.tab {
+    background: #e0e0e0 !important;
+    margin-right: 8px;
+    padding: 0px 10px;
+}
+
+.tab:hover {
+    background: #50636d !important;
+    color: white !important;
+}
+
+.tab-active {
+    background: rgb(202, 164, 164) !important;
+    color: white !important;
+}
+
+.tabActive {
+    background: #50636d !important;
+    color: #fff !important;
+}
+.ui-inputtext.ui-widget.ui-state-default.ui-corner-all {
+    width: 82% !important;
+}
+.space-tab-master {
+    font-weight: 700;
+    margin: 6px;
+    //cursor: move;
+    padding-bottom: 9px !important;
+    padding-top: 9px !important;
+    color: #000;
+    // background: #355b82 !important;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 2px 18px -6px rgba(41, 36, 41, 1) !important;
+    -moz-box-shadow: 0px 2px 18px -6px rgba(41, 36, 41, 1) !important;
+    box-shadow: 0px 2px 18px -6px rgba(41, 36, 41, 1) !important;
+}
+
+.move-handle {
+    z-index: 2;
+    position: absolute;
+    right: 2px;
+    color: #757571;
+    filter: opacity(0.5);
+    top: 2px;
+    cursor: move;
+}
+.total-card {
+    background: #f8edc3;
+    display: flex;
+    justify-content: space-around;
+}
+.space-tab {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    // cursor: move;
+    width: 225px;
+    padding: 7px;
+    font-weight: 700;
+    text-align: center;
+    color: #000;
+    //background: #326b9d !important;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 2px 18px -6px rgba(41, 36, 41, 1) !important;
+    -moz-box-shadow: 0px 2px 18px -6px rgba(41, 36, 41, 1) !important;
+    box-shadow: 0px 2px 18px -6px rgba(41, 36, 41, 1) !important;
+}
+.fixed-h-w-s {
+    display: block;
+    height: 650px !important;
+    overflow-y: auto;
+}
+
+.remove_top_bottom_padding.Active {
+    background: #686968fa !important;
+    color: white !important;
+}
+.btn-success-gray {
+    background: #686968fa !important;
+    color: white !important;
+}
+
+.pills > .nav > li.active > a {
+    background: #50636d !important;
+    color: #fff;
+}
+
+.remove_top_bottom_padding.mat-raised-button {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background: #e0e0e0;
+}
+
+.btn-success-help {
+    background: #ecdf29 !important;
+    color: black !important;
+}
+
+.bulk-action {
+    width: 18%;
+    height: 40px !important;
+    background: #e0e0e0;
+}
+
+.filterBtns:hover {
+    color: #ffffff !important;
+    background: #70818a !important;
+}
+
+.h-40 {
+    height: 40px;
+}
+
+.toggle-active {
+    color: #fff !important;
+    background: #007ad9fa !important;
+}

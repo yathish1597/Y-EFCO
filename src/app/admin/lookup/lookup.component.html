@@ -1,0 +1,72 @@
+<div class="container-fluid">
+    <div fxLayout="row wrap" #resizedDiv>
+        <div class="flex-p w-100">
+
+            <div class="row" style="margin-bottom:14px;">
+                <div class="col-sm-6">
+                    <div class="w-100 flex-p">
+                    </div>
+                </div>
+                <div class="col-sm-6 p-0 m-0">
+                    <div class="w-100 flex-p">
+                        <!-- <button mat-raised-button class="pull-right add-hover-help btn-success-help"
+                      style="margin-left: 10px; background-color: rgb(255, 255, 1);">
+                      <mat-icon>help_outline</mat-icon> Help
+                  </button> -->
+                        <button mat-raised-button class="pull-right btn-primary" (click)="openUserDialog('Add')">
+                            <mat-icon>add</mat-icon>&nbsp;Add
+                            Lookup
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row p-0 m-0">
+            <div class="col-sm-12 p-0 m-0">
+                <div class="">
+                    <table id="example2" class="table table-bordered table-hover table-striped">
+                        <thead class="tbl-head">
+                            <tr class="tr-grid-header">
+                                <th>Code</th>
+                                <th>Lookups</th>
+                                <th style="text-align: center !important;">Status</th>
+                                <th style="text-align: center !important;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of tableList">
+                                <td>{{item.code}}</td>
+                                <td>{{item.options}}</td>
+                                <td style="text-align: center !important;">
+                                    <a [ngStyle]="{'color': item.status? 'blue' : 'red','cursor':'pointer'}"
+                                        mwlConfirmationPopover [popoverTitle]="popoverStatusTitle"
+                                        [popoverMessage]="popoverStatusMessage" placement="left"
+                                        (confirm)="saveStatus();item.status=!item.status"
+                                        (cancel)="cancelClicked = true">
+                                        {{item.status?'Active':'Inactive'}}
+                                    </a>
+                                </td>
+                                <td style="text-align: center !important;">
+                                    <a (click)="openUserDialog('Edit')" style="margin-right: 10px; cursor: pointer;">
+                                        <i title="Edit Lookup" class="fa fa-edit blue"></i>
+                                    </a>
+                                    <a mwlConfirmationPopover [popoverTitle]="popoverTitle"
+                                        [popoverMessage]="popoverMessage" placement="left" (confirm)="deleteLookup()"
+                                        (cancel)="cancelClicked = true">
+                                        <i style="cursor: pointer;" title="Delete Lookup" class="fa fa-trash red"></i>
+                                    </a>
+
+
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </div>
+</div>

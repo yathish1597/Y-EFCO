@@ -1,0 +1,44 @@
+<div class="w-100">
+    <div class="flex-p">
+        <div class="row wrap">
+            <div class="col-sm-12 no-padding">
+                <div class="col-sm-12">
+                    <div class="pull-right col-sm-1 no-padding">
+                    </div>
+                  </div>                
+                
+                <div class="table-responsive w-100 flex-p"> 
+                  <table id="example2" class="table table-bordered table-hover">
+                      <thead class="tbl-head">
+                          <tr class="tr-grid-header">
+                              
+                              <th class="vert-align-mid" style="width:200px">Date & Time</th>
+                              <th class="vert-align-mid" style="width:200px">Status</th>
+                              <th class="vert-align-mid" style="width:130px">Type</th>
+                              <th class="vert-align-mid" style="width:300px">EFCO Unique Number</th>
+                              <th class="vert-align-mid" >Option</th>
+                              <th class="vert-align-mid" style="width:300px">Remarks</th>
+                              <th class="vert-align-mid" >Activity Date</th>
+                              <th class="vert-align-mid">Updated By</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr *ngFor="let item of items">
+                              <td>{{item.date}}</td>
+                              <td>{{item.status}}</td>
+                              <td>{{item.type}}</td>
+                              <td>{{item.refno}}</td>
+                              <td>{{item.option}}</td>
+                              <td>{{item.remarks}}</td>
+                              <td>{{item.activityDate}}</td>
+                              <td>{{item.updatedBy}}</td>
+                              
+                          </tr>
+                      </tbody>
+                  </table>
+                  <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

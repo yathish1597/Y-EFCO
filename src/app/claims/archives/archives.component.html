@@ -1,0 +1,224 @@
+<div class="row-wrap">
+  <div class="w-100">
+    <div fxLayout="row">
+      <div class="col-sm-6">
+
+      </div>
+
+      <div class="col-sm-6 p-0 m-0">
+
+        <div class="" style="margin-top: -25px;margin-bottom: 18px;">
+
+          <button mat-raised-button class="pull-right  btn-primary">
+            Move to Actives
+          </button>
+          <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+            (click)="filterToggle = !filterToggle">
+            <mat-icon>filter_list</mat-icon> Filter
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Filter details -->
+<div fxLayout="row wrap p-0 m-0">
+  <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 p-0 m-0" *ngIf="filterToggle">
+    <mat-card class="filter mt-5">
+      <mat-card-content>
+        <div class="row col-sm-12">
+          <div class="col-sm-3">
+            <div class="col-sm-4 mt-2">
+              Client :
+            </div>
+            <div class="col-sm-8">
+              <mat-select class="form-control" placeholder="Select Client">
+                <mat-option [value]="0">
+                  Adani kawai
+                </mat-option>
+                <mat-option [value]="1">
+                  Talwandi Saboo
+                </mat-option>
+                <mat-option [value]="2">
+                  Carin bhogiot
+                </mat-option>
+                <mat-option [value]="3">
+                  RCF Thal
+                </mat-option>
+                <mat-option [value]="4">
+                  Lanco
+                </mat-option>
+                <mat-option [value]="5">
+                  Prayagraj
+                </mat-option>
+                <mat-option [value]="5">
+                  Balco
+                </mat-option>
+              </mat-select>
+            </div>
+          </div>
+          <div class="col-sm-3 mt-2">
+            <div class="col-sm-4 newMarginClass">Job Order :</div>
+            <div class="col-sm-8">
+              <mat-select class="form-control" placeholder="Select Job Order">
+                <mat-option [value]="0">
+                  Select Job Order
+                </mat-option>
+
+              </mat-select>
+            </div>
+          </div>
+          <div class="col-sm-3 mt-2">
+            <div class="col-sm-4 newMarginClass">Start Date :</div>
+            <div class="col-sm-8">
+              <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" name="dt2">
+              <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
+            </div>
+          </div>
+          <div class="col-sm-3 mt-2">
+            <div class="col-sm-4 newMarginClass">End Date :</div>
+            <div class="col-sm-8">
+              <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3" name="dt3">
+              <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>
+            </div>
+          </div>
+          <div class="col-sm-3 mt-3">
+            <div class="col-sm-4 newMarginClass mt-2">Ref No :</div>
+            <div class="col-sm-8">
+              <input type="text" placeholder="Reference Number" class="form-control">
+            </div>
+          </div>
+
+          <div class="col-sm-3 mt-3">
+            <div class="col-sm-4 newMarginClass mt-2">
+              Status :
+            </div>
+            <div class="col-sm-8">
+              <mat-select class="form-control" placeholder="Select Status">
+                <mat-option [value]="0">
+                  Approved
+                </mat-option>
+                <mat-option [value]="1">
+                  Pending
+                </mat-option>
+                <mat-option [value]="2">
+                  Rejected
+                </mat-option>
+              </mat-select>
+            </div>
+          </div>
+          <div class="col-sm-3 mt-3">
+            <div class="col-sm-4 newMarginClass mt-2">User :</div>
+            <div class="col-sm-8">
+              <mat-select class="form-control" placeholder="Select User">
+                <mat-option [value]="0">
+                  Admin Efo
+                </mat-option>
+                <mat-option [value]="1">
+                  Amit Kumar
+                </mat-option>
+                <mat-option [value]="2">
+                  BV sudhakar
+                </mat-option>
+                <mat-option [value]="3">
+                  Debasis Pattnaik
+                </mat-option>
+                <mat-option [value]="4">
+                  Lokesh Kumar
+                </mat-option>
+                <mat-option [value]="5">
+                  Nanda Kumar
+                </mat-option>
+              </mat-select>
+            </div>
+          </div>
+
+
+
+        </div>
+
+        <div class="row col-sm-12 mt-5">
+
+
+          <div class="col-sm-12">
+            <a (click)="filterToggle = !filterToggle" class="pull-right"
+              style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+              <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+            </a>
+            <button mat-raised-button class="pull-right ml-2">
+              Download CSV
+            </button>
+            <button mat-raised-button class="float-right ml-2">
+              Search
+            </button>
+            <button mat-raised-button class="pull-right btn-primary">
+              Clear
+            </button>
+
+
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</div>
+
+<!-- Table -->
+<div class="row p-0 m-0" style="margin-top:20px">
+  <div class="col-sm-12 p-0 m-0" style="margin-left:10px">
+    <div id="grid-table-container" class="table-responsive" style="width:100%">
+      <table matSort id="example2" class="table table-bordered table-hover">
+        <thead class="tbl-head ">
+          <tr>
+            <th>Select</th>
+            <th>Reference No</th>
+            <th>Category</th>
+            <th>User</th>
+            <th>Project Code</th>
+            <th>Attachment(s)</th>
+            <th style="width: 120px;">Status</th>
+            <th>Approval Notes</th>
+            <th>Claim Amount</th>
+            <th>Approval Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of values;let i = index">
+            <td class="text-center" style="vertical-align: middle;">
+              <mat-checkbox></mat-checkbox>
+            </td>
+
+            <td>{{item.referenceNo }}</td>
+            <td>{{item.category }}</td>
+            <td>{{item.user }}</td>
+            <td>{{item.projectCode }}</td>
+            <td class="text-center" style="vertical-align: middle;"><a style="color:blue; "
+                (click)="openClientDialog(null)">{{item.attachments}}</a>
+            </td>
+            <td style="text-align: center!important;vertical-align: middle;">
+              <mat-select [style.background]="item.stageColour" style="min-width: 120px;" [(value)]="item.Status"
+                placeholder="--Select Stage --" class='form-control'>
+                <ng-container *ngFor='let option of statusOptions'>
+                  <mat-option [style.background]="option.colorCode" class='option' [value]="option.value">
+                    {{option.name}}</mat-option>
+                </ng-container>
+              </mat-select>
+            </td>
+            <td class="text-center">{{item.approvalStatus }}</td>
+            <td class="text-center">{{item.amount}}</td>
+            <td class="text-center">{{item.approvalamount}}</td>
+
+          </tr>
+
+        </tbody>
+      </table>
+      <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+        [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+</div>

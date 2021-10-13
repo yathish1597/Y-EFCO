@@ -1,0 +1,20 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>Project Permissions</h1>
+</div> 
+
+<div mat-dialog-content style="overflow:hidden!important;">
+  <form class="form-horizontal" novalidate  style="margin-top:10px">
+    <mat-checkbox  class="col-sm-4" >Manjeera Constructions</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Asian Constructions</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Orion Group</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Mantri group</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >MNR Group</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Siva Infra</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Mearns Aviations</mat-checkbox>
+  </form>
+</div>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary" (click)="close()"><mat-icon>send</mat-icon>Save</button>
+  <button mat-raised-button class="CancelClass" (click)="close()"><mat-icon>cancel</mat-icon>Cancel</button>
+</mat-dialog-actions>

@@ -1,0 +1,273 @@
+<div class="container-fluid">
+  <div class="row ">
+    <div class="col-sm-12">
+      <button mat-raised-button class="btn-primary float-right"
+        routerLink="/joborders/joborder-dashboard/POW/man-days">Back</button>
+    </div>
+  </div>
+  <div class="row mt-4">
+
+    <div class="col-4 ">
+      <div>
+        <!-- <div class="chart-header">
+        <p style="font-size: 17px">Daily Jobs Trend</p>
+      </div> -->
+        <div class="">
+          <mat-card>
+            <h3 style="text-align: center;text-decoration: underline;">Cumulative Man Power at Site</h3>
+            <div class="w-100 h-300p mt-4 " [chart]="cumulativeManPower">
+            </div>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4 ">
+      <div>
+        <!-- <div class="chart-header">
+        <p style="font-size: 17px">Daily Jobs Trend</p>
+      </div> -->
+        <div class="">
+          <mat-card>
+            <h3 style="text-align: center;text-decoration: underline;">Cumulative of Received Valves</h3>
+
+            <div class="w-100 h-300p mt-4" [chart]="cumulativeValves">
+
+            </div>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div>
+        <!-- <div class="chart-header">
+        <p style="font-size: 17px">Daily Jobs Trend</p>
+      </div> -->
+        <div class="">
+          <mat-card>
+            <h3 style="text-align: center;text-decoration: underline;">Cumulative of Handovered Valves</h3>
+            <div class="w-100 h-300p mt-4" [chart]="cumulativeHandoverValves">
+
+            </div>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-xs-12">
+      <div class="row">
+        <div class="col-sm-5 pr-0">
+          <table class="table table-bordered">
+            <tr>
+              <th style="vertical-align: middle;">Project Code</th>
+              <th colspan="2" style="vertical-align: middle;"><input type="text" class="form-control"
+                  placeholder="Enter Project Code"></th>
+              <th style="height: 47.57px;"></th>
+            </tr>
+            <tr>
+              <th style="vertical-align: middle;">Planned Date of work start</th>
+              <th colspan="2" style="vertical-align: middle;">
+                <mat-form-field>
+                  <mat-label>Start Date</mat-label>
+                  <input matInput [matDatepicker]="startDate" [(ngModel)]="startdate">
+                  <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                  <mat-datepicker #startDate (closed)=date()></mat-datepicker>
+                </mat-form-field>
+              </th>
+              <th colspan="2" style="vertical-align: middle;height: 74.17px;">
+                <mat-form-field>
+                  <mat-label>Start Date</mat-label>
+                  <input matInput [matDatepicker]="startDate2" [(ngModel)]="startdate2">
+                  <mat-datepicker-toggle matSuffix [for]="startDate2"></mat-datepicker-toggle>
+                  <mat-datepicker #startDate2></mat-datepicker>
+                </mat-form-field>
+              </th>
+            </tr>
+            <tr>
+              <th style="vertical-align: middle;">Planned Date of work completion</th>
+              <th colspan="2" style="vertical-align: middle;">
+                <mat-form-field>
+                  <mat-label>End Date</mat-label>
+                  <input matInput [matDatepicker]="endDate" [(ngModel)]="enddate">
+                  <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+                  <mat-datepicker #endDate (closed)=date()></mat-datepicker>
+                </mat-form-field>
+              </th>
+              <th colspan="2" style="vertical-align: middle;">
+                <mat-form-field>
+                  <mat-label>End Date</mat-label>
+                  <input matInput [matDatepicker]="endDate2" [(ngModel)]="enddate2">
+                  <mat-datepicker-toggle matSuffix [for]="endDate2"></mat-datepicker-toggle>
+                  <mat-datepicker #endDate2></mat-datepicker>
+                </mat-form-field>
+              </th>
+            </tr>
+            <tr>
+              <th style="vertical-align: middle;">No. of Valves</th>
+              <th colspan="2" style="vertical-align: middle;"><input type="input" class="form-control"></th>
+              <th colspan="2" style="vertical-align: middle;"><input type="input" class="form-control"></th>
+            </tr>
+            <tr>
+              <th style="vertical-align: middle;">No. of Days</th>
+              <th colspan="2" style="vertical-align: middle;height: 36.55px;" id="p1"></th>
+              <th colspan="2" style="vertical-align: middle;height: 36.55px;"></th>
+            </tr>
+            <tr>
+              <th style="vertical-align: middle;text-align: center !important;height: 37px;" colspan="4">Dates</th>
+            </tr>
+            <tr>
+              <th style="vertical-align: middle;" colspan="2" rowspan="2">Manpower Mobilization</th>
+              <th colspan="2" style="vertical-align: middle; height:37px !important;">Planned</th>
+
+            </tr>
+            <tr>
+              <th colspan="2" style="vertical-align: middle; height:37px !important;">Actual</th>
+            </tr>
+            <tr>
+              <th style="vertical-align: middle;" colspan="2" rowspan="2">Manpower De-Mobilization</th>
+              <th colspan="2" style="vertical-align: middle; height:37px !important;">Planned</th>
+
+            </tr>
+            <tr>
+              <th colspan="2" style="vertical-align: middle; height:37px !important;">Actual</th>
+            </tr>
+            <tr>
+              <th style="vertical-align: middle;" colspan="2" rowspan="2">Cumulative Manpower at Site</th>
+              <th colspan="2" style="vertical-align: middle; height:37px !important;">Planned</th>
+
+            </tr>
+            <tr>
+              <th colspan="2" style="vertical-align: middle; height:37px !important;">Actual</th>
+            </tr>
+            <tr>
+              <th style="vertical-align: middle;" colspan="2" rowspan="2">Valves Received</th>
+              <th colspan="2" style="vertical-align: middle; height:37px !important;">Planned</th>
+
+            </tr>
+            <tr>
+              <th colspan="2" style="vertical-align: middle; height:37px !important;">Actual</th>
+            </tr>
+            <tr>
+              <th style="vertical-align: middle;" colspan="2" rowspan="2">Cumulative of Received valves</th>
+              <th colspan="2" style="vertical-align: middle; height:37px !important;">Planned</th>
+
+            </tr>
+            <tr>
+              <th colspan="2" style="vertical-align: middle; height:37px !important;">Actual</th>
+            </tr>
+            <tr>
+              <th style="vertical-align: middle;" colspan="2" rowspan="2">Valves Handover</th>
+              <th colspan="2" style="vertical-align: middle; height:37px !important;">Planned</th>
+
+            </tr>
+            <tr>
+              <th colspan="2" style="vertical-align: middle; height:37px !important;">Actual</th>
+            </tr>
+            <tr>
+              <th style="vertical-align: middle;" colspan="2" rowspan="2">Cumulative of Handover valves</th>
+              <th colspan="2" style="vertical-align: middle; height:37px !important;">Planned</th>
+
+            </tr>
+            <tr>
+              <th colspan="2" style="vertical-align: middle; height:37px !important;">Actual</th>
+            </tr>
+
+          </table>
+        </div>
+        <div class="col-sm-7 pl-0">
+          <table class="table table-bordered">
+            <tr>
+              <th rowspan="4" class="text-center" style="vertical-align: middle;">
+                EFCO Maschinenbau India Pvt Ltd
+              </th>
+            </tr>
+            <tr>
+              <th>Site Incharge</th>
+              <th style="width:150px"> <input type="text" class="form-control"></th>
+            </tr>
+            <tr>
+              <th>Designation </th>
+              <th style="width:150px"> <input type="text" class="form-control"></th>
+            </tr>
+            <tr>
+              <th>Month</th>
+              <th style="width:150px">
+                <input type="text" class="form-control">
+              </th>
+            </tr>
+            <tr>
+              <th colspan="3">
+                <h3 style="text-align: center;margin-bottom: 0px;padding: 8px;">Work Execution Plan</h3>
+              </th>
+            </tr>
+            <tr>
+              <th colspan="3" style="height:37px !important; text-align: end !important;">
+                <mat-icon style="color:#37474f;cursor: pointer;" (click)="scrollGrid('last');">first_page</mat-icon>
+                <mat-icon style="color:#37474f;cursor: pointer;" (click)="scrollGrid('right');">last_page</mat-icon>
+              </th>
+            </tr>
+          </table>
+
+          <div id="grid-table-container1" class="table-responsive" style="overflow-x: hidden;margin-top: -10px;">
+            <table matSort id="example2" class="table table-bordered table-hover">
+
+              <thead>
+
+                <th *ngFor="let item of data2; let i = index">Day- {{i + 1}}</th>
+
+
+
+
+
+              </thead>
+
+              <tbody *ngIf="showTable == false">
+                <tr>
+                  <th style="height: 37px" colspan="12"></th>
+                </tr>
+                <tr *ngFor="let value of falseTableBody">
+                  <th style="height:37px">
+
+                  </th>
+                </tr>
+
+              </tbody>
+
+              <tbody *ngIf="showTable == true">
+                <tr>
+                  <th style="height: 37px" colspan="12"></th>
+                </tr>
+                <tr *ngFor="let value of falseTableBody">
+                  <th *ngFor="let value of data" style="height:37px;padding-top: 2px;padding-bottom: 2px;">
+                    <input type="text" style="width:67px" id="input">
+                  </th>
+                </tr>
+              </tbody>
+
+            </table>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-12 mt-3 p-0  text-center">
+    <button class="btn btn-primary add-hover" style="font-size:larger !important;"
+      routerLink="/joborders/joborder-dashboard/deposit">Save &
+      Continue</button>
+  </div>
+
+
+
+
+
+</div>

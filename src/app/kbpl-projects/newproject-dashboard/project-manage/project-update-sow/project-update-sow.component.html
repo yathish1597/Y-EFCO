@@ -1,0 +1,119 @@
+<h1 mat-dialog-title class="custom-header" style="background-color:#286ba5 !important;height:50px">New SOW</h1>
+<form>
+    <div mat-dialog-content>
+<div class="col-sm-12">
+    <div class="row">
+        <div class="form-group col-sm-6 m-b-0">
+            <div class="col-sm-6">
+                <div class="row">
+                    <label class="col-sm-12">SOW Ref: </label>
+                    <div class="col-sm-12">
+                        <label style="font-size: 18px; color: #1d4d76;">001</label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Site: </label>
+                <div class="col-sm-12">
+                    <mat-select placeholder="--Select Site--" class="form-control">
+                        <mat-option>Default</mat-option>
+                    </mat-select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Project Type: </label>
+                <div class="col-sm-12">
+                    <mat-select placeholder="--Select Project Type--" class="form-control">
+                      <mat-option value="[0]">Constrution</mat-option>
+                      <mat-option value="[1]">Engineering</mat-option>
+                      <mat-option value="[2]">Internal</mat-option>
+                      <mat-option value="[3]">Legal</mat-option>
+                    </mat-select>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">SOW Name: </label>
+                <div class="col-sm-12">
+                    <input class="form-control" placeholder="Enter SOW Name" type="text">
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Status: </label>
+                <div class="col-sm-12">
+                    <mat-select placeholder="--Select Status--" class="form-control">
+                        <mat-option>open</mat-option>
+                    </mat-select>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Fees Structure: </label>
+                <div class="col-sm-12">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="0" style="margin-left: 0px;" checked>Fixed Rate&nbsp;&nbsp; </mat-radio-button>
+                    <mat-radio-button value="1" style="margin-left: 0px;">Time & Expense&nbsp;&nbsp;</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">PO Number: </label>
+                <div class="col-sm-12">
+                    <input maxlength="20" class="form-control" placeholder="Enter PO Number" type="text">
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Due Date: </label>
+                <div class="col-sm-12">
+                  <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="dt1"  style="margin-left: 0px;">
+                  <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group col-sm-12" style="padding: 0px 10px 0px;">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Description: </label>
+                <div class="col-sm-12">
+                    <textarea maxlength="999" formControlName="remarks" placeholder="Enter Description" class="form-control customtext" rows="2" ></textarea>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+      
+
+    </div>
+
+    <mat-dialog-actions align="center">
+        <button mat-raised-button class="add-hover btn-primary" type="submit"><mat-icon>send</mat-icon>&nbsp;Save</button>
+        <button mat-raised-button type="button" class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+    </mat-dialog-actions>
+</form>

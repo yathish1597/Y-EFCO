@@ -1,0 +1,79 @@
+<div class="NewHeader" style="background-color:#286ba5 !important;height:50px">
+  <h1 mat-dialog-title>
+
+    {{project ? 'Update': 'Add'}} Contracts
+  </h1>
+</div>
+<div mat-dialog-content>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Select Employee Type :
+      </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="margin-top:9px ;">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked
+            (click)="employetoggle()">
+          <label class="form-check-label" for="exampleRadios1">
+            Permanent Employee
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2"
+            (click)="employetoggle()">
+          <label class="form-check-label" for="exampleRadios2">
+            Contract Employee
+          </label>
+        </div>
+      </div>
+
+    </div>
+
+    <div *ngIf="employeetoggle == false" class="form-group">
+      <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Name :
+      </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <mat-select class="form-control" placeholder="Select Name">
+          <mat-option *ngFor = 'let emp of contractEmployees' [value]='emp'>{{emp.UserName}}</mat-option>
+        </mat-select>
+      </div>
+    </div>
+    <div *ngIf="employeetoggle == true" class="form-group">
+      <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Name :
+      </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <mat-select class="form-control" placeholder="Select Name">
+          <mat-option *ngFor = 'let emp of permanentEmployees' [value]='emp'>{{emp.UserName}}</mat-option>
+        </mat-select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Role(s) :
+      </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <mat-select class="form-control" placeholder="Select Role">
+          <mat-option *ngFor = 'let role of roles' [value]='role'>{{role.roleName}}</mat-option>
+        </mat-select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd"> Contact# :
+      </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <input type="text" class="form-control" placeholder="" required value="+91 ">
+      </div>
+    </div>
+
+
+  </form>
+</div>
+<mat-dialog-actions align="end">
+  
+  <button mat-raised-button class="btn-primary" [mat-dialog-close]="'test'">
+    <mat-icon>send</mat-icon> Save
+  </button>
+  <button mat-raised-button (click)="close()" style="color: rgb(7, 10, 7); background-color: #e0e0e0;">
+    <mat-icon>cancel</mat-icon> Close
+  </button>
+
+</mat-dialog-actions>

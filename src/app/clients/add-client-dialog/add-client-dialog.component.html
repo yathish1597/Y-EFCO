@@ -1,0 +1,89 @@
+<div class="NewHeader"> 
+  <h1 mat-dialog-title>
+    {{data ? 'Update' : 'Add'}} Client
+  </h1>
+</div>
+
+<div mat-dialog-content>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-sm-4 add-member-label">Client Name: </label>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <input type="email" class="form-control" id="email" placeholder="Enter Client Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-4 add-member-label">Contact Name: </label>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <input type="email" class="form-control" id="email" placeholder="Enter Contact Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label">Client Type: </label>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <mat-radio-group aria-label="Select a client">
+                    <mat-radio-button value="1" class="mr-1">Referral</mat-radio-button>
+                    <mat-radio-button value="2">New</mat-radio-button>
+                  </mat-radio-group>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-4 add-member-label">Industry: </label>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">              
+                   
+                    <mat-select class="form-control" placeholder="Select Industry">
+                      <mat-option [value]="0">
+                        E-Com
+                      </mat-option>
+                      <mat-option [value]="1">
+                        Architect
+                      </mat-option>
+                      <mat-option [value]="2">
+                        Hospitality
+                      </mat-option>
+                    </mat-select>
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Email: </label>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <input type="text" class="form-control" placeholder="Enter Email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Phone Number: </label>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <input type="text" class="form-control" placeholder="Enter Phone Number">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Street Address: </label>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <input type="text-area" class="form-control" placeholder="Enter Address">
+            </div>
+        </div>
+       
+        <div class="form-group">
+            <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">State: </label>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <mat-select class="form-control" placeholder="Select State">
+                    <mat-option [value]="0">
+                      Telengana
+                    </mat-option>
+                    <mat-option [value]="1">
+                      Karnataka
+                    </mat-option>
+                    <mat-option [value]="2">
+                      Tamil Nadu
+                    </mat-option>
+                  </mat-select>
+            </div>
+        </div>
+       
+    </form>
+</div>
+<mat-dialog-actions align="end">
+    <button mat-raised-button class="btn-primary"  [mat-dialog-close]="'test'"><mat-icon>send</mat-icon><span>Save</span></button>
+    <button mat-raised-button class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon>Close</button>
+</mat-dialog-actions> 
